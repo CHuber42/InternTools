@@ -5,12 +5,13 @@ import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-ro
 import Navbar from './components/navbar';
 
 
-
-
 function App() {
   return (
     <>
       <Navbar/>
+      {/* Flask backend interaction */}
+      {/* <p>My Token = {window.token}</p> */}
+      {/* <Footer /> */}
     </>
   );
 }

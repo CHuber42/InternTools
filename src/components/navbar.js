@@ -1,7 +1,7 @@
 import React from 'react';
 import image from "../img/guf_logo.png";
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
-import Home from '../Home';
+import Home from './Home';
 
 const headerStyle = {
     backgroundColor: '#959595',
