@@ -1,8 +1,7 @@
 import React from 'react';
 import Banner from './banner';
 
-function Team() {
-
+function FreeTrial() {
   return (
     <>
       <Banner />
@@ -10,4 +9,4 @@ function Team() {
   )
 };
 
-export default Team;
+export default FreeTrial;

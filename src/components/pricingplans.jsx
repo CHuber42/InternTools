@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from './banner';
 
-function Team() {
+function PricingPlans() {
 
   return (
     <>
@@ -10,4 +10,4 @@ function Team() {
   )
 };
 
-export default Team;
+export default PricingPlans;
