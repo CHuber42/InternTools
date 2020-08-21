@@ -6,6 +6,7 @@ import govicon from '../img/govicon.svg';
 import IndividualFreeTrial from './individualtrial';
 import SmallMedFreeTrial from './smallmedtrial';
 import LargeFreeTrial from './largetrial';
+import EssentialFeatures from './essentialfeatures';
 
 const background = {
   backgroundColor: '#E5e5e5',
@@ -29,8 +30,7 @@ const optionType = {
   fontSize: '28px'
 }
 
-const spacer = {
-}
+
 
 var nextFragment = "";
 
@@ -55,24 +55,28 @@ function FreeTrial() {
 
         {/* CLICKABLE INPUT */}
         <div className="row">
-          <div style={spacer} className="col-md-1"/>
+          <div  className="col-md-1"/>
           <div className="col-md-2" onClick={() => {nextFragment=<IndividualFreeTrial/>; forceUpdate();}}>
-            <img src={schoolIcon1} alt="school icon"/>
-            <p style={optionType}>Individual</p>
+            <img style={{cursor: 'pointer'}} src={schoolIcon1} alt="school icon"/>
+            <p style={optionType}>Educational Funding</p>
+            <p>Public & Private Schools, Colleges & Universities</p>
           </div>
-          <div style={spacer} className="col-md-2"/>
+          <div  className="col-md-2"/>
           <div className="col-md-2" onClick={() => {nextFragment=<SmallMedFreeTrial/>; forceUpdate();}}>
-            <img src={smallbusiness1} alt="small business icon"/>
-            <p style={optionType}>Small or Medium Business</p>
+            <img style={{cursor: 'pointer'}} src={smallbusiness1} alt="small business icon"/>
+            <p style={optionType}>Small & Medium Business Funding</p>
+            <p>Profit / Non-Profit Organizations & Buisnesses</p>
           </div>
-          <div style={spacer} className="col-md-2"/>
+          <div className="col-md-2"/>
           <div className="col-md-2" onClick={() => {nextFragment=<LargeFreeTrial/>; forceUpdate();}}>
-            <img src={govicon} alt="small gov icon"/>
-            <p style={optionType}>Large Business or Institution</p>  
+            <img style={{cursor: 'pointer'}} src={govicon} alt="small gov icon"/>
+            <p style={optionType}>Government Contract Funding</p>
+            <p>Small to Large Scale Projects: All forms of Needs From Single to Ongoing Contracts</p>  
           </div>
-          <div style={spacer} className="col-md-1"/>
+          <div className="col-md-1"/>
         </div>
         {nextFragment}
+        <EssentialFeatures/>
       </div>
     </>
   )

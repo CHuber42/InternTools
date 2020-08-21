@@ -5,6 +5,7 @@ import RightPic from "../img/computer-backplane.svg";
 import schoolIcon1 from '../img/schoolIcon1.svg';
 import smallbusiness1 from '../img/smallbusiness1.svg';
 import govicon from '../img/govicon.svg';
+import SmartFocusFunding from './smartfocusfunding';
 
 const inquire = {
   top: '50vh',
@@ -150,27 +151,6 @@ const gettingTo = {
   color: '#000000',
 }
 
-const smartFocusedFunding1 = {
-  fontWeight: 'bold',
-  fontSize: '36px',
-  lineHeight: '24px',
-  textAlign: 'center',
-}
-
-const smartFocusedFunding2 = {
-  fontSize: '24px',
-  fontStyle: 'italic',
-  textAlign: 'center'
-}
-
-const list1 = {
-  fontSize: '24px',
-  lineHeight: '60px',
-  listStylePosition: 'inside',
-  textAlign: 'left',
-  marginLeft: '100px',  
-}
-
 const leftSide = {
   padding: '20px 50px 0px 0px'
 }
@@ -202,17 +182,7 @@ const blueBox = {
   backgroundColor: '#5881BE'
 }
 
-const buttonOrange = {
-  backgroundColor: '#FF9900',
-  border: 'none',
-  color: '#FFFFFF',
-  padding: '15px 32px',
-  textAlign: 'center',
-  textDecoration: 'none',
-  display: 'inline-block',
-  fontSize: '24px',
-  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-}
+
 
 const corona = {
   textAlign: 'center',
@@ -244,17 +214,7 @@ const responsePlan = {
   color: '#FFFFFF', 
 }
 
-const buttonGrey = {
-  backgroundColor: '#E5e5e5',
-  border: 'none',
-  color: '#000000',
-  padding: '15px 32px',
-  textAlign: 'center',
-  textDecoration: 'none',
-  display: 'inline-block',
-  fontSize: '24px',
-  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
-}
+
 
 function Home() {
   
@@ -420,39 +380,7 @@ function Home() {
       </div>
       <hr style={{marginTop: '10vh'}}/>
 
-      {/* Smart Focused Funding */}
-      <div class="container">
-        
-        {/* TOP */}
-        <div style={{textAlign: 'center'}}>
-          <p style={smartFocusedFunding1}><br/>Smart Focused Funding</p>
-          <br/>
-          <p style={smartFocusedFunding2}> Get Funded!</p>
-          <br/>
-          <div class="row">
-          
-          {/* LEFT */}
-            <div class="col-md-6 col-sm-12">
-                <h3>Our Commitment to You:</h3>
-                  <ul style={list1}>
-                    <strong> <li> Easy-To-Use Software</li> <li>Find Truly Qualified Leads</li> <li>Save You Time</li> <li>Keep You Informed</li> </strong>
-                  </ul>
-            </div>
-
-            {/* RIGHT */}
-            <div class="col-md-6 col-sm-12">
-                <p style={{fontSize: '24px', lineHeight: '36px' }}>Join Us.</p>
-                <a style={buttonGrey} href="freetrial.html">Plans and Pricing</a>
-                <br/>
-                <br/>
-                <p style={{fontSize: '24px', lineHeight: '36px' }}>Or Start Your</p>
-                <a style={buttonOrange} href="freetrial.html">7-Day Free Trial</a>
-                <p style={{fontSize: '24px', lineHeight: '36px' }}>No Credit Card Required</p>
-            </div>
-            
-          </div>
-        </div>
-      </div>
+      <SmartFocusFunding/>
 
       {/* BOTTOM ROW  */}
       <div class="container">

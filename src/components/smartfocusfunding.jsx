@@ -1,0 +1,95 @@
+import React from 'react';
+
+const smartFocusedFunding1 = {
+    fontWeight: 'bold',
+    fontSize: '36px',
+    lineHeight: '24px',
+    textAlign: 'center',
+  }
+  
+const smartFocusedFunding2 = {
+    fontSize: '24px',
+    fontStyle: 'italic',
+    textAlign: 'center'
+}
+
+const list1 = {
+    fontSize: '24px',
+    lineHeight: '60px',
+    listStylePosition: 'inside',
+    textAlign: 'left',
+    marginLeft: '100px',  
+}
+
+const buttonOrange = {
+  backgroundColor: '#cf974f',
+  border: 'none',
+  color: '#FFFFFF',
+  textAlign: 'center',
+  textDecoration: 'none',
+  display: 'inline-block',
+  fontSize: '24px',
+  boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25)',
+  width: '15rem',
+  height: '2rem',
+  marginTop: '1rem',
+  marginBottom: '1rem',
+  borderRadius: '5rem',
+}
+
+const buttonGreen = {
+  backgroundColor: '#128049',
+  border: 'none',
+  color: '#FFFFFF',
+  textAlign: 'center',
+  textDecoration: 'none',
+  display: 'inline-block',
+  fontSize: '24px',
+  boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25)',
+  width: '15rem',
+  height: '2rem',
+  marginTop: '1rem',
+  marginBottom: '1rem',
+  borderRadius: '5rem',
+}
+
+function SmartFocusFunding() {
+  return (
+  <>
+    {/* Smart Focused Funding */}
+    <div class="container">
+            
+    {/* TOP */}
+    <div style={{textAlign: 'center'}}>
+      <p style={smartFocusedFunding1}><br/>Smart Focused Funding</p>
+      <br/>
+      <p style={smartFocusedFunding2}> Get Funded!</p>
+      <br/>
+      <div class="row">
+      
+      {/* LEFT */}
+        <div class="col-md-6 col-sm-12">
+          <h3>Our Commitment to You:</h3>
+            <ul style={list1}>
+              <strong> <li>Easy-To-Use Software</li> <li>Find Truly Qualified Leads</li> <li>Save You Time</li> <li>Keep You Informed</li> </strong>
+            </ul>
+        </div>
+
+        {/* RIGHT */}
+        <div class="col-md-6 col-sm-12">
+            <p style={{fontSize: '24px', lineHeight: '36px' }}>Join Us.</p>
+            <a style={buttonGreen} href="freetrial.html">Plans and Pricing</a>
+            <br/>
+            <br/>
+            <p style={{fontSize: '24px', lineHeight: '36px' }}>Or Start Your</p>
+            <a style={buttonOrange} href="freetrial.html">7-Day Free Trial</a>
+            <p style={{fontSize: '24px', lineHeight: '36px' }}>No Credit Card Required</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </>
+  )
+}
+
+export default SmartFocusFunding;

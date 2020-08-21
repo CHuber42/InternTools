@@ -5,8 +5,7 @@ import GovIcon from '../img/govicon.svg';
 function LargeFreeTrial(){
     return (
         <>   
-        <div className="container justify-content-center">
-            <div className="spacer-div"></div>
+        <div className="container justify-content-center">        
                 <div className="free-trial-academic-top-box">
                     <div>
                         <img src={GovIcon} alt=""/>
@@ -14,9 +13,7 @@ function LargeFreeTrial(){
                         <p style={{color: '#FF9900', fontSize: '2em'}}>7-Day Free Trial</p>
                         <p style={{fontSize: '2em', fontWeight: 'bold'}}>Government Contracting</p>
                         <p style={{fontSize: '2em'}}>Plan Details</p>
-                    </div>
-                    <div className="spacer-div"></div>
-                    {/* <!-- <div className="free-trial-academic-box2"> --> */}
+                    </div>             
                         <div className="center-this">
                             <div className="row">
                                 <div className="col-md-6 col-sm-12">
@@ -96,10 +93,10 @@ function LargeFreeTrial(){
                                 </div>
                                 <div className="col-md-6 col-sm-12">
                                     <div className="center-this">
-                                        <div className="f-size-28">
+                                        <div className="f-size-28" >
                                             <p style={{fontSize: '1.5em', fontWeight: 'bold', lineHeight: '1.5em'}}>What you’ll get, and what to look
                                         forward to:</p>
-                                            <p>With your <span style={{fontWeight: 'bold'}}>7-Day Free Trial,</span> you get a chance to jump right
+                                            <p style={{fontSize: '24px'}}>With your <span style={{fontWeight: 'bold'}}>7-Day Free Trial,</span> you get a chance to jump right
                                         in
                                         and
                                         start exploring with our powerful set
@@ -108,7 +105,7 @@ function LargeFreeTrial(){
                                         • Get Basic Details <br/><br/>
                                         • Create a Profile to be used in our Directed Personalized Algorithm <br/><br/>
                                         • At the end of your no-cost, no-obligation
-                                        trial, you can choose to Upgrade, allowing you to contiune where you left off and start using the
+                                        trial, you can choose to Upgrade, allowing you to continue where you left off and start using the
                                         full
                                         power of our
                                         essential features. <br/><br/> </p>
@@ -122,7 +119,7 @@ function LargeFreeTrial(){
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>              
         </>
     )
 }

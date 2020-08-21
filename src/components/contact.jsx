@@ -3,34 +3,102 @@ import Banner from './banner';
 import EducationIcon from '../img/schoolIcon1.svg';
 import SmallBusinessIcon from '../img/smallbusiness1.svg';
 import GovIcon from '../img/govicon.svg';
+import SmartFocusFunding from './smartfocusfunding';
+
+const backGround = {
+    backgroundColor: '#E5E5E5',
+    border: '1px solid #E5E5E5',
+}
+
+const title = {
+    marginBottom: '2.5rem',
+    marginTop: '2.5rem',
+    textAlign: 'center',
+}
+
+const btnFun = {
+    height: '8rem',
+    width: '15rem',
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: '20px',
+    lineHeight: '28px',
+    color: '#000000',
+    background: '#d5d5d5',
+    boxShadow: '0px 4px 4px rgba(0,0,0,0.25)',
+    border: 'none',
+    borderRadius: '1rem',
+    marginBottom: '1rem',
+    marginLeft: '-5rem'
+}
+
+const btnPlans = {
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: '20px',
+    lineHeight: '28px',
+    color: '#ffffff',
+    height: '8rem',
+    width: '10rem',
+    border: 'none',
+    borderRadius: '1rem',
+    background: '#5881b3',
+    boxShadow: '0rem, .5rem, .5rem rgba(0,0,0,.25)'
+}
+
+const btnChat = {
+    marginTop: '2rem',
+    marginBottom: '2rem',
+    marginLeft: '28%',
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: '48px',
+    color: '#FFFFFF',
+    width: '30rem',
+    height: '8rem',
+    border: 'none',
+    borderRadius: '5rem',
+    background: '#5881BE',
+    boxShadow: '.1rem .5rem .5rem rgba(.1, .1, .1, .25)',
+}
+
+const contactInfo = {
+    background: '#D5D5D5',
+    borderRadius: '39px',
+    padding: '15px',
+    textAlign: 'center',
+    margin: 'auto',
+    width: '55vw',
+    boxShadow: '.1rem .5rem .5rem rgba(.1, .1, .1, .25)'
+}
+
+const email = {
+    cursor: 'pointer'
+}
 
 function Contact() {
     return (
         <>
             <Banner />
-
+            <div style={backGround}>
             <div className="container"> 
-                <div className="statement d-none d-md-block"> 
-                    <h1>FIND YOUR FUNDING TODAY</h1> 
-                </div>     
-                <div className="find-fund-white d-none d-sm-block d-md-none"> 
-                    <h1>FIND YOUR FUNDING TODAY</h1> 
-                </div>     
-                <div className="find-fund-white d-block d-sm-none" style={{fontSize: '28px'}}> 
-                    <h1>FIND YOUR FUNDING TODAY</h1> 
-                </div>     
-                <div className="spacer-div d-none d-md-block"></div>     
+                <div> 
+                    <h1 style={title}>FIND YOUR FUNDING TODAY</h1> 
+                </div>      
                 <div className="row row-center"> 
                     <div className="col-md-4"> 
                         <img src={EducationIcon} alt="school icon"/> 
                     </div>         
-                    <div className="col-md-4"> 
-                        <button type="button" className="btn-fun" data-toggle="modal" data-target="#contactModal" data-whatever="@Academic">Request
-                                info@Academic
+                    <div className="col-md-4" > 
+                        <button type="button" style={btnFun} data-toggle="modal" data-target="#contactModal" data-whatever="@Academic">
+                            Request info@Academic
                         </button>             
                     </div>         
                     <div className="col-md-4"> 
-                        <a href="eduplans.html"><button className="btn-plans">See Plans & Pricing</button></a> 
+                        <a href="eduplans.html"><button style={btnPlans}>See Plans <br /> & <br/> Pricing</button></a> 
                     </div>         
                 </div>     
                 <div className="row row-center"> 
@@ -38,14 +106,12 @@ function Contact() {
                         <img src={SmallBusinessIcon} alt="smb icon"/> 
                     </div>         
                     <div className="col-md-4"> 
-                        <button type="button" className="btn-fun" data-toggle="modal" data-target="#contactModal" data-whatever="@Small">Request
-                            info@Small
-
-                            <br/>& Medium Business
+                        <button type="button" style={btnFun} data-toggle="modal" data-target="#contactModal" data-whatever="@Small">
+                            Request info@Small<br/>& Medium Business
                         </button>             
                     </div>         
                     <div className="col-md-4 plans"> 
-                        <a href="smbplans.html"><button className="btn-plans">See Plans & Pricing</button></a> 
+                        <a href="smbplans.html"><button style={btnPlans}>See Plans <br /> & <br/> Pricing</button></a> 
                     </div>         
                 </div>     
                 <div className="row row-center"> 
@@ -53,20 +119,31 @@ function Contact() {
                         <img src={GovIcon} alt="gov icon"/> 
                     </div>         
                     <div className="col-md-4"> 
-                        <button type="button" className="btn-fun" data-toggle="modal" data-target="#contactModal" data-whatever="@Gov">Request
-                            info@ 
-
-                            <br/>Government Contracting
+                        <button type="button" style={btnFun} data-toggle="modal" data-target="#contactModal" data-whatever="@Gov">
+                            Request info@<br/>Government Contracting
                         </button>             
                     </div>         
                     <div className="col-md-4 plans"> 
-                        <a href="govplans.html"><button className="btn-plans">See Plans & Pricing</button></a> 
+                        <a href="govplans.html"><button style={btnPlans}>See Plans <br /> & <br/> Pricing</button></a> 
                     </div>         
-                </div>     
-                <div className="spacer-div"></div>     
-                <div className="horizontal-rule"></div>     
+                </div>          
+                {/* ChatWithUs */}
+                <button type="submit" style={btnChat}>Chat With Us</button>
             </div>
-
+      
+            <hr />
+            {/* SMAR FOCUSED FUNDING */}
+            <SmartFocusFunding />
+            
+            {/* CONTACT DETAILS */}
+            <div style={contactInfo}> 
+                <span class="contact-company">  <p><strong> Grant Us Funding</strong></p>  </span> 
+                <p>Corvallis, Oregon 97330</p> 
+                <p><strong>Phone:</strong> 971-800-1048</p> 
+                <p style={email}><strong>Email:</strong> Info@GrantUsFunding.com</p> 
+            </div>             
+            <hr/>
+        </div>
         </>
     )
 };
