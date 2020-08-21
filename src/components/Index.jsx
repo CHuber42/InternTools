@@ -131,6 +131,7 @@ const funderSpecific = {
   fontWeight: 'bold',
   fontSize: '36px', 
   color: '#000000',
+  paddingTop: '10%'
 }
 
 const notUnlikeClothing = {
