@@ -8,9 +8,9 @@ function Banner() {
   }
 
   const heroStyle = {
-    position: 'relative',
+    position: 'absolute',
     zIndex: '2',
-    top: '-25vh',
+    top: '65vh',
     width: '50rem',
     height: '11rem',
     backgroundColor: 'rgba(11,45,86,0.4)',
@@ -19,7 +19,7 @@ function Banner() {
     lineHeight: '5.125rem',
     color: '#FFFFFF',
     textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', 
-    paddingLeft: "2vw"
+    paddingLeft: "2vw",
   }
 
   const dreamStyle = {

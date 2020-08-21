@@ -3,7 +3,6 @@ import image from "./img/guf_logo.png";
 import Footer from './components/footer.jsx';
 import Navbar from './components/navbar';
 
-
 function App() {
   return (
     <>

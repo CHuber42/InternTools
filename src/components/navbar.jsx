@@ -14,11 +14,13 @@ const headerStyle = {
   
 const logoStyle = {
     maxHeight: '8.2vh',
-    height: '100%'
+    height: '100%',
+    cursor: 'pointer'
 }
 
 const navLinksStyle = {
     color: '#ffffff',
+    cursor: 'pointer'
 }
 
 const btnLogin = {
@@ -44,58 +46,67 @@ const magGlassStyle = {
     border: 'none',
 }
 
-function someFunction(){
-    return;
+const freeTrialStyle = {
+    color: 'yellow',
+    cursor: 'pointer'
 }
 
 class Navbar extends Component {
+    constructor(){
+      super()
+      this.state = {
+          active: "",
+      };
+      this.fragment = "";
+    }
+    
     render(){
+        switch (this.state.active){
+            case "home":
+                this.fragment=<Home/>;
+                break
+            case "team":
+                this.fragment=<Team/>;
+                break
+            case "pricingplans":
+                this.fragment=<PricingPlans/>;
+                break
+            case "contact":
+                this.fragment=<Contact/>;
+                break
+            case "freetrial":
+                this.fragment=<FreeTrial/>;
+                break
+            default:
+                this.fragment=<Home/>;
+                break
+        }
     return(
         <>
-        <Router>
+        {/* <Router> */}
             <div style={headerStyle} className="navbar">
                 <div className="navbar-brand">
-                  <img src={image} alt="Logo" style={logoStyle} />
+                  <img src={image} alt="Logo" style={logoStyle} onClick={() => this.setState({active: "home"})}/>
                 </div>
                 <div className="nav-item">
-                    <Link style={navLinksStyle} to="/">Home</Link>
+                    <span style={navLinksStyle} onClick={() => this.setState({active: "team"})}>Our Team</span>
                 </div>
                 <div className="nav-item">
-                    <Link style={navLinksStyle} to="/team">Our Team</Link>
+                    <span style={navLinksStyle} onClick={() => this.setState({active: "pricingplans"})}>Pricing & Plans</span>
                 </div>
                 <div className="nav-item">
-                    <Link style={navLinksStyle} to="/pricingplans">Pricing & Plans</Link>
+                    <span style={navLinksStyle} onClick={() => this.setState({active: "contact"})}>Contact</span>
                 </div>
                 <div className="nav-item">
-                    <Link style={navLinksStyle} to="/contact">Contact</Link>
-                </div>
-                <div className="nav-item">
-                    <Link style={{color: 'yellow'}} to="/freetrial">7-Day Free Trial</Link>
+                    <span style={freeTrialStyle} onClick={() => this.setState({active: "freetrial"})}>7-Day Free Trial</span>
                 </div>
                 <div className="nav-item">
                     <input style={searchStyle} type="text" placeholder="Search For..."/>
-                    <button className='fas fa-search fa-sm' style={magGlassStyle} type='submit' onSubmit={() => someFunction()}/>
+                    <button className='fas fa-search fa-sm' style={magGlassStyle} type='submit'/>
                 </div>
                 <button style={btnLogin} className='btn-login' type='button'>Login</button>
             </div>
-                <Switch>
-                    <Route path='/team'>
-                        <Team />
-                    </Route>
-                    <Route path='/pricingplans'>
-                        <PricingPlans />
-                    </Route>
-                    <Route path="/freetrial">
-                        <FreeTrial />
-                    </Route>
-                    <Route path='/contact'>
-                        <Contact />
-                    </Route>
-                    <Route path='/'>
-                        <Home />
-                    </Route>
-                </Switch>
-        </Router>
+            {this.fragment}
         </>
     )}
 }
