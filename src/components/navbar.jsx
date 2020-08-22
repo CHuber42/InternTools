@@ -92,7 +92,7 @@ class Navbar extends Component {
                     <span style={navLinksStyle} onClick={() => this.setState({active: "team"})}>Our Team</span>
                 </div>
                 <div className="nav-item">
-                    <span style={navLinksStyle} onClick={() => this.setState({active: "pricingplans"})}>Pricing & Plans</span>
+                    <a href="/pricingplans" style={navLinksStyle}>Pricing & Plans</a>
                 </div>
                 <div className="nav-item">
                     <span style={navLinksStyle} onClick={() => this.setState({active: "contact"})}>Contact</span>

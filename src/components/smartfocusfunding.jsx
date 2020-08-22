@@ -35,6 +35,7 @@ const buttonOrange = {
   marginTop: '1rem',
   marginBottom: '1rem',
   borderRadius: '5rem',
+  paddingBottom: '2.5rem'
 }
 
 const buttonGreen = {
@@ -51,6 +52,7 @@ const buttonGreen = {
   marginTop: '1rem',
   marginBottom: '1rem',
   borderRadius: '5rem',
+  paddingBottom: '2.5rem'
 }
 
 function SmartFocusFunding() {
@@ -79,8 +81,6 @@ function SmartFocusFunding() {
         <div class="col-md-6 col-sm-12">
             <p style={{fontSize: '24px', lineHeight: '36px' }}>Join Us.</p>
             <a style={buttonGreen} href="freetrial.html">Plans and Pricing</a>
-            <br/>
-            <br/>
             <p style={{fontSize: '24px', lineHeight: '36px' }}>Or Start Your</p>
             <a style={buttonOrange} href="freetrial.html">7-Day Free Trial</a>
             <p style={{fontSize: '24px', lineHeight: '36px' }}>No Credit Card Required</p>
