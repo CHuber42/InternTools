@@ -1,15 +1,25 @@
 import React from 'react';
-import image from "./img/guf_logo.png";
 import Footer from './components/footer.jsx';
 import Navbar from './components/navbar';
+import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <Navbar/>
-      {/* Flask backend interaction */}
-      {/* <p>My Token = {window.token}</p> */}
-      <Footer />
+    <Router>
+      <Switch>
+        {/* <Route path="/team">
+          <p>This is the Team Route</p>
+        </Route> */}
+        <Route path="/">
+          {/* <a href="/team">Link to Team</a> */}
+          <Navbar />
+          {/* Flask backend interaction */}
+          {/* <p>My Token = {window.token}</p> */}
+          <Footer />
+        </Route>
+      </Switch>
+    </Router>
     </>
   );
 }
