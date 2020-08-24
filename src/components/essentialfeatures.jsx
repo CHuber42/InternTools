@@ -39,7 +39,6 @@ const buttonOrange = {
     width: '15rem',
     marginTop: '2rem',
     borderRadius: '5rem'
-
 }
  
 const buttonGreen = {
@@ -55,7 +54,6 @@ const buttonGreen = {
     marginTop: '2rem',
     borderRadius: '5rem',
     marginBottom: '2rem'
-
 }
 
 const freeTrialBox = {

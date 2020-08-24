@@ -19,22 +19,43 @@ const fabLinkStyle = {
   marginRight: '1vw'
 }
 
+const copyRight = {
+  marginTop: '1rem'
+}
+
+const links = {
+  color: 'black'
+}
+
 function Footer() {
   return (
     <>
       <div style={footer}>
-        <div >
-              <a href="#" class="fab fa-facebook fa-2x" style={fabLinkStyle}/>
+        <div>
+              <a href="https://www.facebook.com/Grant-Us-Funding-104687287971432" class="fab fa-facebook fa-2x" style={fabLinkStyle}/>
               <a href="#" class="fab fa-twitter fa-2x" style={fabLinkStyle}/>
               <a href="#" class="fab fa-instagram fa-2x" style={fabLinkStyle}/>
               <a href="#" class="fab fa-linkedin fa-2x" style={fabLinkStyle}/>
               <a href="#" class="fab fa-youtube fa-2x" style={fabLinkStyle}/>
           </div>
-          <div id="copyright">
+          <hr/>
+          <div className='container'>
+            <div className='row'>
+              <div className='col'>
+                <h4></h4>
+                <a href="#"></a>
+              </div>
+              <div className='col'>
+                <h4></h4>
+                <a href="#"></a>
+              </div>
+            </div>
+          </div>
+          <div style={copyRight}>
               <p>
-                Copyright &copy; 2020 Grant Us Funding all rights reserved 
+                &copy; 2020-{new Date().getFullYear()}, Grant Us Funding 
                 <br/>
-                Terms of Service Privacy Policy
+                All Rights Reserved | <a style={links} href="#">Terms of Service</a> | <a style={links} href="#">Privacy Policy</a> 
               </p>
           </div>
         </div>
