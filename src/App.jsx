@@ -19,8 +19,8 @@ function App() {
         </Route> */}
         <Route path="/">
           {/* <a href="/team">Link to Team</a> */}
-          <Faq />
           {/* <Navbar /> */}
+          <Faq />
           {/* Flask backend interaction */}
           {/* <p>My Token = {window.token}</p> */}
           {/* <Footer /> */}
