@@ -1,11 +1,12 @@
 
-.accordion:hover, 
+.accordion_title:hover, 
 .active {
-    background-color: #0056b3
+  background-color: #1879d9;
+  transition: background-color 0.6s ease;
 }
 
 .accordion {
-  background-color: #eee;
+  background-color: #e5e5e5;
   color: #444;
   cursor: pointer;
   padding: 18px;
@@ -22,9 +23,19 @@
 }
 
 .accordion_title {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 40px;
+  color: #000000; 
+  line-height: 68px;
+  font-style: italic;
+  text-decoration: none;
+  border-radius: .5rem;
+  padding-left: .5rem;
+  width: 85%;
+  margin-bottom: 0px;
+  box-shadow: .5rem 2px .5rem rgba(0, 0, 0, 0.3);
+  text-align: left;
 }
 
 .accordion_icon {
@@ -33,18 +44,23 @@
 }
 
 .accordion_content {
-    background-color: #e5e5e5;
-    overflow: hidden;
-    transition: max-height 0.6s ease;
+  background-color: #e5e5e5;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
 }
 
 .accordion_text {
-    font-family: "Open Sans", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    padding: 18px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 18px;
 }
 
 .rotate {
   transform: rotate(90deg);
 }
+
+
+/* const accordionItem = {
+
+  } */

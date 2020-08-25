@@ -4,7 +4,7 @@ const footer = {
   display: 'flex',
   position: 'absolute',
   width: '100%',
-  height: '71px',
+  // height: '71px',
   background: '#959595',
   flexDirection: 'column',
   alignItems: 'center',
@@ -53,7 +53,7 @@ function Footer() {
           </div>
           <div style={copyRight}>
               <p>
-                &copy; 2020-{new Date().getFullYear()}, Grant Us Funding 
+                &copy; 2019-{new Date().getFullYear()}, Grant Us Funding 
                 <br/>
                 All Rights Reserved | <a style={links} href="#">Terms of Service</a> | <a style={links} href="#">Privacy Policy</a> 
               </p>

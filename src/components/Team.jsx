@@ -60,7 +60,7 @@ function Team() {
         <div style={{marginTop: '3rem'}}className="container ">
                 <div className="row" id="clint">
                     <div className="info-right2 col-sm-12 col-md-6 ">
-                        <img style={{borderRadius: '1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={ClintImage} alt=""/>
+                        <img style={{borderRadius: '1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={ClintImage} alt="Clint"/>
                     </div>
                     <div className="info-left2 col-sm-12 col-md-6 ">
                         <h1><span className="about-name">Matthew Johnson</span></h1>
@@ -73,9 +73,9 @@ function Team() {
             </div>
             <h1 style={{textAlign: 'center', paddingTop: '2rem', fontFamily: 'Rhodium Libre'}}>And of course, our dedicated programming experts.</h1>
             <div className="container text-center">
-                <img  style={{marginLeft: '1rem', borderRadius:'1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={RachelImage}/>
-                <img  style={{marginLeft: '1rem', borderRadius:'1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={HristoImage}/>
-                <img  style={{marginLeft: '1rem', borderRadius:'1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={BryonImage}/>
+                <img  style={{marginLeft: '1rem', borderRadius:'1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={RachelImage} alt="Rachel"/>
+                <img  style={{marginLeft: '1rem', borderRadius:'1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={HristoImage} alt="Hristo"/>
+                <img  style={{marginLeft: '1rem', borderRadius:'1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={BryonImage} alt="Bryon"/>
             </div>
     </section>
 </div>

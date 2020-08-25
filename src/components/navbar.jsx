@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import image from "../img/guf_logo.png";
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 import Home from './Index';
 import Contact from './contact'
 import FreeTrial from './freetrial'

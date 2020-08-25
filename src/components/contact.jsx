@@ -132,7 +132,7 @@ function Contact() {
             </div>
       
             <hr />
-            {/* SMAR FOCUSED FUNDING */}
+            {/* SMART FOCUSED FUNDING */}
             <SmartFocusFunding />
             
             {/* CONTACT DETAILS */}

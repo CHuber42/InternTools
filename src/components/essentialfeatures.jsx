@@ -1,5 +1,4 @@
 import React from 'react';
-import FreeTrial from './freetrial';
 import EllipseImg from '../img/ellipse1.svg';
 
 const background = {
