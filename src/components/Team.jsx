@@ -5,6 +5,30 @@ import ClintImage from '../img/Clint.png';
 import HristoImage from '../img/hristo.png';
 import RachelImage from '../img/rachel.png';
 import BryonImage from '../img/bryon.png';
+import CHuberImage from '../img/CHuber.png'
+
+const programmerIMG = {
+  marginLeft: '1rem', 
+  borderRadius:'1rem',
+  boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25', 
+  height: '85%', 
+  float: 'left',
+}
+
+const programmerDiv = {
+  height: '45vh',
+  horizontalAlign: 'center',
+  position: 'relative'
+}
+
+const aboutParagraph2 = {
+  fontSize: '18px',
+  fontFamily: 'Rhodium Libre',
+  position: 'absolute',
+  width: '70%',
+  marginLeft: '40%',
+  marginTop: '5%'
+}
 
 const background = {
   backgroundColor: '#E5E5E5',
@@ -73,9 +97,48 @@ function Team() {
             </div>
             <h1 style={{textAlign: 'center', paddingTop: '2rem', fontFamily: 'Rhodium Libre'}}>And of course, our dedicated programming experts.</h1>
             <div className="container text-center">
-                <img  style={{marginLeft: '1rem', borderRadius:'1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={RachelImage} alt="Rachel"/>
-                <img  style={{marginLeft: '1rem', borderRadius:'1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={HristoImage} alt="Hristo"/>
-                <img  style={{marginLeft: '1rem', borderRadius:'1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={BryonImage} alt="Bryon"/>
+              <div style={programmerDiv}>
+                <img style={programmerIMG} src={CHuberImage} alt="Christopher"/>
+                <p style={aboutParagraph2}>
+                  <p><strong>Christopher Huber</strong></p>
+                  <br/>
+                  Christopher is a Graduate of Seattle Pacific University with a B.S. in Molecular Biology and the Epicodus Programming Bootcamp.
+                  <br/>
+                  With a nose for data and math, his colleagues nicknamed him "The Scripting Sorcerer".
+                </p>
+              </div>
+              <div style={programmerDiv}>
+                <img style={programmerIMG} src={CHuberImage} alt="Nathan"/>
+                <p style={aboutParagraph2}>
+                <p><strong>Nathan Watkins-Hoagland</strong></p>
+                <br/>
+
+                </p>
+              </div>
+              <div style={programmerDiv}>
+                <img style={programmerIMG} src={RachelImage} alt="Rachel"/>
+                <p style={aboutParagraph2}>
+                  <p><strong>Rachel</strong></p>
+                  <br/>
+
+                </p>
+              </div>
+              <div style={programmerDiv}>
+                <img style={programmerIMG} src={HristoImage} alt="Hristo"/>
+                <p style={aboutParagraph2}>
+                  <p><strong>Hristo</strong></p>
+                  <br/>
+
+                </p>
+              </div>
+              <div style={programmerDiv}>
+                <img style={programmerIMG} src={BryonImage} alt="Bryon"/>
+                <p style={aboutParagraph2}>
+                  <p><strong>Bryon</strong></p>
+                  <br/>
+
+                </p>
+              </div>
             </div>
     </section>
 </div>

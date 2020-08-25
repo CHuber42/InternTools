@@ -20,8 +20,7 @@ const CancellationsAndRefunds = `
                     <strong>“I still want to cancel”</strong>
                 </li>                             
                 <li>We’d appreciate knowing why you’re canceling, and if you’re on the fence. We are here to make your
-                    <br/> experience great. Give us call or drop us an email. (highlight 
-                    <br/> link to email or contact page ??
+                    <br/> experience great. Give us call or <a href='mailto: support@GrantUsFunding.com'>drop us an email</a>.
                 </li>                             
             </ol>                         
             <h3>Refunds:</h3> 
