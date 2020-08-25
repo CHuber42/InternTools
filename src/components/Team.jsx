@@ -5,7 +5,8 @@ import ClintImage from '../img/Clint.png';
 import HristoImage from '../img/hristo.png';
 import RachelImage from '../img/rachel.png';
 import BryonImage from '../img/bryon.png';
-import CHuberImage from '../img/CHuber.png'
+import CHuberImage from '../img/CHuber.png';
+import NathanImage from '../img/nathan.jpg'
 
 const programmerIMG = {
   marginLeft: '1rem', 
@@ -57,8 +58,6 @@ function Team() {
 
   return (
     <>
-      <Banner />
-
       <div style={background}>
         <section id="about-info">
           <h1 style={aboutStatement}>How We Found Our Funding Pathway</h1>
@@ -108,11 +107,11 @@ function Team() {
                 </p>
               </div>
               <div style={programmerDiv}>
-                <img style={programmerIMG} src={CHuberImage} alt="Nathan"/>
+                <img style={programmerIMG} src={NathanImage} alt="Nathan"/>
                 <p style={aboutParagraph2}>
                 <p><strong>Nathan Watkins-Hoagland</strong></p>
                 <br/>
-
+                My journey through higher education began with a passion for Renewable Energy Engineering and flourished into a B.S of Environmental Research and Sustainability from University of Oregon. With an ever burning c
                 </p>
               </div>
               <div style={programmerDiv}>
@@ -120,7 +119,7 @@ function Team() {
                 <p style={aboutParagraph2}>
                   <p><strong>Rachel</strong></p>
                   <br/>
-
+                  Known for having an eye for design.
                 </p>
               </div>
               <div style={programmerDiv}>
