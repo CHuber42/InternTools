@@ -6,6 +6,8 @@ const background = {
     width: '10rem',
     border: '1px solid #9E9E9E',
     boxShadow: '.1rem .3rem .3rem rgba(0, 0, 0, 0.25)',
+    position: 'absolute',
+    height: '200%'
 }
 
 const text = {
