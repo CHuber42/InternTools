@@ -1,11 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 import Banner from './banner';
-import GlassesImage from '../img/glasses.svg';
-import RightPic from "../img/computer-backplane.svg";
 import schoolIcon1 from '../img/schoolIcon1.svg';
 import smallbusiness1 from '../img/smallbusiness1.svg';
 import govicon from '../img/govicon.svg';
 import SmartFocusFunding from './smartfocusfunding';
+import HowWeFindFunding from './IndexFragments/howwefindfunding';
+import CovidPlan from './IndexFragments/covidplan';
+import Gov from './PreRegister/gov';
+import Edu from './PreRegister/edu';
+import SMB from './PreRegister/smb';
 
 const inquire = {
   top: '50vh',
@@ -88,7 +92,8 @@ const findFund = {
   left: '.5rem',
   fontSize: '3rem',
   lineHeight: '3.5rem',
-  textAlign: 'center'
+  textAlign: 'center',
+  padding: '2rem'
   //   color: #FFFFFF;
   //   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
@@ -151,85 +156,20 @@ const gettingTo = {
   color: '#000000',
 }
 
-const leftSide = {
-  padding: '20px 50px 0px 0px'
-}
-
-const rightPic = {
-  padding: '20px 50px 0px 0px',
-  opacity: '0.8',
-  position: 'absolute',
-  marginLeft: '25%'
-}
-
-const leftPic = {
-  padding: '20px 50px 0px 0px',
-  opacity: '0.8',
-  position: 'absolute',
-  marginLeft: '25%'
-}
-
-const howWeFind = {
-  fontFamily: 'Roboto',
-  fontStyle: 'normal',
-  lineHeight: '28px',
-  fontSize: '30px',
-}
-
-const blueBox = {
-  height: '21rem',
-  width: '100%',
-  backgroundColor: '#5881BE'
-}
-
-
-
-const corona = {
-  textAlign: 'center',
-  fontFamily: 'Roboto',
-  fontStyle: 'normal',
-  fontWeight: '500',
-  fontSize: '30px',
-  lineHeight: '35px',
-  color: '#FFFFFF'
-}
-
-const covid19 = {
-  textAlign: 'center',
-  fontFamily: 'Roboto',
-  fontStyle: 'normal',
-  fontWeight: '500',
-  fontSize: '96px',
-  lineHeight: '112px',
-  color: '#FFFBFB',
-}
-
-const responsePlan = {
-  textAlign: 'center',
-  fontFamily: 'Roboto',
-  fontStyle: 'normal',
-  fontWeight: '500',
-  fontSize: '36px',
-  lineHeight: '42px',
-  color: '#FFFFFF', 
-}
-
-
-
 function Home() {
   
   return (
     <>
-      <Banner />
+      {/* <Banner /> */}
      
         {/* Inquire Box */}
-        <div style={inquire} class="col-md-4 col-sm-12">
-          <div stlye={inquireBox} class="d-none d-lg-block">
+        <div style={inquire} className="col-md-4 col-sm-12">
+          <div stlye={inquireBox} className="d-none d-lg-block">
             <p style={inquireAbout}>
               <em>Inquire About</em><br></br>GETTING FUNDED
             </p>
             <form action="">
-              <div style={inquireForm} class="form-group">
+              <div style={inquireForm} className="form-group">
                 <input type="text" name="firstName" style={firstName} placeholder="First Name"/>
                 <input type="text" name="lastName" style={lastName} placeholder="Last Name"/>
                 <input type="email" name="email" style={inquireFields} placeholder="Email Address"/>
@@ -241,9 +181,10 @@ function Home() {
         </div>
         
         <div style={{backgroundColor: '#e5e5e5'}}>
+
         {/* Funding Pathway */}
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
+        <div className="row">
+          <div className="col-md-6 col-sm-12">
             <div style={findFund}>
               <p>FIND YOUR
               <br/>
@@ -251,58 +192,64 @@ function Home() {
               </p>
             </div>
           <div style={leftTable}> 
-            <div class="row" style={edu}>
-              <div class="col-sm-3">
+            <div className="row" style={edu}>
+              <div className="col-sm-3">
                 <img style={icon} src={schoolIcon1} alt="school icon"/>
               </div>
-              <div class="col" style={sectText}>
-                <div class="row">
-                  <div class="col-sm-8" style={sectHead}>
+              <div className="col" style={sectText}>
+                <div className="row">
+                  <div className="col-sm-8" style={sectHead}>
                     <h4>EDUCATION FUNDING </h4>
                   </div>
-                  <div class="col-sm-4">
-                      <a style={buttonBlue} href="education.html">→</a>
+                  <div className="col-sm-4">
+                    <Link to="/edu">
+                      <p style={buttonBlue}>→</p>
+                    </Link>
                   </div>
                 </div>
-                <div class="row">
+                <div className="row">
                   <br/>
                   <p> FOR PUBLIC AND PRIVATE SCHOOLS, COLLEGES AND UNIVERSITIES</p>
                 </div>
               </div>
             </div>
-            <div class="row" style={edu}>
-              <div class="col-sm-3">
+            <div className="row" style={edu}>
+              <div className="col-sm-3">
                 <img style={icon} src={smallbusiness1} alt="small business icon"/>
               </div>
-              <div class="col" style={sectText}>
-                <div class="row">
-                  <div class="col-sm-8" style={sectHead}>
+              <div className="col" style={sectText}>
+                <div className="row">
+                  <div className="col-sm-8" style={sectHead}>
                     <h4> <p>SMALL AND MEDIUM BUSINESS FUNDING</p> </h4>
                   </div>
-                  <div class="col-sm-4">
-                      <a style={buttonBlue} href="education.html">→</a>
+                  <div className="col-sm-4">
+                    <Link to='/smb'>
+                      <p style={buttonBlue}>→</p>
+                    </Link>
                   </div>
                 </div>
-                <div class="row">
+                <div className="row">
                     <br/>
                     <p> FOR PROFIT & NONPOFIT ORGANIZATION AND BUSINESSES</p>
                 </div>
               </div>
             </div>
-            <div class="row" style={edu}>
-              <div class="col-sm-3">
+            <div className="row" style={edu}>
+              <div className="col-sm-3">
                 <img style={icon} src={govicon} alt="small gov icon"/>
               </div>
-                <div class="col" style={sectText}>
-                  <div class="row">
-                    <div class="col-sm-8" style={sectHead}>
+                <div className="col" style={sectText}>
+                  <div className="row">
+                    <div className="col-sm-8" style={sectHead}>
                       <h4>GOVERNMENT CONTRACT FUNDING </h4>
                     </div>
-                    <div class="col-sm-4">
-                      <a style={buttonBlue} href="education.html">→</a>
+                    <div className="col-sm-4">
+                      <Link to='./gov'>
+                        <p style={buttonBlue}>→</p>
+                      </Link>
                     </div>
                   </div>
-                  <div class="row">
+                  <div className="row">
                     <br/>
                     <p>SMALL TO LARGE SCALE PROJECTS, ALL FORMS OF <br/> NEEDS FROM SINGLE TO ONGOING CONTRACTS</p>
                   </div>
@@ -312,7 +259,7 @@ function Home() {
         </div>
 
         {/* Funders */}
-        <div class="col-md-6">
+        <div className="col-md-6">
           <div style={funderSpecific}>
             <br/>
             <p>Funders are very specific, and so are we.</p>
@@ -325,104 +272,33 @@ function Home() {
           </div>
         </div>
       </div>
-
-      {/* How We Find Funding Box */}
       <hr/>
-      <div style={howWeFind}>
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <div style={leftSide}>
-              <p style={{textAlign: 'center', marginLeft: '15%'}}> 
-              <span style={{fontWeight: 'bold'}}>HOW WE FIND FUNDING</span>
-                <br/><br/>
-                We start by getting to know both you and your specific project, in detail. 
-                <br/><br/>
-                We take the hard work out of finding your grants by asking the right questions upfront, isolating the
-                best fits and delivering all the information you need to file, seamlessly.
-                <br/><br/>
-                Many funding sources don’t choose to have a public web presence, and our extensive and constantly
-                updating databases allow us to contact, catalogue and match you with many more opportunities than are
-                available anywhere else. 
-                <br/><br/>
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div style={rightPic} class="d-none d-md-block">
-              <img style={{float: 'right', marginRight: '15%'}} src={RightPic} alt=""/>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Continued - How We Find Funding Box */}
-      <div style={howWeFind}>
-
-          <div class="row">
-            <div class="col-sm-6">
-              <div style={leftPic} class="d-none d-md-block">
-                <img style={{float: 'right', marginRight: '15%'}} src={GlassesImage} alt=""/>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-12" style={{textAlign: 'center'}}>
-                <p style={{marginTop: '15vh', marginRight: '2vw'}}> <span style={{fontWeight: 'bold'}}>WHY GRANTUS?</span>
-                  <br/><br/>
-                  Our Intuitive Technology helps you find your Optimal Opportunity.
-                  <br/><br/>
-                  Our unique method of web scraping coupled with Natural Language Processing (NLP) technology and
-                  machine learning gives us the opportunity to fine tune your results, saving you time and effort. 
-                  <br/><br/>
-                  Learn More: <a href="nlp.html">What is Natural Language Processing (NLP)?</a> 
-                </p>
-            </div>
-          </div>
-
-      </div>
-      <hr style={{marginTop: '10vh'}}/>
-
-      <SmartFocusFunding/>
-
-      {/* BOTTOM ROW  */}
-      <div class="container">
-        <hr/>
-        <div class="row">
-
-          {/* LEFT SIDE */}
-          <div class="col-md-6 col-sm-12">    
-            <div style={blueBox}>
-              <div style={corona}>
-                <br/>
-                <br/>
-                <p>Coronavirus Disease 2019</p>
-              </div>
-              <div style={covid19}>
-                  <p>COVID-19</p>
-              </div>
-              <div style={responsePlan}>
-                  <p>RESPONSE PLAN</p>
-              </div>   
-            </div>
-          </div>
-
-          {/* RIGHT SIDE */}
-          <div class="col-md-6 col-sm-12">
-            <div>
-              <h4>SOLUTIONS TO KEEP YOUR BUSINESS IN MOTION DURING AND AFTER COVID-19</h4>
-              <p>
-                As the world works to contain the spread of COVID-19, our team at
-                Grant Us Funding™ is adapting to this rapidly eveolving situation, implementing satety measures, and
-                taking care of out employees, our partners and our clients. <br/> <br/>
-                We’re helping firms make a seamless transtition to remote business with our software gathering secure
-                digital solutions, backed by our experienced teams and world class protocols to find you funding. <br/> <br/>
-                Discover new ways to get your organization or business funded and moving forward. 
-              </p>
-            </div>
-          </div>
-          
-        </div>
-      </div>
+      {/* <Router>
+        <Switch>
+          <Route path="/edu">
+            <Edu/>
+            <SmartFocusFunding/>
+          </Route>
+          <Route path="/smb">
+            <SMB/>
+            <SmartFocusFunding/>
+          </Route>
+          <Route path="/gov">
+            <Gov/>
+            <SmartFocusFunding/>
+          </Route>
+          <Route path="/"> */}
+            {/* How We Find Funding Box */}
+            <HowWeFindFunding/>
+            {/* SMART FOCUSED FUNDING SECTION */}
+            <SmartFocusFunding/>
+            {/* Covid Bottom Section */}
+            <CovidPlan/>
+            {/* <Preregistration/>
+          </Route>
+        </Switch>
+      </Router> */}
     </div>
-      
     </>
   )
 };

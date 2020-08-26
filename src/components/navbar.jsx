@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
-import image from "../img/guf_logo.png";
-// import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
-import Home from './Index';
-import Contact from './contact'
-import FreeTrial from './freetrial'
-import PricingPlans from './pricingplans';
-import Team from './team';
+// import GrantUsLogo from "../img/RemasteredGufLogo3.png";
+// import GrantUsLogo from "../img/RemasteredGufLogo1.png";
+// import GrantUsLogo from "../img/RemasteredGufLogo2.png";
+import GrantUsLogo from "../img/RemasteredGufLogo3.png";
+// import GrantUsLogo from "../img/RemasteredGufLogo4.png";
+// import GrantUsLogo from "../img/guf_logo.png";
+// import {Link} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
+// import Home from './Index';
+// import Contact from './contact'
+// import FreeTrial from './freetrial'
+// import PricingPlans from './pricingplans';
+// import Team from './team';
 
 const headerStyle = {
     backgroundColor: '#959595',
@@ -20,7 +26,7 @@ const logoStyle = {
 
 const navLinksStyle = {
     color: '#ffffff',
-    cursor: 'pointer'
+    cursor: 'pointer',
 }
 
 const btnLogin = {
@@ -42,7 +48,7 @@ const searchStyle = {
 const magGlassStyle = {
     height: '100%',
     borderRadius: '5px',
-    marginLeft: '-15%',
+    marginLeft: '-17%',
     border: 'none',
 }
 
@@ -50,6 +56,24 @@ const freeTrialStyle = {
     color: 'yellow',
     cursor: 'pointer'
 }
+
+const activeLink = {
+    backgroundColor: '#7598cc',
+    borderRadius: '2rem',
+    border: '1px solid white',
+    boxShadow: '.3rem .3rem .3rem rgba(0, 0, 0, 0.25)',
+}
+
+const boundingBox = {
+    width: '10rem',
+    textAlign: 'center',
+}
+
+var teamLink;
+var freeTrialLink;
+var contactLink;
+var pricingPlansLink;
+
 
 class Navbar extends Component {
     constructor(){
@@ -59,54 +83,96 @@ class Navbar extends Component {
       };
       this.fragment = "";
     }
-    
-    render(){
-        switch (this.state.active){
-            case "home":
-                this.fragment=<Home/>;
-                break
-            case "team":
-                this.fragment=<Team/>;
-                break
-            case "pricingplans":
-                this.fragment=<PricingPlans/>;
-                break
-            case "contact":
-                this.fragment=<Contact/>;
-                break
-            case "freetrial":
-                this.fragment=<FreeTrial/>;
-                break
-            default:
-                this.fragment=<Home/>;
-                break
+
+    componentWillUpdate(){
+        pricingPlansLink = {};
+        contactLink = {};
+        freeTrialLink = {};
+        teamLink = {};
+        
+        switch(window.location.href){
+            case 'http://localhost:3000/pricingplans':
+                pricingPlansLink = activeLink;
+                break;
+            case 'http://localhost:3000/contact':
+                contactLink = activeLink;
+                break;
+            case 'http://localhost:3000/team':
+                teamLink = activeLink;
+                break;
+            case 'http://localhost:3000/freetrial':
+                freeTrialLink = activeLink;
+                break;
+            default :
+                console.log("default switch condition in navbar");
+                break;
         }
+    }
+    
+    render(){  
+        // switch (this.state.active){
+        //     case "home":
+        //         this.fragment=<Home/>;
+        //         break
+        //     case "team":
+        //         this.fragment=<Team/>;
+        //         break
+        //     case "pricingplans":
+        //         this.fragment=<PricingPlans/>;
+        //         break
+        //     case "contact":
+        //         this.fragment=<Contact/>;
+        //         break
+        //     case "freetrial":
+        //         this.fragment=<FreeTrial/>;
+        //         break
+        //     default:
+        //         this.fragment=<Home/>;
+        //         break
+        // }
     return(
         <>
         {/* <Router> */}
             <div style={headerStyle} className="navbar">
                 <div className="navbar-brand">
-                  <img src={image} alt="Logo" style={logoStyle} onClick={() => this.setState({active: "home"})}/>
+                    <Link to="/">
+                        <img src={GrantUsLogo} alt="Logo" style={logoStyle} /> 
+                        {/* onClick={() => this.setState({active: "home"})} */}
+                    </Link>
                 </div>
-                <div className="nav-item">
-                    <span style={navLinksStyle} onClick={() => this.setState({active: "team"})}>Our Team</span>
+                <div style={boundingBox}>
+                    <div className="nav-item" style={teamLink}>
+                    {/* <span style={navLinksStyle} onClick={() => this.setState({active: "team"})}>Our Team</span> */}
+                    <Link style={navLinksStyle} to="/team">Our Team</Link>
+                    </div>
                 </div>
-                <div className="nav-item">
-                    <span style={navLinksStyle} onClick={() => this.setState({active: "pricingplans"})}>Pricing & Plans</span>
+                <div style={boundingBox}>
+                    <div className="nav-item" style={pricingPlansLink}>
+                        {/* <span style={navLinksStyle} onClick={() => this.setState({active: "pricingplans"})}>Pricing & Plans</span> */}
+                        <Link style={navLinksStyle} to="/pricingplans">Pricing & Plans</Link>
+                    </div>
                 </div>
-                <div className="nav-item">
-                    <span style={navLinksStyle} onClick={() => this.setState({active: "contact"})}>Contact</span>
+                <div style={boundingBox}>
+                    <div className="nav-item" style={contactLink}>
+                        {/* <span style={navLinksStyle} onClick={() => this.setState({active: "contact"})}>Contact</span> */}
+                        <Link style={navLinksStyle} to="/contact">Contact</Link>
+                    </div>
                 </div>
-                <div className="nav-item">
-                    <span style={freeTrialStyle} onClick={() => this.setState({active: "freetrial"})}>7-Day Free Trial</span>
+                <div style={boundingBox}>
+                    <div className="nav-item" style={freeTrialLink}>
+                        {/* <span style={freeTrialStyle} onClick={() => this.setState({active: "freetrial"})}>7-Day Free Trial</span> */}
+                        <Link style={freeTrialStyle} to="/freetrial">7-Day Free Trial</Link>
+                    </div>
                 </div>
                 <div className="nav-item">
                     <input style={searchStyle} type="text" placeholder="Search For..."/>
                     <button className='fas fa-search fa-sm' style={magGlassStyle} type='submit'/>
                 </div>
-                <button style={btnLogin} className='btn-login' type='button'>Login</button>
+                <Link to="./preregister">
+                    <button style={btnLogin} className='btn-login' type='button'>Login</button>
+                </Link>
             </div>
-            {this.fragment}
+            {/* {this.fragment} */}
         </>
     )}
 }

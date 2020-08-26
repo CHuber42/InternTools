@@ -1,19 +1,18 @@
 import React from 'react';
-import CheckMarkImage from '../img/tick-mark-pic.svg';
-import SmallBusinessIcon from '../img/smallbusiness1.svg';
+import CheckMarkImage from '../../img/tick-mark-pic.svg';
+import EducationalIcon from '../../img/schoolIcon1.svg';
 
-
-function SmallMedFreeTrial(){
+function IndividualFreeTrial(){
     return (
         <>   
         <div className="container justify-content-center">
             <div className="spacer-div"></div>
                 <div className="free-trial-academic-top-box">
                     <div>
-                        <img src={SmallBusinessIcon} alt=""/>
+                        <img src={EducationalIcon} alt=""/>
                     </div>
                         <p style={{color: '#FF9900', fontSize: '2em'}}>7-Day Free Trial</p>
-                        <p style={{fontSize: '2em', fontWeight: 'bold'}}>Small and Medium Businesses</p>
+                        <p style={{fontSize: '2em', fontWeight: 'bold'}}>Educational Trial</p>
                         <p style={{fontSize: '2em'}}>Plan Details</p>
                     </div>
                     <div className="spacer-div"></div>
@@ -128,4 +127,4 @@ function SmallMedFreeTrial(){
     )
 }
 
-export default SmallMedFreeTrial;
+export default IndividualFreeTrial;

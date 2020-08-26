@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const background = {
   backgroundColor: '#e5e5e5'
@@ -85,9 +86,13 @@ function SmartFocusFunding() {
             {/* RIGHT */}
             <div className="col-md-6 col-sm-12">
                 <p style={{fontSize: '24px', lineHeight: '36px' }}>Join Us.</p>
-                <a style={buttonGreen} href="freetrial.html">Plans and Pricing</a>
+                <Link to='./pricingplans'>
+                  <p style={buttonGreen}>Plans and Pricing</p>
+                </Link>
                 <p style={{fontSize: '24px', lineHeight: '36px' }}>Or Start Your</p>
-                <a style={buttonOrange} href="freetrial.html">7-Day Free Trial</a>
+                <Link to='./freetrial'>
+                  <p style={buttonOrange}>7-Day Free Trial</p>
+                </Link>
                 <p style={{fontSize: '24px', lineHeight: '36px' }}>No Credit Card Required</p>
             </div>
           </div>

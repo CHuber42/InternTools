@@ -4,7 +4,7 @@ import image from '../img/header-image.svg';
 function Banner() {
 
   const headerStyle = {
-    width: '100vw',
+    width: '100%',
   }
 
   const heroStyle = {

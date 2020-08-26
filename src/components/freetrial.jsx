@@ -3,9 +3,9 @@ import Banner from './banner';
 import schoolIcon1 from '../img/schoolIcon1.svg';
 import smallbusiness1 from '../img/smallbusiness1.svg';
 import govicon from '../img/govicon.svg';
-import IndividualFreeTrial from './individualtrial';
-import SmallMedFreeTrial from './smallmedtrial';
-import LargeFreeTrial from './largetrial';
+import IndividualFreeTrial from './FreeTrials/individualtrial';
+import SmallMedFreeTrial from './FreeTrials/smallmedtrial';
+import LargeFreeTrial from './FreeTrials/largetrial';
 import EssentialFeatures from './essentialfeatures';
 
 const background = {
@@ -37,10 +37,8 @@ var nextFragment = "";
 function FreeTrial() {
   const [, updateState] = React.useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
-  console.log("render", nextFragment)
   return (
     <>
-      <Banner />
       <div style={background}>
       
       {/* PROMPT */}
@@ -54,7 +52,7 @@ function FreeTrial() {
         </div> 
 
         {/* CLICKABLE INPUT */}
-        <div className="row">
+        <div className="row" style={{maxWidth: '99vw'}}>
           <div  className="col-md-1"/>
           <div className="col-md-2" onClick={() => {nextFragment=<IndividualFreeTrial/>; forceUpdate();}}>
             <img style={{cursor: 'pointer'}} src={schoolIcon1} alt="school icon"/>

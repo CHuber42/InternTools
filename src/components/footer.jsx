@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const footer = {
   display: 'flex',
@@ -31,31 +32,30 @@ function Footer() {
   return (
     <>
       <div style={footer}>
-        <div>
-              <a href="https://www.facebook.com/Grant-Us-Funding-104687287971432" class="fab fa-facebook fa-2x" style={fabLinkStyle}/>
-              <a href="#" class="fab fa-twitter fa-2x" style={fabLinkStyle}/>
-              <a href="#" class="fab fa-instagram fa-2x" style={fabLinkStyle}/>
-              <a href="#" class="fab fa-linkedin fa-2x" style={fabLinkStyle}/>
-              <a href="#" class="fab fa-youtube fa-2x" style={fabLinkStyle}/>
-          </div>
-          <hr/>
+        <div style={{paddingTop: '2rem'}}>
+          <a href="https://www.facebook.com/Grant-Us-Funding-104687287971432" className="fab fa-facebook fa-2x" style={fabLinkStyle}> </a>
+          <a href="/tbd" className="fab fa-twitter fa-2x" style={fabLinkStyle}> </a>
+          <a href="/tbd" className="fab fa-instagram fa-2x" style={fabLinkStyle}> </a>
+          <a href="/tbd" className="fab fa-linkedin fa-2x" style={fabLinkStyle}> </a>
+          <a href="https://cdn.discordapp.com/attachments/719641242123894877/748303525792186388/unknown.png" className="fab fa-youtube fa-2x" style={fabLinkStyle}> </a>
+        </div>
           <div className='container'>
-            <div className='row'>
-              <div className='col'>
-                <h4></h4>
-                <a href="#"></a>
-              </div>
-              <div className='col'>
-                <h4></h4>
-                <a href="#"></a>
-              </div>
-            </div>
+            {/* <div className='row'>
+              <ul>
+              <li>
+                <Link to='/faq'><span style={{padding: '1rem', float: 'left', color: 'black' }}>Faq</span></Link>
+              </li>
+              <li>
+                <Link to="/nlp"><span style={{padding: '1rem', float: 'left', color: 'black' }}>NLP</span></Link>
+              </li>
+              </ul>
+            </div> */}
           </div>
           <div style={copyRight}>
               <p>
                 &copy; 2019-{new Date().getFullYear()}, Grant Us Funding 
                 <br/>
-                All Rights Reserved | <a style={links} href="#">Terms of Service</a> | <a style={links} href="#">Privacy Policy</a> 
+                All Rights Reserved | <Link to='/terms'><span style={links}>Terms of Service</span></Link> | <Link to="/privacypolicy"><span style={links}>Privacy Policy</span></Link> 
               </p>
           </div>
         </div>

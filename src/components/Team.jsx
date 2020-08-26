@@ -55,7 +55,7 @@ const aboutParagraph = {
 }
 
 function Team() {
-
+  
   return (
     <>
       <div style={background}>
@@ -94,12 +94,14 @@ function Team() {
                     </div>
                 </div>
             </div>
-            <h1 style={{textAlign: 'center', paddingTop: '2rem', fontFamily: 'Rhodium Libre'}}>And of course, our dedicated programming experts.</h1>
+            <h1 style={{textAlign: 'center', paddingTop: '2rem', fontFamily: 'Rhodium Libre', paddingBottom: '1rem',}}>Software Engineers</h1>
             <div className="container text-center">
               <div style={programmerDiv}>
                 <img style={programmerIMG} src={CHuberImage} alt="Christopher"/>
                 <p style={aboutParagraph2}>
-                  <p><strong>Christopher Huber</strong></p>
+                  <span><strong>Christopher Huber</strong></span>
+                  <br/>
+                  <a href='https://www.linkedin.com/in/chuber42/'>LinkedIn</a>
                   <br/>
                   Christopher is a Graduate of Seattle Pacific University with a B.S. in Molecular Biology and the Epicodus Programming Bootcamp.
                   <br/>
@@ -109,33 +111,35 @@ function Team() {
               <div style={programmerDiv}>
                 <img style={programmerIMG} src={NathanImage} alt="Nathan"/>
                 <p style={aboutParagraph2}>
-                <p><strong>Nathan Watkins-Hoagland</strong></p>
+                <span><strong>Nathan Watkins-Hoagland</strong></span>
                 <br/>
-                My journey through higher education began with a passion for Renewable Energy Engineering and flourished into a B.S of Environmental Research and Sustainability from University of Oregon. With an ever burning c
+                <a href='https://www.linkedin.com/in/nathan-watkins-hoagland/'>LinkedIn</a>
+                <br/>
+                My education began with a passion for Renewable Energy Engineering and flourished into a B.S of Environmental Research and Sustainability from University of Oregon. With an ever burning curiosity for knowledge, I dove into the world of programming, graduated from Epicodus's Programming Bootcamp & never turned back.
                 </p>
               </div>
               <div style={programmerDiv}>
                 <img style={programmerIMG} src={RachelImage} alt="Rachel"/>
                 <p style={aboutParagraph2}>
-                  <p><strong>Rachel</strong></p>
+                  <span><strong>Rachel</strong></span>
                   <br/>
-                  Known for having an eye for design.
+                  Known for having an eye for design. More Coming Soon!
                 </p>
               </div>
               <div style={programmerDiv}>
                 <img style={programmerIMG} src={HristoImage} alt="Hristo"/>
                 <p style={aboutParagraph2}>
-                  <p><strong>Hristo</strong></p>
+                  <span><strong>Hristo</strong></span>
                   <br/>
-
+                  Epicodus Programming Bootcamp Graduate. More Coming Soon!
                 </p>
               </div>
               <div style={programmerDiv}>
                 <img style={programmerIMG} src={BryonImage} alt="Bryon"/>
                 <p style={aboutParagraph2}>
-                  <p><strong>Bryon</strong></p>
+                  <span><strong>Bryon</strong></span>
                   <br/>
-
+                  Coming Soon!
                 </p>
               </div>
             </div>

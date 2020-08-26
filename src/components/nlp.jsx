@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const sectionBreakStyle = {
     fontFamily: 'Roboto',
@@ -127,11 +128,10 @@ function NLP () {
                 <div style={JoinUs}> 
 
                     <h2 style={actionstyle}>Join us for a piece of the action.</h2> 
-                    <a style={buttonGreen} href="freetrial.html">Plans and Pricing</a>         
+                    <Link to='/pricingplans'><span style={buttonGreen}>Plans and Pricing</span></Link>     
                     <h4>Or Start Your</h4> 
-                    <a style={buttonOrange} href="freetrial.html">7-Day Free Trial</a>          
+                    <Link to='/freetrial'><span style={buttonOrange}>7-Day Free Trial</span></Link>          
                     <p style={{marginBottom: '0px', paddingBottom: '1rem'}}>No Credit Card Required</p>      
-
                 </div>
             </div>
         </div>

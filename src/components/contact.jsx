@@ -82,7 +82,6 @@ const email = {
 function Contact() {
     return (
         <>
-            <Banner />
             <div style={backGround}>
             <div className="container"> 
                 <div> 
@@ -137,7 +136,7 @@ function Contact() {
             
             {/* CONTACT DETAILS */}
             <div style={contactInfo}> 
-                <span class="contact-company">  <p><strong> Grant Us Funding</strong></p>  </span> 
+                <span className="contact-company">  <p><strong> Grant Us Funding</strong></p>  </span> 
                 <p>Corvallis, Oregon 97330</p> 
                 <p><strong>Phone:</strong> 971-800-1048</p> 
                 <p style={email}><strong>Email:</strong> Info@GrantUsFunding.com</p> 

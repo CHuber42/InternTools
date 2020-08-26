@@ -1,6 +1,6 @@
 import React from 'react';
-import CheckMarkImage from '../img/tick-mark-pic.svg';
-import GovIcon from '../img/govicon.svg';
+import CheckMarkImage from '../../img/tick-mark-pic.svg';
+import GovIcon from '../../img/govicon.svg';
 
 function LargeFreeTrial(){
     return (

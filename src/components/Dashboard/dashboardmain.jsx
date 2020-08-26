@@ -14,12 +14,16 @@ const DashTitle = {
   color:'#000000',
 }
 
+const projectBox = {
+  
+}
+
 function DashMain(){
   return(
     <>
       <h1 style={DashTitle}>Dashboard</h1>
-      <div>
-        
+        <div style={projectBox}>
+
       </div>
     </>
   )

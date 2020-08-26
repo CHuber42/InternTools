@@ -1,6 +1,6 @@
 import React from 'react';
 import SmartFocusFunding from './smartfocusfunding';
-import Accordion from './accordion';
+import Accordion from './faq/accordion';
 import CancellationsAndRefunds from './faq/faqcancellationsandrefunds';
 import WhatIsNLP from './faq/faqwhatisnlp';
 import GrantProbabilityScore from './faq/faqgrantprobabilityscore';

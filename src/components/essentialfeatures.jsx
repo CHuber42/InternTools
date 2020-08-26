@@ -1,5 +1,6 @@
 import React from 'react';
 import EllipseImg from '../img/ellipse1.svg';
+import { Link } from 'react-router-dom';
 
 const background = {
     backgroundColor: '#E5e5e5'
@@ -26,8 +27,8 @@ const planListBox = {
     marginTop: '5rem'
 }
 
-const buttonOrange = {
-    backgroundColor: '#CF974F',
+const buttonBlue = {
+    backgroundColor: '#1879d9',
     border: 'none',
     color: '#FFFFFF',
     textAlign: 'center',
@@ -156,6 +157,8 @@ const listItemTitle = {
     fontFamily: 'Rhodium Libre'
 }
 
+
+
     
 function EssentialFeatures() {
   return(
@@ -163,7 +166,8 @@ function EssentialFeatures() {
     <div style={background}>
       <div className="two-button-box">
         <div>
-            <a style={buttonOrange} href="tbd.html">Start my Free Trial</a> <a style={buttonGreen} href="educationplans.html">View Paid Plans</a>
+        <Link to='./preregister'><p style={buttonBlue}>Get Started</p> </Link> 
+        <Link to='./pricingplans'><p style={buttonGreen}>Plans and Pricing</p></Link>
         </div>
       </div>
       <h2 style={{fontSize: '3em', textAlign: 'center', fontWeight: 'bold'}}><span style={{color: '#466695'}}>Essential

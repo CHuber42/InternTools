@@ -1,0 +1,44 @@
+.priceStyle {
+font-size: 24px;
+font-weight: bold;
+font-feature-settings: 'tnum on; onum on';
+}
+
+.headStyle {
+border: 1px solid #5881BE;
+text-align: center;
+font-feature-settings: 'tnum on; onum on';
+font-weight: bold;
+background-color: #5881BE;
+justify-content: center
+}
+
+.columnOutline {
+border: 1px solid #5881BE;
+text-align: center;
+font-feature-settings: 'tnum on; onum on';
+font-weight: bold
+}
+
+.rowTitles {
+text-align: right
+}
+
+.buttonOrange {
+    background-color: #CF974F;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    box-shadow: .1rem .5rem .5rem rgba(0, 0, 0, 0.25);
+    width: 15rem;
+    margin-top: 1rem;
+    border-radius: 5rem
+}
+
+.pricingFragmentTopSpacer {
+    text-align: center;
+    padding-top: 2rem;
+}
