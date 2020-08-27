@@ -37,7 +37,7 @@ function Footer() {
           <a href="/tbd" className="fab fa-twitter fa-2x" style={fabLinkStyle}> </a>
           <a href="/tbd" className="fab fa-instagram fa-2x" style={fabLinkStyle}> </a>
           <a href="/tbd" className="fab fa-linkedin fa-2x" style={fabLinkStyle}> </a>
-          <a href="https://cdn.discordapp.com/attachments/719641242123894877/748303525792186388/unknown.png" className="fab fa-youtube fa-2x" style={fabLinkStyle}> </a>
+          <a href="https://www.youtube.com/channel/UCWO63zfjdC941HVwvTK_kFw?guided_help_flow=3" className="fab fa-youtube fa-2x" style={fabLinkStyle}> </a>
         </div>
           <div className='container'>
             {/* <div className='row'>
