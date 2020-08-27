@@ -30,7 +30,7 @@ function App() {
     <>
     <Router>
       <Switch>
-        <Route path="/nlp">
+        {/* <Route path="/nlp">
           <Navbar />
           <NLP />
           <Footer />
@@ -103,12 +103,12 @@ function App() {
           <Banner />
           <Home />
           <Footer />
-        </Route>
-        {/* <Route>
+        </Route> */}
+        <Route>
           <DashNavbar />
      
           <DashMain />
-        </Route> */}
+        </Route>
       </Switch>
     </Router>
     </>

@@ -41,7 +41,7 @@ const rowFormatting = {
   height: '25rem', 
   marginTop: '3rem', 
   marginLeft: '2rem',
-  width: '90.1vw',
+  width: '87.6vw',
   marginRight: '0px'
 }
 
