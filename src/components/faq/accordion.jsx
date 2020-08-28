@@ -2,9 +2,9 @@ import React, { useState, useRef } from 'react';
 import './accordion.css';
 
 const background = {
-    boxSizing: 'border-box',
-    margin: '0px',
-    padding: '0px',
+  boxSizing: 'border-box',
+  margin: '0px',
+  padding: '0px',
 }
 
 
