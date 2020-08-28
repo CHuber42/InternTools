@@ -131,7 +131,10 @@ function Team() {
                 <p style={aboutParagraph2}>
                   <span><strong>Hristo</strong></span>
                   <br/>
-                  Epicodus Programming Bootcamp Graduate. More Coming Soon!
+                  <a href='https://www.linkedin.com/in/hristo-dzhambov/'>LinkedIn</a>
+                  <br/>
+                  Self-motivated Full Stack Developer and entrepreneur, passionate about 
+                  building modern, well thought, and responsive web applications in JavaScript, React, and C#. Empathizer, looking forward to bringing my strong skills in customer service, finance, and communications to a fulfilling carrier in Tech.
                 </p>
               </div>
               <div style={programmerDiv}>

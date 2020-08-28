@@ -56,7 +56,7 @@ function PricingPlans() {
         <div className="row" style={{maxWidth: '99vw'}}>
           <div  className="col-md-1"/>
           <div className="col-md-2" onClick={() => {nextFragment=<EduPlanPricing/>; forceUpdate();}}>
-            <img style={{cursor: 'pointer'}} src={schoolIcon1} alt="school icon"/>
+            <img style={{cursor: 'pointer', marginTop: '1rem'}} src={schoolIcon1} alt="school icon"/>
             <p style={optionType}>Educational Funding</p>
             <p>Public & Private Schools, Colleges & Universities</p>
           </div>

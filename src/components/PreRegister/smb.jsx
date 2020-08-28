@@ -34,7 +34,7 @@ function Smb() {
           From small startups to scaling medium-sized 10 million dollar businesses, we have you covered.</h3> 
         </div>         
         <div style={{marginLeft: '40px'}}> 
-            <p><strong>Our product makes your search seamless:</strong></p> 
+            <p style={{fontSize: '40px'}}><strong>Our product makes your search seamless:</strong></p> 
             <ul> 
                 <li className="listItem">
                     <strong>Comprehensive:</strong> Sources from both Private and Public sectors
@@ -49,14 +49,14 @@ function Smb() {
         </div>         
     </section>     
     <div className="container" style={{fontSize: '50px', textAlign: 'center', marginTop: '40px'}}> 
-        <p>We’ve added <span style={{color:'#5881BE'}}>X,XXX </span> new Funding <br/>opportunities in the last week.</p> 
+        <p>We’ve added <span style={{color:'#5881BE'}}> [variable] </span> new Funding <br/>opportunities in the last week.</p> 
     </div>     
-    <div className="container" style={{fontSize: '18px', textAlign: 'center', padding: '3rem'}}> 
+    <div className="container" style={{fontSize: '18px', textAlign: 'center'}}> 
         <p>(Yes, really.)</p>
-        <br/>
             <Link to="/preregister">
                 <span className="buttonBlue">Get Registered</span>
             </Link>
+        <br/>
         <br/>
     </div>
     </div>

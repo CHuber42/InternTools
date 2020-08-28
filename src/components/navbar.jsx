@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
+
 // import GrantUsLogo from "../img/RemasteredGufLogo3.png";
-// import GrantUsLogo from "../img/RemasteredGufLogo1.png";
-// import GrantUsLogo from "../img/RemasteredGufLogo2.png";
-import GrantUsLogo from "../img/RemasteredGufLogo3.png";
-// import GrantUsLogo from "../img/RemasteredGufLogo4.png";
-// import GrantUsLogo from "../img/guf_logo.png";
+
+import GrantUsLogo from "../img/guf_logo.png";
 // import {Link} from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 // import Home from './Index';

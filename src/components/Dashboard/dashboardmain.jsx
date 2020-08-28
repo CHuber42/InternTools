@@ -1,17 +1,56 @@
-import React from 'react';
+import React, { useState, useRef } from 'react'
 import DashNavbar from './dashnav';
 import DashboardSidebar from './dashboardsidebar';
+import Project from './project.jsx';
+import Admins from './admins.jsx';
+import CanvasJSReact from '../../canvasjs.react';
+
+const CanvasJSChart = CanvasJSReact.CanvasJSChart;
+// CanvasJSReact.addColorSet ('greenShades', ['#e5e5e5']);
+
+const chartData = {
+  animationEnabled: true,
+  title: {
+    text: "Your Grant Matches"
+  },
+  subtitles: [{
+    text: "Matches",
+    verticalAlign: "center",
+    fontSize: 24,
+    dockInsidePlotArea: true
+  }],
+  data: [{
+    type: "doughnut",
+    showInLegend: true,
+    indexLabel: "{name}: {y}",
+    yValueFormatString: "#,###''",
+    dataPoints: [
+      // BLUE
+      { name: "Unsatisfied", y: 1 },
+      // RED
+      { name: "Very Unsatisfied", y: 54 },
+      // YELLOW
+      { name: "Very Satisfied", y: 1 },
+      // Teal
+      { name: "Satisfied", y: 1 },
+      // Purple
+      { name: "Neutral", y: 1 }
+    ]
+  }],
+  colorSet: "colorSet1",
+};
+// Update Y Values to calculate percentages from user input data
 
 const dash = {
   backgroundColor: '#e5e5e5',
   position: 'relative',
-}
+};
 
 const background = {
   backgroundColor: '#e5e5e5',
   position: 'absolute',
   marginLeft: '10rem'
-}
+};
 
 const DashTitle = {
   fontFamily: 'Roboto',
@@ -21,43 +60,139 @@ const DashTitle = {
   color:'#000000',
   marginLeft: '3.5rem',
   paddingTop: '2rem'
-}
+};
 
 const projectBoxOne = {
-  height: '100%',
-  borderRadius: '5rem',
+  height: 'fit-content',
+  borderRadius: '2rem',
   backgroundColor: '#FFFFFF',
   margin:'1rem' 
-}
+};
 
 const projectBoxTwo = {
-  height: '80%',
-  borderRadius: '5rem',
+  height: 'fit-content',
+  borderRadius: '2rem',
   backgroundColor: '#FFFFFF',
   margin:'1rem' 
-}
+};
 
 const rowFormatting = {
-  height: '25rem', 
+  height: 'fit-content', 
   marginTop: '3rem', 
   marginLeft: '2rem',
   width: '87.6vw',
   marginRight: '0px'
-}
+};
 
 const projectTitleHeader = {
   fontSize: '2rem',
   marginLeft: '2rem',
   fontFamily: 'Roboto',
+  fontWeight: 'bold',
+ 
+};
+
+const columnOutline = {
+  border: '2px solid #e5e5e5',
+  textAlign: 'center',
+  fontFeatureSettings: 'tnum on; onum on',
   fontWeight: 'bold'
+};
+
+
+const testUser = {
+  name: 
+    "Test User",
+  
+  grantMatches: 
+    [{}, {}, {}],
+  
+  matchedGrants: 
+    [],
+
+  adminsAndCoadmins: 
+    [{picture: "", name: "Frank Bochowski", title: "Admin"}, {picture: '', name: 'Tom Bombadil', title:'Co-Admin'}, {picture: "", name: "Bob Horatio", title: "Co-Admin"}],
+  
+  projects: 
+    [{title: "Project One", manager: "Test Manager One", events: []}, {title: "Project Two", manager: "Test Manager Two", events: []}, {title: "Project Three", manager: "Test Manager Three", events: []}],
+
+  watchedGrants: 
+    [{name: "Test Grant One", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the first test grant"}, {name: "Test Grant Two", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the second test grant"}],
+  
+  appliedGrants: 
+    [{name: "Test Grant One", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the first applied for grant", status: "won"}, {name: "Test Grant Two", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the second applied for grant", status: 'pending'}, {name: "Test Grant three", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the third applied for grant", status: 'lost'}],
+}
+
+const pending = {
+  backgroundColor: '#FFA500',
+  border: 'none',
+  color: '#FFFFFF',
+  textAlign: 'center',
+  textDecoration: 'none',
+  display: 'inline-block',
+  fontSize: '24px',
+  boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25)',
+  width: '15rem',
+  borderRadius: '5rem',
+};
+
+const lost = {
+  backgroundColor: '#ad180a',
+  border: 'none',
+  color: '#FFFFFF',
+  textAlign: 'center',
+  textDecoration: 'none',
+  display: 'inline-block',
+  fontSize: '24px',
+  boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25)',
+  width: '15rem',
+  borderRadius: '5rem',
+}
+
+const won = {
+  backgroundColor: '#128049',
+  border: 'none',
+  color: '#FFFFFF',
+  textAlign: 'center',
+  textDecoration: 'none',
+  display: 'inline-block',
+  fontSize: '24px',
+  boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25)',
+  width: '15rem',
+  borderRadius: '5rem',
+}
+
+// const accountName = testUser.name;
+// const grantMatches = testUser.matchedGrants;
+// const matchedGrants = testUser.matchedGrants;
+const adminsAndCoadmins = testUser.adminsAndCoadmins;
+const projects = testUser.projects;
+const appliedGrants = testUser.appliedGrants;
+const watchedGrants = testUser.watchedGrants;
+
+function determineColor(status){
+  switch(status){
+    case 'won':
+      return won;
+        break;
+    case 'lost':
+      return lost;
+        break;
+    case 'pending':
+      return pending;
+        break;
+    default:
+      return {};
+  }
 }
 
 function DashMain(){
+   
   return(
     <>
     <DashboardSidebar/>
     <div style={background}>
-        <h1 style={DashTitle}>Dashboard</h1>
+        <h1 style={DashTitle}>{testUser.name}</h1>
         <div style={dash}>
 
           {/* DASHBOARD TOP ROW */}
@@ -66,6 +201,15 @@ function DashMain(){
             
             <div style={projectBoxOne} className="col-md-5">
               <span style={projectTitleHeader}>8 Projects</span>
+              {/* MAP PROJECT SUMMARY DATA */}
+              <div >
+                {projects.map((project) =>
+                  <Project 
+                    title={project.title}
+                    manager={project.manager}
+                  />
+                )}
+              </div>
             </div>
 
             <div className='col-md-3'>
@@ -76,8 +220,7 @@ function DashMain(){
 
             <div className='col-md-3'>
               <span style={projectTitleHeader}>PROJECT 2</span>
-              <div style={projectBoxTwo}>
-              
+              <div style={projectBoxTwo}>           
               </div>
             </div>
 
@@ -89,12 +232,19 @@ function DashMain(){
           
           <div className="row" style={rowFormatting}>
             <div style={projectBoxOne} className="col-md-5">
-              <span style={projectTitleHeader}>Your Grant Matches</span>
+              {/* <span style={projectTitleHeader}>Your Grant Matches</span> */}
+              <CanvasJSChart options = {chartData}/>  
             </div>
             <div className='col-md-6'>
               <span style={projectTitleHeader}>Admins and Co-Admins</span>
               <div style={projectBoxTwo}>
-
+                {adminsAndCoadmins.map((adminsAndCoadmins) =>
+                    <Admins 
+                      picture={adminsAndCoadmins.picture}
+                      name={adminsAndCoadmins.name}
+                      title={adminsAndCoadmins.title}
+                    />
+                  )}
               </div>
             </div>  
           </div>
@@ -105,6 +255,28 @@ function DashMain(){
           <div className="row" style={rowFormatting}>
             <div style={projectBoxOne} className="col-md-11">
               <span style={projectTitleHeader}>Watched Grants and Opportunities</span>
+              <table className="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Submission Date</th>
+                    <th>Amount</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {watchedGrants.map((grant) =>
+                    <>
+                    <tr>
+                      <td style={columnOutline}>{grant.name}</td>
+                      <td style={columnOutline}>{grant.submissiondate}</td>
+                      <td style={columnOutline}>{grant.amount}</td>
+                      <td style={columnOutline}>{grant.notes}</td>
+                    </tr>
+                    </>
+                  )}
+                </tbody>            
+              </table>
             </div>
           </div>
           {/* END WATCHED GRANTS AND OPPORTUNITIES */}
@@ -113,13 +285,36 @@ function DashMain(){
           <div className="row" style={rowFormatting}>
             <div style={projectBoxOne} className="col-md-11">
               <span style={projectTitleHeader}>Applied-For Grants and Opportunities</span>
+              <table className="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Submission Date</th>
+                    <th>Amount</th>
+                    <th>Notes</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {appliedGrants.map((grant) =>
+                    <>
+                    <tr>
+                      <td style={columnOutline}>{grant.name}</td>
+                      <td style={columnOutline}>{grant.submissiondate}</td>
+                      <td style={columnOutline}>{grant.amount}</td>
+                      <td style={columnOutline}>{grant.notes}</td>
+                      <td style={columnOutline}><span style={determineColor(grant.status)}>{grant.status}</span></td>
+                    </tr>
+                    </>
+                  )}
+                </tbody>
+              </table>
             </div>
           </div>
           {/* END APPLIED FOR GRANTS AND OPPORTUNITIES */}
 
           {/* CALENDAR */}
           {/* END CALENDAR */}
-
 
         </div>
       </div>     
