@@ -25,12 +25,12 @@ import DashboardSidebar from './components/Dashboard/dashboardsidebar.jsx';
 import DashMain from './components/Dashboard/dashboardmain.jsx';
 import NLP from './components/nlp';
 
-function App() {
+function App(props) {
   return (
     <>
     <Router>
       <Switch>
-        <Route path="/nlp">
+        {/* <Route path="/nlp">
           <Navbar />
           <NLP />
           <Footer />
@@ -103,12 +103,12 @@ function App() {
           <Banner />
           <Home />
           <Footer />
-        </Route>
-        {/* <Route>
+        </Route> */}
+        <Route>
           <DashNavbar />
      
-          <DashMain />
-        </Route> */}
+          <DashMain userData={props.userData}/>
+        </Route>
       </Switch>
     </Router>
     </>

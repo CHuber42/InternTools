@@ -5,6 +5,7 @@ import Project from './project.jsx';
 import Admins from './admins.jsx';
 import CanvasJSReact from '../../canvasjs.react';
 
+const he = require('he');
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 // CanvasJSReact.addColorSet ('greenShades', ['#e5e5e5']);
 
@@ -100,28 +101,28 @@ const columnOutline = {
 };
 
 
-const testUser = {
-  name: 
-    "Test User",
+// const testUser = {
+//   name: 
+//     "Test User",
   
-  grantMatches: 
-    [{}, {}, {}],
+//   grantMatches: 
+//     [{}, {}, {}],
   
-  matchedGrants: 
-    [],
+//   matchedGrants: 
+//     [],
 
-  adminsAndCoadmins: 
-    [{picture: "", name: "Frank Bochowski", title: "Admin"}, {picture: '', name: 'Tom Bombadil', title:'Co-Admin'}, {picture: "", name: "Bob Horatio", title: "Co-Admin"}],
+//   adminsAndCoadmins: 
+//     [{picture: '', name: "Frank Bochowski", title: "Admin"}, {picture: '', name: 'Tom Bombadil', title:'Co-Admin'}, {picture: "", name: "Bob Horatio", title: "Co-Admin"}],
   
-  projects: 
-    [{title: "Project One", manager: "Test Manager One", events: []}, {title: "Project Two", manager: "Test Manager Two", events: []}, {title: "Project Three", manager: "Test Manager Three", events: []}],
+//   projects: 
+//     [{title: "Project One", manager: "Test Manager One", events: []}, {title: "Project Two", manager: "Test Manager Two", events: []}, {title: "Project Three", manager: "Test Manager Three", events: []}],
 
-  watchedGrants: 
-    [{name: "Test Grant One", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the first test grant"}, {name: "Test Grant Two", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the second test grant"}],
+//   watchedGrants: 
+//     [{name: "Test Grant One", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the first test grant"}, {name: "Test Grant Two", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the second test grant"}],
   
-  appliedGrants: 
-    [{name: "Test Grant One", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the first applied for grant", status: "won"}, {name: "Test Grant Two", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the second applied for grant", status: 'pending'}, {name: "Test Grant three", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the third applied for grant", status: 'lost'}],
-}
+//   appliedGrants: 
+//     [{name: "Test Grant One", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the first applied for grant", status: "won"}, {name: "Test Grant Two", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the second applied for grant", status: 'pending'}, {name: "Test Grant three", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the third applied for grant", status: 'lost'}],
+// }
 
 const pending = {
   backgroundColor: '#FFA500',
@@ -162,37 +163,43 @@ const won = {
   borderRadius: '5rem',
 }
 
-// const accountName = testUser.name;
-// const grantMatches = testUser.matchedGrants;
-// const matchedGrants = testUser.matchedGrants;
-const adminsAndCoadmins = testUser.adminsAndCoadmins;
-const projects = testUser.projects;
-const appliedGrants = testUser.appliedGrants;
-const watchedGrants = testUser.watchedGrants;
+
 
 function determineColor(status){
   switch(status){
     case 'won':
       return won;
-        break;
+      break;
     case 'lost':
       return lost;
-        break;
+      break;
     case 'pending':
       return pending;
-        break;
+      break;
     default:
       return {};
   }
 }
 
-function DashMain(){
-   
+// JSON.dumps(stuff)
+        
+function DashMain(props){
+
+  const testUser = JSON.parse(he.decode(props.userData));
+
+  const accountName = testUser.name;
+  const grantMatches = testUser.matchedGrants;
+  const matchedGrants = testUser.matchedGrants;
+  const adminsAndCoadmins = testUser.adminsAndCoadmins;
+  const projects = testUser.projects;
+  const watchedGrants = testUser.watchedGrants;
+  const appliedGrants = testUser.appliedGrants;
+
   return(
     <>
     <DashboardSidebar/>
     <div style={background}>
-        <h1 style={DashTitle}>{testUser.name}</h1>
+        <h1 style={DashTitle}>{accountName}</h1>
         <div style={dash}>
 
           {/* DASHBOARD TOP ROW */}
