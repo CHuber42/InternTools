@@ -12,6 +12,7 @@ const footer = {
   textAlign: 'center',
   justifyContent: 'center',
   height: '200px',
+  padding: '1rem'
 };
 
 const fabLinkStyle = {
@@ -21,11 +22,13 @@ const fabLinkStyle = {
 }
 
 const copyRight = {
-  marginTop: '1rem'
+  // marginTop: '1rem',
+  // marginBottom: '1rem'
 }
 
 const links = {
-  color: 'black'
+  color: 'black',
+  // marginBottom: '1rem'
 }
 
 function Footer() {
@@ -52,7 +55,7 @@ function Footer() {
             </div>
           </div>
           <div style={copyRight}>
-              <p>
+              <p style={{background: '#959595', marginBottom: '0px'}}>
                 &copy; 2019-{new Date().getFullYear()}, Grant Us Funding 
                 <br/>
                 All Rights Reserved | <Link to='/terms'><span style={links}>Terms of Service</span></Link> | <Link to="/privacypolicy"><span style={links}>Privacy Policy</span></Link> 

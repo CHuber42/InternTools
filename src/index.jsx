@@ -8,6 +8,7 @@ require('typeface-rhodium-libre');
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* <App /> */}
     <App userData={window.userData}/>
   </React.StrictMode>,
   document.getElementById('root')

@@ -183,7 +183,7 @@ function Home() {
         <div style={{backgroundColor: '#e5e5e5'}}>
 
         {/* Funding Pathway */}
-        <div className="row">
+        <div style={{marginRight: '0rem'}} className="row">
           <div className="col-md-6 col-sm-12">
             <div style={findFund}>
               <p>FIND YOUR

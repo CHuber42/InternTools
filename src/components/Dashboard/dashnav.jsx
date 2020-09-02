@@ -118,7 +118,7 @@ class DashNavbar extends Component{
                     <input style={searchStyle} type="text" placeholder="Search For..."/>
                     <button className='fas fa-search fa-sm' style={magGlassStyle} type='submit'/>
                 </div>
-                <Link to="./preregister">
+                <Link to="/">
                     <button style={btnLogin} className='btn-login' type='button'>Sign Out</button>
                 </Link>
             </div>

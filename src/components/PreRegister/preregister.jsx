@@ -9,7 +9,7 @@ function PreRegister(){
     return (
         <>
         <div style={background}>
-            <div class="container" style={{paddingTop: '3rem'}}>
+            <div className="container" style={{paddingTop: '3rem'}}>
                 <h2><strong>Let’s start finding you Funding opportunities today!</strong></h2>
                 <br/>
                 <h3><strong>A few quick words</strong> before we start your onboarding at <em>Grant Us Funding.</em></h3>

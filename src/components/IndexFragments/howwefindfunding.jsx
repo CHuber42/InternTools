@@ -27,13 +27,14 @@ const howWeFind = {
   fontStyle: 'normal',
   lineHeight: '28px',
   fontSize: '30px',
+//   marginRight: '0rem'
 }
 
 function HowWeFindFunding() {
     return (
         <>
         <div style={howWeFind}>
-            <div className="row">
+            <div style={{marginRight: '0rem'}} className="row">
                 <div className="col-md-6 col-sm-12">
                 <div style={leftSide}>
                     <p style={{textAlign: 'center', marginLeft: '15%'}}> 
@@ -62,7 +63,7 @@ function HowWeFindFunding() {
             {/* Continued - How We Find Funding Box */}
             <div style={howWeFind}>
 
-                <div className="row">
+                <div style={{marginRight: '0rem'}} className="row">
                 <div className="col-sm-6">
                     <div style={leftPic} className="d-none d-md-block">
                     <img style={{float: 'right', marginRight: '15%'}} src={GlassesImage} alt=""/>

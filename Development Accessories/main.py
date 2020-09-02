@@ -18,9 +18,16 @@ def my_index():
     return flask.render_template("index.html", userData=testUser)
 # React Route
 
+@app.route("/submit_registration", methods= ['POST'])
+def submit_registration():
+    passed_in_data = flask.request.json
+    print(passed_in_data)
+    return redirect('/')
+
 @app.errorhandler(404)
 def not_found():
     return redirect('/')
+
 
 
 @app.route("/reservedroute", methods=['post'])

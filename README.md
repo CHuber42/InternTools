@@ -4,7 +4,7 @@
 
 ## Description
 
-_This is GrantUs Fundings website where user's will be able to find grant proposals & track their progress towards completeing grant proposals & aachieveing funding._
+_This is GrantUs Fundings website where user's will be able to find grant proposals & track their progress towards completeing proposals & achieveing funding._
 
 ## Setup
 

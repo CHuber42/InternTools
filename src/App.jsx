@@ -7,30 +7,29 @@ import Faq from './components/faq';
 import Team from './components/team';
 import Terms from './components/terms'
 import PrivacyPolicy from './components/privacypolicy';
-import WhatIsNLP from './components/nlp';
 import PreRegister from './components/PreRegister/preregister.jsx';
-import EduPlanPricing from './components//PlansAndPricing/planpricingedu.jsx';
-import SmbPlanPricing from './components/PlansAndPricing/planpricingsmb.jsx';
 import FreeTrial from './components/freetrial.jsx';
 import Banner from './components/banner.jsx';
 import Home from './components/Index.jsx';
 import PricingPlans from './components/pricingplans.jsx';
 import Contact from './components/contact.jsx';
-import GovPlanPricing from './components/PlansAndPricing/planpricinggov.jsx';
 import Gov from './components/PreRegister/gov.jsx';
 import Edu from './components/PreRegister/edu.jsx';
 import Smb from './components/PreRegister/smb.jsx';
 import DashNavbar from './components/Dashboard/dashnav.jsx';
-import DashboardSidebar from './components/Dashboard/dashboardsidebar.jsx';
+// import DashboardSidebar from './components/Dashboard/dashboardsidebar.jsx';
 import DashMain from './components/Dashboard/dashboardmain.jsx';
 import NLP from './components/nlp';
+import Registration from './components/Registration/registrationform.jsx';
+import Login from './components/Registration/login.jsx';
+
 
 function App(props) {
   return (
     <>
     <Router>
       <Switch>
-        {/* <Route path="/nlp">
+        <Route path="/nlp">
           <Navbar />
           <NLP />
           <Footer />
@@ -98,17 +97,27 @@ function App(props) {
           <FreeTrial />
           <Footer />
         </Route>
+        <Route path="/register">
+          <Navbar/>
+          <Registration />
+          <Footer />
+        </Route>
+        <Route path="/login">
+          <Navbar/>
+          <Login />
+          <Footer />
+        </Route>
+        <Route path="/Dashboard">
+          <DashNavbar />
+          <DashMain />
+          {/* <DashMain userData={props.userData}/> */}
+        </Route>
         <Route path="/">
           <Navbar />
           <Banner />
           <Home />
           <Footer />
-        </Route> */}
-        <Route>
-          <DashNavbar />
-     
-          <DashMain userData={props.userData}/>
-        </Route>
+        </Route> 
       </Switch>
     </Router>
     </>
