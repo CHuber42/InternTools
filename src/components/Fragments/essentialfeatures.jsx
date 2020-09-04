@@ -1,5 +1,5 @@
 import React from 'react';
-import EllipseImg from '../img/ellipse1.svg';
+import EllipseImg from '../../img/ellipse1.svg';
 import { Link } from 'react-router-dom';
 
 const background = {
@@ -156,9 +156,6 @@ const listItemTitle = {
     fontSize: '1.5em', 
     fontFamily: 'Rhodium Libre'
 }
-
-
-
     
 function EssentialFeatures() {
   return(
@@ -166,7 +163,7 @@ function EssentialFeatures() {
     <div style={background}>
       <div className="two-button-box">
         <div>
-        <Link to='./preregister'><p style={buttonBlue}>Get Started</p> </Link> 
+        <Link to='./register'><p style={buttonBlue}>Get Started</p></Link> 
         <Link to='./pricingplans'><p style={buttonGreen}>Plans and Pricing</p></Link>
         </div>
       </div>
@@ -184,7 +181,6 @@ function EssentialFeatures() {
             format you’re only matched with opportunities that have a high probability of success. The process of
             finding your funding is ongoing daily, with updates reported immediately.</p>
             
-            
         </div>
         <div style={planListBox}>
             <img src={EllipseImg} alt=""/>
@@ -198,7 +194,6 @@ function EssentialFeatures() {
             forms. You receive all of the dates
             and grant specifics needed to successfully apply.</p>
             
-            
         </div>
         <div style={planListBox}>
             <img src={EllipseImg} alt=""/>
@@ -209,8 +204,7 @@ function EssentialFeatures() {
             
             <p style={listItemText}>Your searches are organized by year, application stage and project; seamlessly
             displayed.</p>
-            
-            
+             
         </div>
         <div style={planListBox}>
             <img src={EllipseImg} alt=""/>
@@ -220,7 +214,6 @@ function EssentialFeatures() {
             <p style={listItemTitle}>Automatic Deadline Reminders</p>
             
             <p style={listItemText}>Time is always ticking. We send you automatic deadline reminders.</p>
-            
             
         </div>
         <div style={planListBox}>
@@ -243,7 +236,6 @@ function EssentialFeatures() {
             
             <p style={listItemText}>Your searches and data are downloadable in both CSV and PDF formats.</p>
             
-            
         </div>
         <div style={planListBox}>
             <img src={EllipseImg} alt=""/>
@@ -253,7 +245,6 @@ function EssentialFeatures() {
             <p style={listItemTitle}>Team Management</p>
             
             <p style={listItemText}>Secure portal with numerous options for control and flexibility of your team. </p>
-            
             
         </div>
         <div style={planListBox}>
@@ -283,9 +274,6 @@ function EssentialFeatures() {
                             </li>
                             <li>
                                 <p>SalesForce</p>
-                            </li>
-                            <li>
-                                <p>Chritodora</p>
                             </li>
                         </ul>
                     </div>

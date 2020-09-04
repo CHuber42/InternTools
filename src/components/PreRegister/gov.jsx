@@ -81,7 +81,7 @@ function Gov() {
     <div className="container" style={{fontSize: '18px', textAlign: 'center', padding: '3rem'}}> 
         <p>(Yes, really.)</p>
         <br/>
-        <Link to="/preregister">
+        <Link to="/register">
            <span className="buttonBlue">Get Registered</span>
         </Link>
         <br/>

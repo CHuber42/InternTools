@@ -1,32 +1,36 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
-import Banner from './banner';
+import Banner from './Fragments/banner';
 import schoolIcon1 from '../img/schoolIcon1.svg';
 import smallbusiness1 from '../img/smallbusiness1.svg';
 import govicon from '../img/govicon.svg';
-import SmartFocusFunding from './smartfocusfunding';
-import HowWeFindFunding from './IndexFragments/howwefindfunding';
-import CovidPlan from './IndexFragments/covidplan';
+import SmartFocusFunding from './Fragments/smartfocusfunding';
+import HowWeFindFunding from './Fragments/howwefindfunding';
+import CovidPlan from './Fragments/covidplan';
 import Gov from './PreRegister/gov';
 import Edu from './PreRegister/edu';
 import SMB from './PreRegister/smb';
 
 const inquire = {
-  top: '50vh',
+  top: '-10vw',
   background: '#FFFFFF',
   border: '1px solid #DDDDDD',
   boxShadow: '.1rem .25em .25em rgba(0, 0, 0, 0.25)',
   borderRadius: '5rem',
   marginLeft: '60vw',
-  position: 'absolute'
+  // position: 'absolute'
+  position: 'relative',
+  // marginBottom: '0rem'
 }
 
 const inquireBox = {
-  position: 'absolute',
-  zIndex: '1000',
+  position: 'relative',
+  // position: 'absolute',
+  // zIndex: '1000',
   backgroundColor:'#FFFFFF',
   color: '#FFFFFF',
   fontWeight: 'bold',
+  // marginBottom: '0rem'
 }
 
 const inquireAbout = {
@@ -35,17 +39,17 @@ const inquireAbout = {
   fontWeight: '200',
   fontSize: '40px',
   textAlign: 'left',
-  marginLeft: '5rem',
+  marginLeft: '4vw',
 }
 
 const inquireForm = {
-  padding: '40px 40px',
+  padding: '2vw 2vw',
 }
 
 const firstName = {
   height: '4vh',
   width: '12vw',
-  paddingLeft: '1rem',
+  // paddingLeft: '1rem',
   borderRadius: '5rem',
   border: '1px solid',
 }
@@ -53,7 +57,7 @@ const firstName = {
 const lastName = {
   height: '4vh',
   width: '12vw',
-  paddingLeft: '1rem',
+  // paddingLeft: '1rem',
   marginLeft: '1vw',
   borderRadius: '5rem',
   border: '1px solid',
@@ -137,7 +141,7 @@ const funderSpecific = {
   fontWeight: 'bold',
   fontSize: '36px', 
   color: '#000000',
-  paddingTop: '10%'
+  paddingTop: '25%'
 }
 
 const notUnlikeClothing = {
@@ -160,13 +164,13 @@ function Home() {
   
   return (
     <>
+      <div style={{backgroundColor: '#e5e5e5'}}>
       {/* <Banner /> */}
-     
         {/* Inquire Box */}
         <div style={inquire} className="col-md-4 col-sm-12">
           <div stlye={inquireBox} className="d-none d-lg-block">
             <p style={inquireAbout}>
-              <em>Inquire About</em><br></br>GETTING FUNDED
+              <em>Inquire About</em><br/>GETTING FUNDED
             </p>
             <form action="">
               <div style={inquireForm} className="form-group">
@@ -179,9 +183,8 @@ function Home() {
             </form>
           </div>
         </div>
-        
-        <div style={{backgroundColor: '#e5e5e5'}}>
 
+        <div style={{marginTop: '-20vw'}}>
         {/* Funding Pathway */}
         <div style={{marginRight: '0rem'}} className="row">
           <div className="col-md-6 col-sm-12">
@@ -298,6 +301,7 @@ function Home() {
           </Route>
         </Switch>
       </Router> */}
+    </div>
     </div>
     </>
   )

@@ -1,9 +1,10 @@
 import React from 'react';
-import Banner from './banner';
+import Banner from './Fragments/banner';
 import EducationIcon from '../img/schoolIcon1.svg';
 import SmallBusinessIcon from '../img/smallbusiness1.svg';
 import GovIcon from '../img/govicon.svg';
-import SmartFocusFunding from './smartfocusfunding';
+import SmartFocusFunding from './Fragments/smartfocusfunding';
+import { Link } from 'react-router-dom';
 
 const backGround = {
     backgroundColor: '#E5E5E5',
@@ -92,12 +93,14 @@ function Contact() {
                         <img src={EducationIcon} alt="school icon"/> 
                     </div>         
                     <div className="col-md-4" > 
+                        <a href="mailto:Info@GrantUsFunding.com">
                         <button type="button" style={btnFun} data-toggle="modal" data-target="#contactModal" data-whatever="@Academic">
                             Request info@Academic
-                        </button>             
+                        </button> 
+                        </a>             
                     </div>         
-                    <div className="col-md-4"> 
-                        <a href="eduplans.html"><button style={btnPlans}>See Plans <br /> & <br/> Pricing</button></a> 
+                    <div className="col-md-4">
+                        <Link to="/pricingplans"><button style={btnPlans}>See Plans <br /> & <br/> Pricing</button></Link>
                     </div>         
                 </div>     
                 <div className="row row-center"> 
@@ -105,12 +108,14 @@ function Contact() {
                         <img src={SmallBusinessIcon} alt="smb icon"/> 
                     </div>         
                     <div className="col-md-4"> 
-                        <button type="button" style={btnFun} data-toggle="modal" data-target="#contactModal" data-whatever="@Small">
-                            Request info@Small<br/>& Medium Business
-                        </button>             
+                        <a href="mailto:Info@GrantUsFunding.com">
+                            <button type="button" style={btnFun} data-toggle="modal" data-target="#contactModal" data-whatever="@Small">
+                                Request info@Small<br/>& Medium Business
+                            </button>  
+                        </a>            
                     </div>         
                     <div className="col-md-4 plans"> 
-                        <a href="smbplans.html"><button style={btnPlans}>See Plans <br /> & <br/> Pricing</button></a> 
+                        <Link to="/pricingplans"><button style={btnPlans}>See Plans <br /> & <br/> Pricing</button></Link> 
                     </div>         
                 </div>     
                 <div className="row row-center"> 
@@ -118,12 +123,14 @@ function Contact() {
                         <img src={GovIcon} alt="gov icon"/> 
                     </div>         
                     <div className="col-md-4"> 
-                        <button type="button" style={btnFun} data-toggle="modal" data-target="#contactModal" data-whatever="@Gov">
-                            Request info@<br/>Government Contracting
-                        </button>             
+                        <a href="mailto:Info@GrantUsFunding.com">
+                            <button type="button" style={btnFun} data-toggle="modal" data-target="#contactModal" data-whatever="@Gov">
+                                Request info@<br/>Government Contracting
+                            </button>            
+                        </a> 
                     </div>         
-                    <div className="col-md-4 plans"> 
-                        <a href="govplans.html"><button style={btnPlans}>See Plans <br /> & <br/> Pricing</button></a> 
+                    <div className="col-md-4 plans">
+                        <Link to="/pricingplans"><button style={btnPlans}>See Plans <br /> & <br/> Pricing</button></Link> 
                     </div>         
                 </div>          
                 {/* ChatWithUs */}
@@ -138,8 +145,8 @@ function Contact() {
             <div style={contactInfo}> 
                 <span className="contact-company">  <p><strong> Grant Us Funding</strong></p>  </span> 
                 <p>Corvallis, Oregon 97330</p> 
-                <p><strong>Phone:</strong> 971-800-1048</p> 
-                <p style={email}><strong>Email:</strong> Info@GrantUsFunding.com</p> 
+                <p><strong>Phone:</strong><a href="tel:971-800-1048"> 971-800-1048</a></p>
+                <p style={email}><strong>Email:</strong><a href="mailto:Info@GrantUsFunding.com"> Info@GrantUsFunding.com</a></p> 
             </div>             
             <hr/>
         </div>

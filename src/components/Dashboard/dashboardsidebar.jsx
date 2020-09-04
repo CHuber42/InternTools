@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+
 const background = {
     background: '#6F6F6F',
     width: '10rem',
@@ -39,7 +40,7 @@ function DashboardSidebar(){
 
             {/* CONTENTS */}
             <div style={text}>
-                <Link to="/">
+                <Link to="/dashboard">
                     <p style={linkStyling}>Dashboard</p>
                 </Link>
 
@@ -57,8 +58,8 @@ function DashboardSidebar(){
                 
                 <hr style={hrModifiedStyle}/>
                 
-                <Link to="/">
-                    <p style={linkStyling}>Team</p>
+                <Link to="/teammanagement">
+                    <p style={linkStyling}>Team Manager</p>
                 </Link>
                 
                 <hr style={hrModifiedStyle}/>

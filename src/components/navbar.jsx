@@ -1,13 +1,9 @@
 import React, {Component} from 'react';
 // import GrantUsLogo from "../img/RemasteredGufLogo3.png";
 import GrantUsLogo from "../img/guf_logo.png";
-// import {Link} from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
-// import Home from './Index';
-// import Contact from './contact'
-// import FreeTrial from './freetrial'
-// import PricingPlans from './pricingplans';
-// import Team from './team';
+import ReactDOM from 'react-dom';
+
 
 const headerStyle = {
     backgroundColor: '#959595',
@@ -44,7 +40,7 @@ const searchStyle = {
 const magGlassStyle = {
     height: '100%',
     borderRadius: '5px',
-    marginLeft: '-17%',
+    marginLeft: '-35px',
     border: 'none',
 }
 
@@ -80,6 +76,10 @@ class Navbar extends Component {
       this.fragment = "";
     }
 
+    componentDidUpdate = () => {
+        ReactDOM.findDOMNode(this).scrollIntoView();
+    }
+
     componentWillUpdate(){
         pricingPlansLink = {};
         contactLink = {};
@@ -87,16 +87,16 @@ class Navbar extends Component {
         teamLink = {};
         
         switch(window.location.href){
-            case 'http://localhost:3000/pricingplans':
+            case 'http://www.grantusfunding.com/pricingplans':
                 pricingPlansLink = activeLink;
                 break;
-            case 'http://localhost:3000/contact':
+            case 'http://www.grantusfunding.com/contact':
                 contactLink = activeLink;
                 break;
-            case 'http://localhost:3000/team':
+            case 'http://www.grantusfunding.com/team':
                 teamLink = activeLink;
                 break;
-            case 'http://localhost:3000/freetrial':
+            case 'http://www.grantusfunding.com/freetrial':
                 freeTrialLink = activeLink;
                 break;
             default :

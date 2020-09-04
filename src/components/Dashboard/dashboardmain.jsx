@@ -90,7 +90,6 @@ const projectTitleHeader = {
   marginLeft: '2rem',
   fontFamily: 'Roboto',
   fontWeight: 'bold',
- 
 };
 
 const columnOutline = {

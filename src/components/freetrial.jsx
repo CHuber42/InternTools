@@ -1,12 +1,12 @@
 import React from 'react';
-import Banner from './banner';
+import Banner from './Fragments/banner';
 import schoolIcon1 from '../img/schoolIcon1.svg';
 import smallbusiness1 from '../img/smallbusiness1.svg';
 import govicon from '../img/govicon.svg';
 import IndividualFreeTrial from './FreeTrials/individualtrial';
 import SmallMedFreeTrial from './FreeTrials/smallmedtrial';
 import LargeFreeTrial from './FreeTrials/largetrial';
-import EssentialFeatures from './essentialfeatures';
+import EssentialFeatures from './Fragments/essentialfeatures';
 
 const background = {
   backgroundColor: '#E5e5e5',

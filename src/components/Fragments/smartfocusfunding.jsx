@@ -79,7 +79,7 @@ function SmartFocusFunding() {
             <div className="col-md-6 col-sm-12">
               <h3>Our Commitment to You:</h3>
                 <ul style={list1}>
-                  <strong> <li>Easy-To-Use Software</li> <li>Find Truly Qualified Leads</li> <li>Save You Time</li> <li>Keep You Informed</li> </strong>
+                  <strong> <li>Easy-To-Use Software</li> <li>Find Qualified Leads</li> <li>Save You Time</li> <li>Keep You Informed</li> </strong>
                 </ul>
             </div>
 

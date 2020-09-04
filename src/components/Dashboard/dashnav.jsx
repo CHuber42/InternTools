@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 // import GrantUsLogo from "../../img/RemasteredGufLogo3.png";
 import GrantUsLogo from "../../img/guf_logo.png";
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 
 const headerStyle = {
     backgroundColor: '#959595',
@@ -64,6 +65,13 @@ var contactLink;
 var pricingPlansLink;
 
 class DashNavbar extends Component{
+    constructor(props){
+        super()
+    }
+
+    componentDidUpdate = () => {
+        ReactDOM.findDOMNode(this).scrollIntoView();
+    }
     
     componentWillUpdate(){
         pricingPlansLink = {};

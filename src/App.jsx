@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-ro
 import Footer from './components/footer.jsx';
 import Navbar from './components/navbar';
 
-import Faq from './components/faq';
+import Faq from './components/faq/faq';
 import Team from './components/team';
-import Terms from './components/terms'
-import PrivacyPolicy from './components/privacypolicy';
-import PreRegister from './components/PreRegister/preregister.jsx';
+import Terms from './components/Fragments/terms'
+import PrivacyPolicy from './components/Fragments/privacypolicy';
+import PreRegister from './components/PreRegister/deprecated-preregister.jsx';
 import FreeTrial from './components/freetrial.jsx';
-import Banner from './components/banner.jsx';
+import Banner from './components/Fragments/banner.jsx';
 import Home from './components/Index.jsx';
 import PricingPlans from './components/pricingplans.jsx';
 import Contact from './components/contact.jsx';
@@ -17,12 +17,12 @@ import Gov from './components/PreRegister/gov.jsx';
 import Edu from './components/PreRegister/edu.jsx';
 import Smb from './components/PreRegister/smb.jsx';
 import DashNavbar from './components/Dashboard/dashnav.jsx';
-// import DashboardSidebar from './components/Dashboard/dashboardsidebar.jsx';
-import DashMain from './components/Dashboard/dashboardmain.jsx';
-import NLP from './components/nlp';
+import DashboardSidebar from './components/Dashboard/dashboardsidebar.jsx';
+import DashBoardMain from './components/Dashboard/dashboardmain.jsx';
+import NLP from './components/Fragments/nlp';
 import Registration from './components/Registration/registrationform.jsx';
 import Login from './components/Registration/login.jsx';
-
+import Teammanagement from './components/Dashboard/teammanagement';
 
 function App(props) {
   return (
@@ -109,8 +109,15 @@ function App(props) {
         </Route>
         <Route path="/Dashboard">
           <DashNavbar />
-          <DashMain />
+          <DashBoardMain />
+          {/* <Footer /> */}
           {/* <DashMain userData={props.userData}/> */}
+        </Route>
+        <Route path="/teammanagement">
+          <DashNavbar />
+          <DashboardSidebar/>
+          <Teammanagement />
+          {/* <Footer /> */}
         </Route>
         <Route path="/">
           <Navbar />

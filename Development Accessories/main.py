@@ -1,7 +1,25 @@
 import flask
 import json
+# from flask_cors import CORS
+import pandas as pd
+import os
 
 app = flask.Flask("__main__")
+# app = flask.Flask(__name__, static_folder='./')
+redirectData = ""
+
+
+@app.errorhandler(404)
+def not_found(e):
+    redirectData = os.path.split(flask.request.url)[1:]
+    # print(data)
+    return flask.redirect("/", 404, redirectData)
+
+
+@app.route("/<reroute>")
+def reroute(reroute):
+
+    return flask.render_template("index.html", rerouteData = reroute)
 
 # React Route
 @app.route("/")
@@ -14,27 +32,45 @@ def my_index():
                 "watchedGrants": [{'name': "Test Grant One", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the first test grant"}, {'name': "Test Grant Two", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the second test grant"}],
                 "appliedGrants": [{'name': "Test Grant One", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the first applied for grant", 'status': "won"}, {'name': "Test Grant Two", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the second applied for grant", 'status': 'pending'}, {'name': "Test Grant three", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the third applied for grant", 'status': 'lost'}],
                 }
+    print(redirectData)
     token = json.dumps(testUser)
-    return flask.render_template("index.html", userData=testUser)
+    return flask.redirect("/<reroute>")
+    # return flask.render_template("index.html", userData=testUser)
 # React Route
 
 @app.route("/submit_registration", methods= ['POST'])
 def submit_registration():
-    passed_in_data = flask.request.json
-    print(passed_in_data)
-    return redirect('/')
+    newUser = flask.request.json['newUser']
+    firstName = newUser['firstName']
+    lastName = newUser['lastName']
+    email = newUser['email']
+    password = newUser['password']
+    
+    print(firstName, lastName, email, password)
+    return flask.redirect('/')
 
-@app.errorhandler(404)
-def not_found():
-    return redirect('/')
-
-
-
-@app.route("/reservedroute", methods=['post'])
-def reserved():
-    # Process Data and submit to database
-    return redirect('/')
+@app.route("/login", methods= ['POST'])
+def login():
+    returningUser = flask.request.json['returningUser']
+    email = returningUser['email']
+    password = returningUser['password']
+    return flask.redirect('/')
 
 # debug=True
-# if name == 'main':
-app.run(debug=True)
+# CORS(app)
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+# ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__enter__', '__eq__', '__exit__', '__format__', '__ge__', '__getattribute__',
+#  '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__',
+#   '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_cached_json', '_get_data_for_json', '_get_file_stream', '_get_stream_for_parsing',
+#    '_load_form_data', '_parse_content_type', 'accept_charsets', 'accept_encodings', 'accept_languages', 'accept_mimetypes', 'access_control_request_headers',
+#     'access_control_request_method', 'access_route', 'application', 'args', 'authorization', 'base_url', 'blueprint', 'cache_control', 'charset', 'close',
+#      'content_encoding', 'content_length', 'content_md5', 'content_type', 'cookies', 'data', 'date', 'dict_storage_class', 'disable_data_descriptor',
+#       'encoding_errors', 'endpoint', 'environ', 'files', 'form', 'form_data_parser_class', 'from_values', 'full_path', 'get_data', 'get_json', 'headers',
+#        'host', 'host_url', 'if_match', 'if_modified_since', 'if_none_match', 'if_range', 'if_unmodified_since', 'input_stream', 'is_json', 'is_multiprocess',
+#         'is_multithread', 'is_run_once', 'is_secure', 'json', 'json_module', 'list_storage_class', 'make_form_data_parser', 'max_content_length',
+#          'max_form_memory_size', 'max_forwards', 'method', 'mimetype', 'mimetype_params', 'on_json_loading_failed', 'origin', 'parameter_storage_class',
+#           'path', 'pragma', 'query_string', 'range', 'referrer', 'remote_addr', 'remote_user', 'routing_exception', 'scheme', 'script_root', 'shallow',
+#            'stream', 'trusted_hosts', 'url', 'url_charset', 'url_root', 'url_rule', 'user_agent', 'values', 'view_args', 'want_form_data_parsed']

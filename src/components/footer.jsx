@@ -5,7 +5,6 @@ const footer = {
   display: 'flex',
   position: 'absolute',
   width: '100%',
-  // height: '71px',
   background: '#959595',
   flexDirection: 'column',
   alignItems: 'center',
@@ -27,9 +26,16 @@ const copyRight = {
 }
 
 const links = {
-  color: 'black',
-  // marginBottom: '1rem'
+  color: '#FFFFFF',
 }
+
+const footerLinks = {
+  float: 'left',
+  // color: '#49DCB1',
+  // color: '#7CFFCB',
+  color: '#fff',
+  // color: '#5881BE',
+} 
 
 function Footer() {
   return (
@@ -46,10 +52,10 @@ function Footer() {
             <div className='row'>
               <ul style={{listStyle: 'none'}}>
               <li>
-                <Link to='/faq'><span style={{float: 'left', color: 'black' }}>Faq - Frequently Asked Questions</span></Link>
+                <Link to='/faq'><span style={footerLinks}>Faq - Frequently Asked Questions</span></Link>
               </li>
               <li>
-                <Link to="/nlp"><span style={{float: 'left', color: 'black' }}>NLP - Natural Language Processing</span></Link>
+                <Link to="/nlp"><span style={footerLinks}>NLP - Natural Language Processing</span></Link>
               </li>
               </ul>
             </div>

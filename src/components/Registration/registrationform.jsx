@@ -56,7 +56,7 @@ class Registration extends Component {
       lastName: this.state.lastName,
       email: this.state.email,
       password: this.state.password
-    }
+    } 
 
     if (formValid(this.state)) {
       console.log(`
@@ -66,6 +66,8 @@ class Registration extends Component {
         Email: ${this.state.email}
         Password: ${this.state.password}
       `);
+
+      //encrypt the newuser variable
       
       const requestOptions = {
         method: 'POST',

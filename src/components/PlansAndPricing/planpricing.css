@@ -17,11 +17,13 @@ justify-content: center
 border: 1px solid #5881BE;
 text-align: center;
 font-feature-settings: 'tnum on; onum on';
-font-weight: bold
+font-weight: bold;
+max-width: 20vw;
 }
 
 .rowTitles {
-text-align: right
+text-align: right;
+
 }
 
 .buttonOrange {

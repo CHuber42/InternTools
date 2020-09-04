@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from './banner';
+import Banner from './Fragments/banner';
 import AlanImage from '../img/alanjpgformat1.png';
 import ClintImage from '../img/Clint.png';
 import HristoImage from '../img/hristo.png';
@@ -7,6 +7,13 @@ import RachelImage from '../img/rachel.png';
 import BryonImage from '../img/bryon.png';
 import CHuberImage from '../img/CHuber.png';
 import NathanImage from '../img/nathan.jpg'
+
+const alanClintPhoto = {
+  width: '45vw', 
+  maxWidth: '500px', 
+  borderRadius: '1rem',
+  boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'
+}
 
 const programmerIMG = {
   marginLeft: '1rem', 
@@ -25,9 +32,9 @@ const programmerDiv = {
 const aboutParagraph2 = {
   fontSize: '18px',
   fontFamily: 'Rhodium Libre',
-  position: 'absolute',
+  position: 'relative',
   width: '70%',
-  marginLeft: '40%',
+  marginLeft: '30%',
   marginTop: '5%'
 }
 
@@ -54,6 +61,13 @@ const aboutParagraph = {
   fontFamily: 'Rhodium Libre'
 }
 
+const softwareEngineers = {
+  textAlign: 'center', 
+  paddingTop: '2rem', 
+  fontFamily: 'Rhodium Libre', 
+  paddingBottom: '1rem',
+}
+
 function Team() {
   
   return (
@@ -76,14 +90,14 @@ function Team() {
                     <p style={aboutParagraph}>If you’re wondering.. Yes, we have been successful at getting multiple grants, and have multiple times secured startup funding. The process was painful and time consuming, and never made sense when we considered the strength of our current computing power and ability to search and analyze big data. (Until GUF).</p>
                 </div>
                 <div className="info-right col-sm-12 col-md-6">
-                    <img style={{borderRadius: '1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={AlanImage} alt="Alan"/>
+                    <img style={alanClintPhoto} src={AlanImage} alt="Alan"/>
                 </div>
             </div>
         </div>
         <div style={{marginTop: '3rem'}}className="container ">
                 <div className="row" id="clint">
                     <div className="info-right2 col-sm-12 col-md-6 ">
-                        <img style={{borderRadius: '1rem',boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25'}} src={ClintImage} alt="Clint"/>
+                        <img style={alanClintPhoto} src={ClintImage} alt="Clint"/>
                     </div>
                     <div className="info-left2 col-sm-12 col-md-6 ">
                         <h1><span className="about-name">Matthew Johnson</span></h1>
@@ -94,7 +108,7 @@ function Team() {
                     </div>
                 </div>
             </div>
-            <h1 style={{textAlign: 'center', paddingTop: '2rem', fontFamily: 'Rhodium Libre', paddingBottom: '1rem',}}>Software Engineers</h1>
+            <h1 style={softwareEngineers}>Software Engineers</h1>
             <div className="container text-center">
               <div style={programmerDiv}>
                 <img style={programmerIMG} src={CHuberImage} alt="Christopher"/>
@@ -115,15 +129,7 @@ function Team() {
                 <br/>
                 <a href='https://www.linkedin.com/in/nathan-watkins-hoagland/'>LinkedIn</a>
                 <br/>
-                My education began with a passion for Renewable Energy Engineering and flourished into a B.S of Environmental Research and Sustainability from University of Oregon. With an ever burning curiosity for knowledge, I dove into the world of programming, graduated from Epicodus's Programming Bootcamp & never turned back.
-                </p>
-              </div>
-              <div style={programmerDiv}>
-                <img style={programmerIMG} src={RachelImage} alt="Rachel"/>
-                <p style={aboutParagraph2}>
-                  <span><strong>Rachel</strong></span>
-                  <br/>
-                  Known for having an eye for design. More Coming Soon!
+                My education began with a passion for Renewable Energy Engineering and flourished into a B.S of Environmental Research and Sustainability from University of Oregon. With an ever burning curiosity for knowledge, I dove into the world of programming, graduated from Epicodus's Programming Bootcamp & have been growing ever since.
                 </p>
               </div>
               <div style={programmerDiv}>
@@ -138,6 +144,14 @@ function Team() {
                 </p>
               </div>
               <div style={programmerDiv}>
+                <img style={programmerIMG} src={RachelImage} alt="Rachel"/>
+                <p style={aboutParagraph2}>
+                  <span><strong>Rachel</strong></span>
+                  <br/>
+                  Known for having an eye for design. More Coming Soon!
+                </p>
+              </div>
+              <div style={programmerDiv}>
                 <img style={programmerIMG} src={BryonImage} alt="Bryon"/>
                 <p style={aboutParagraph2}>
                   <span><strong>Bryon</strong></span>
@@ -146,9 +160,8 @@ function Team() {
                 </p>
               </div>
             </div>
-    </section>
-</div>
-
+          </section>
+        </div>
     </>
   )
 };

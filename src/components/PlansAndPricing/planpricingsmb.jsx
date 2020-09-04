@@ -13,7 +13,7 @@ const buttonGreen = {
     display: 'inline-block',
     fontSize: '24px',
     boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25)',
-    width: '12rem',
+    width: '12vw',
     height: '2rem',
     marginTop: '1rem',
     marginBottom: '1rem',
@@ -21,6 +21,13 @@ const buttonGreen = {
     marginRight: '1.5rem',
     borderRadius: '5rem',
     paddingBottom: '2.5rem',
+}
+
+const planTypes = {
+    fontWeight: 'bold', 
+    fontSize: '1.5em', 
+    color: 'white', 
+    textAlign: 'center'
 }
 
 function SmbPlanPricing(){
@@ -46,14 +53,14 @@ function SmbPlanPricing(){
 
                 <div style={{marginLeft: '-50px'}} className="pricing-table1-box">
                     <div className="price-table-block">
-                        <table style={{marginBottom: '0px'}} className="table table-striped">
+                        <table style={{marginBottom: '0rem'}} className="table table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col"></th>
-                                    <th scope="col" className="headStyle"><span style={{fontWeight: 'bold', fontSize: '1.5em', color: 'white', textAlign: 'center'}}>Bootstrap</span></th>
-                                    <th scope="col" className="headStyle"><span style={{fontWeight: 'bold', fontSize: '1.5em', color: 'white', textAlign: 'center'}}>Startup</span></th>
-                                    <th scope="col" className="headStyle"><span style={{fontWeight: 'bold', fontSize: '1.5em', color: 'white', textAlign: 'center'}}>Growth</span></th>
-                                    <th scope="col" className="headStyle"><span style={{fontWeight: 'bold', fontSize: '1.5em', color: 'white', textAlign: 'center'}}>Unicorn</span></th>
+                                    <th scope="col" className="headStyle"><span style={planTypes}>Bootstrap</span></th>
+                                    <th scope="col" className="headStyle"><span style={planTypes}>Startup</span></th>
+                                    <th scope="col" className="headStyle"><span style={planTypes}>Growth</span></th>
+                                    <th scope="col" className="headStyle"><span style={planTypes}>Unicorn</span></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -192,16 +199,16 @@ function SmbPlanPricing(){
                                 <tr>
                                     <th scope="row" className="rowTitles"></th>
                                     <td className="columnOutline">
-                                        <a style={buttonGreen} href="/tbd">Buy</a>
+                                        <a style={buttonGreen} href="/">Buy</a>
                                     </td>
                                     <td className="columnOutline">
-                                        <a style={buttonGreen} href="/tbd">Buy</a>
+                                        <a style={buttonGreen} href="/">Buy</a>
                                     </td>
                                     <td className="columnOutline">
-                                        <a style={buttonGreen} href="/tbd">Buy</a>
+                                        <a style={buttonGreen} href="/">Buy</a>
                                     </td>
                                     <td className="columnOutline">
-                                        <a style={buttonGreen} href="/tbd">Quote</a>
+                                        <a style={buttonGreen} href="/">Quote</a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -209,9 +216,8 @@ function SmbPlanPricing(){
                     </div>
                 </div>
             </div>
-            </div>
-            <hr style={{marginTop: '3rem'}}/>
-
+        </div>
+        <hr style={{marginTop: '3rem'}}/>
         </>
     )
 }

@@ -13,7 +13,7 @@ const buttonGreen = {
     display: 'inline-block',
     fontSize: '24px',
     boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25)',
-    width: '15rem',
+    width: '12vw',
     height: '2rem',
     marginTop: '1rem',
     marginBottom: '1rem',
@@ -21,6 +21,13 @@ const buttonGreen = {
     marginRight: '4.5rem',
     borderRadius: '5rem',
     paddingBottom: '2.5rem',
+}
+
+const planTypes = {
+    fontWeight: 'bold', 
+    fontSize: '1.5em', 
+    color: 'white', 
+    textAlign: 'center'
 }
 
 function EduPlanPricing(){
@@ -52,8 +59,8 @@ function EduPlanPricing(){
                                 <thead> 
                                     <tr> 
                                         <th scope="col"></th> 
-                                        <th scope="col" className="headStyle"><span style={{fontWeight: 'bold', fontSize: '1.5em', color: 'white', textAlign: 'center'}}>Essential Start</span></th> 
-                                        <th scope="col" className="headStyle"><span style={{fontWeight: 'bold', fontSize: '1.5em', color: 'white', textAlign: 'center'}}>Enterprise</span></th>                        
+                                        <th scope="col" className="headStyle"><span style={planTypes}>Essential Start</span></th> 
+                                        <th scope="col" className="headStyle"><span style={planTypes}>Enterprise</span></th>                        
                                     </tr>                     
                                 </thead>                 
                                 <tbody> 
@@ -157,10 +164,10 @@ function EduPlanPricing(){
                                     <tr> 
                                         <th scope="row"></th> 
                                         <td className="columnOutline"> 
-                                            <a style={buttonGreen} href="/tbd">Buy</a>
+                                            <a style={buttonGreen} href="/">Buy</a>
                                         </td>                         
                                         <td className="columnOutline"> 
-                                            <a style={buttonGreen} href="/tbd">Quote</a> 
+                                            <a style={buttonGreen} href="/">Quote</a> 
                                         </td>                         
                                     </tr>                     
                                 </tbody>                 
@@ -169,8 +176,8 @@ function EduPlanPricing(){
                     </div>     
                 </div>
             </div>
-            </div>
-            <hr style={{marginTop: '3rem'}}/>
+        </div>
+        <hr style={{marginTop: '3rem'}}/>
         </>
     )
 }
