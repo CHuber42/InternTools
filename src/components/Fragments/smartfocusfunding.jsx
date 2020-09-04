@@ -23,7 +23,7 @@ const list1 = {
     lineHeight: '60px',
     listStylePosition: 'inside',
     textAlign: 'left',
-    marginLeft: '100px',  
+    marginLeft: '6rem',  
 }
 
 const buttonOrange = {

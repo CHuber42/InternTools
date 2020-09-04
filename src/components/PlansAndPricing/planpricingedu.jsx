@@ -46,7 +46,7 @@ function EduPlanPricing(){
                     <br/>
                     <h3><strong>Making Funding Affordable.</strong></h3>
                     <Link to="/freetrial">
-                        <span className="buttonOrange">7-Day Free Trial</span> 
+                        <span className="planPriceBtnOrange">7-Day Free Trial</span> 
                     </Link>
                     <br/>
                     <br/>

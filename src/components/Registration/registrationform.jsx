@@ -121,7 +121,6 @@ class Registration extends Component {
       <div className='form-wrapper'>
         <h1 style={{color: 'white'}}>Create Account</h1>
         <form className='registration-form' onSubmit={this.handleSubmit} noValidate>
-        {/* <form action='/submit_registration' method= 'POST' name='login_form'> */}
           <div className='firstName'>
             <label htmlform='firstName'>First Name</label>
             <input 

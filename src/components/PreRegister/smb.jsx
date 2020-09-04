@@ -33,7 +33,7 @@ function Smb() {
           You’ll receive critical information that will detail past and present opportunities, insights from their published materials, contact information, and more.<br/><br/> 
           From small startups to scaling medium-sized 10 million dollar businesses, we have you covered.</h3> 
         </div>         
-        <div style={{marginLeft: '40px'}}> 
+        <div style={{marginLeft: '2.5rem'}}> 
             <p style={{fontSize: '40px'}}><strong>Our product makes your search seamless:</strong></p> 
             <ul> 
                 <li className="listItem">
@@ -48,7 +48,7 @@ function Smb() {
             </ul>             
         </div>         
     </section>     
-    <div className="container" style={{fontSize: '50px', textAlign: 'center', marginTop: '40px'}}> 
+    <div className="container" style={{fontSize: '50px', textAlign: 'center', marginTop: '2.5rem'}}> 
         <p>We’ve added <span style={{color:'#5881BE'}}> [variable] </span> new Funding <br/>opportunities in the last week.</p> 
     </div>     
     <div className="container" style={{fontSize: '18px', textAlign: 'center'}}> 

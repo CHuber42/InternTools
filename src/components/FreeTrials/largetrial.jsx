@@ -29,11 +29,11 @@ function LargeFreeTrial(){
                                             <tbody>
                                                 <tr>
                                                     <th scope="row"></th>
-                                                    <td style={{fontSize: '1.5em', width: '300px'}} className="column-outline justify-content-center"><span style={{fontWeight: 'bold', textAlign: 'center'}}>FREE </span><br/>for 7 days</td>
+                                                    <td style={{fontSize: '1.5em', width: '19rem'}} className="column-outline justify-content-center"><span style={{fontWeight: 'bold', textAlign: 'center'}}>FREE </span><br/>for 7 days</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row" style={{textAlign: 'right'}}>Users & Projects</th>
-                                                    <td className="column-outline" style={{fontSize: '1.5em', fontWeight: 'bold', width: '300px'}}>1-2</td>
+                                                    <td className="column-outline" style={{fontSize: '1.5em', fontWeight: 'bold', width: '19rem'}}>1-2</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row" style={{textAlign: 'right'}}>Intuitive Selective Grant Matching</th>

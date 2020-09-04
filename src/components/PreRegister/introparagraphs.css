@@ -8,7 +8,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
     line-height: 56px;
     letter-spacing: .1rem;
     color: #000000;
@@ -17,14 +17,14 @@
 
 .introPic {
     float: left;
-    width: 150px;
-    height: 150px;
-    margin-right: 40px;
-    border-radius: 20px;
+    width: 9.4rem;
+    height: 9.4rem;
+    margin-right: 2.5rem;
+    border-radius: 1.25rem;
 }
 
 .introIcon {
-    margin-top: 40px;
+    margin-top: 2.5rem;
 }
 
 .introInfo {
@@ -33,7 +33,7 @@
 }
 
 .introTextH2 {
-    margin-top: 100px;
+    margin-top: 6.25rem;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
@@ -43,7 +43,7 @@
 }
 
 .introText {
-    margin-top: 30px;
+    margin-top: 1.9rem;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: normal;
@@ -53,20 +53,20 @@
 }
 
 .introTitle {
-    margin-top: -150px;
+    margin-top: -9.4rem;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
     line-height: 56px;
     letter-spacing: .1rem;
     color: #000000
 }
 
 .listItem {
-    padding: 15px 0;
-    font-size: 36px;
+    padding: 1rem 0;
+    font-size: 2.25rem;
 } 
   
 .buttonBlue {

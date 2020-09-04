@@ -17,7 +17,7 @@ const background = {
 }
 
 const JoinUs = {
-    marginTop: '100px',
+    marginTop: '6rem',
     textAlign: 'center'
 }
 
@@ -70,35 +70,6 @@ const buttonGreen = {
     borderRadius: '5rem',
     marginBottom: '2rem'
 }
-  
-//   #joinus {
-//     margin-top: 100px;
-//   }
-  
-//   #joinus ul {
-//     list-style-type: none;
-//     display: block;
-//     text-align: center;
-//   }
-  
-//   #joinus ul li {
-//     margin: 30px 30px 0 30px;
-//   }
-  
-//   #joinus .start {
-//     font-family: 'Roboto';
-//     font-style: normal;
-//     font-weight: normal;
-//     font-size: 30px;
-//     line-height: 35px;
-//     text-align: center;
-//     margin-top: 30px;
-//     color: #000000;
-//   }
-  
-//   #joinus p {
-//     margin-bottom: 50px;
-//   }
 
 function NLP () {
     return(
@@ -121,18 +92,15 @@ function NLP () {
                 <br/> 
                 <h3>Our Data Search returns suggested Data Keywords relevant to your starting input. Don’t waste time combing through endless lists and fields; with our software, you’re directed straight to additional Keywords that are found in similar grants. Then we focus your results, maximizing your opportunities for successful funding. And this is only the start of our smarter technology.</h3> 
 
-
-
                 <h3 style={example}>An example of the process.....in 2 clicks (animation/video of process at some point)</h3>  
-                
                 <div style={JoinUs}> 
-
                     <h2 style={actionstyle}>Join us for a piece of the action.</h2> 
                     <Link to='/pricingplans'><span style={buttonGreen}>Plans and Pricing</span></Link>     
                     <h4>Or Start Your</h4> 
                     <Link to='/freetrial'><span style={buttonOrange}>7-Day Free Trial</span></Link>          
                     <p style={{marginBottom: '0px', paddingBottom: '1rem'}}>No Credit Card Required</p>      
                 </div>
+
             </div>
         </div>
         </>

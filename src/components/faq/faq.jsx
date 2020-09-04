@@ -51,14 +51,14 @@ const faqRight = {
 }
 
 const searchStyle = {
-    borderRadius: '5px',
+    borderRadius: '.3rem',
     height: '100%',
     width: '100%'
 }
 
 const magGlassStyle = {
     height: '100%',
-    borderRadius: '5px',
+    borderRadius: '.3rem',
     marginLeft: '-15%',
     border: 'none',
 }
@@ -79,7 +79,7 @@ function Faq() {
                         <form method="get" action=""> 
                             <div className="tb"> 
                                 <div className="nav-item">
-                                    <input style={searchStyle} type="text" placeholder="Search For..."/>
+                                    <input style={searchStyle} type="text" placeholder="Search Faq..."/>
                                     <button className='fas fa-search fa-sm' style={magGlassStyle} type='submit'/>
                                 </div>                                     
                             </div>                                                      

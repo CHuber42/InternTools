@@ -103,7 +103,6 @@ class Login extends Component {
       <div className='form-wrapper'>
         <h1 style={{color: 'white'}}>Login</h1>
         <form className='registration-form' onSubmit={this.handleSubmit} noValidate>
-        {/* <form action='/submit_registration' method= 'POST' name='login_form'> */}
           <div className='email'>
             <label htmlForm='email'>Email</label>
             <input 

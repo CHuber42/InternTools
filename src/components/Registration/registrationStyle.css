@@ -9,12 +9,12 @@
 }
 
 .form-wrapper {
-  width: 400px;
+  width: 25rem;
   display: flex;
   flex-direction: column;
-  padding: 20px 40px;
-  border-radius: 10px;
-  box-shadow: 0px 10px 50px #555;
+  padding: 1.25rem 2.5rem;
+  border-radius: .625rem;
+  box-shadow: 0rem .625rem 3.125rem #555;
 }
 
 .registration-form {
@@ -39,8 +39,8 @@ label {
 }
 
 input {
-  padding: 10px 10px;
-  border-radius: 5px;
+  padding: .625rem .625rem;
+  border-radius: .3125rem;
   outline: none;
   border: 1px solid #cfcfcf;
 }
@@ -100,7 +100,7 @@ input.error {
 .password {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .firstName,

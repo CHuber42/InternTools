@@ -44,14 +44,14 @@ function SmbPlanPricing(){
                     <br/>
                     <h3><strong>Making Funding Affordable.</strong></h3>
                     <Link to="/freetrial">
-                        <span className="buttonOrange">7-Day Free Trial</span> 
+                        <span className="planPriceBtnOrange">7-Day Free Trial</span> 
                     </Link> 
                     <br/>
                     <br/>
                     <p>Try us free for 7 days. No credit card required.</p>  
                 </div>     
 
-                <div style={{marginLeft: '-50px'}} className="pricing-table1-box">
+                <div style={{marginLeft: '-3.125rem'}} className="pricing-table1-box">
                     <div className="price-table-block">
                         <table style={{marginBottom: '0rem'}} className="table table-striped">
                             <thead>

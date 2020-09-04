@@ -74,7 +74,6 @@ function CovidPlan() {
                     </p>
                 </div>
             </div>
-            
             </div>
         </div>
         </>

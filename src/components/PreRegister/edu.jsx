@@ -32,7 +32,7 @@ function Edu() {
             <br/> 
         There are multiple oppotunities for funding that often times go unrequested. In the current academic environment, funders are actively seeing their next opportunity: From Research to accelerating Fellowships, and much, much more. Advance your research now!</h3> 
         </div>         
-        <div style={{marginLeft: '40px'}}> 
+        <div style={{marginLeft: '2.5rem'}}> 
             <p style={{fontSize: '40px'}}><strong>Our product makes your search seamless:</strong></p> 
             <ul> 
                 <li className="listItem">
@@ -47,7 +47,7 @@ function Edu() {
             </ul>             
         </div>         
     </section>     
-    <div className="container" style={{fontSize: '50px', textAlign: 'center', marginTop: '40px'}}> 
+    <div className="container" style={{fontSize: '50px', textAlign: 'center', marginTop: '2.5rem'}}> 
         <p>We’ve added <span style={{color:'#5881BE'}}>[variable]</span> new Funding <br/>opportunities in the last week.</p> 
     </div>     
     <div className="container" style={{fontSize: '18px', textAlign: 'center'}}> 

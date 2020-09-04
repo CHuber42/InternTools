@@ -60,7 +60,7 @@ function Gov() {
           environment. It’s
           time for you to take part in these well-funded projects.</h3> 
         </div>         
-        <div style={{marginLeft: '40px'}}> 
+        <div style={{marginLeft: '2.5rem'}}> 
             <p><strong>Our product makes your search seamless:</strong></p> 
             <ul> 
                 <li className="listItem">
@@ -75,7 +75,7 @@ function Gov() {
             </ul>             
         </div>         
     </section>     
-    <div className="container" style={{fontSize: '50px', textAlign: 'center', marginTop: '40px'}}> 
+    <div className="container" style={{fontSize: '50px', textAlign: 'center', marginTop: '2.5rem'}}> 
         <p>We’ve added <span style={{color:'#5881BE'}}>X,XXX </span> new Funding <br/>opportunities in the last week.</p> 
     </div>     
     <div className="container" style={{fontSize: '18px', textAlign: 'center', padding: '3rem'}}> 
