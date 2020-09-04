@@ -16,10 +16,11 @@ def not_found(e):
     return flask.redirect("/", 404, redirectData)
 
 
-@app.route("/<reroute>")
-def reroute(reroute):
-
-    return flask.render_template("index.html", rerouteData = reroute)
+@app.route("/<react>")
+def react(react):
+    if react == "<react>":
+        react = ""
+    return flask.render_template("index.html", reactData = react)
 
 # React Route
 @app.route("/")
@@ -34,9 +35,8 @@ def my_index():
                 }
     print(redirectData)
     token = json.dumps(testUser)
-    return flask.redirect("/<reroute>")
-    # return flask.render_template("index.html", userData=testUser)
-# React Route
+    return flask.redirect("/<react>")
+
 
 @app.route("/submit_registration", methods= ['POST'])
 def submit_registration():
