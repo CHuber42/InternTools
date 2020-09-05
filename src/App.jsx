@@ -23,6 +23,7 @@ import NLP from './components/Fragments/nlp';
 import Registration from './components/Registration/registrationform.jsx';
 import Login from './components/Registration/login.jsx';
 import Teammanagement from './components/Dashboard/teammanagement';
+import ML from './components/Fragments/ml.jsx';
 
 function App(props) {
   return (
@@ -32,6 +33,11 @@ function App(props) {
         <Route path="/nlp">
           <Navbar />
           <NLP />
+          <Footer />
+        </Route>
+        <Route path="/ml">
+          <Navbar />
+          <ML />
           <Footer />
         </Route>
         <Route path="/privacypolicy">
@@ -109,9 +115,9 @@ function App(props) {
         </Route>
         <Route path="/Dashboard">
           <DashNavbar />
-          <DashBoardMain />
+          {/* <DashBoardMain /> */}
+          <DashBoardMain userData={props.userData}/>
           {/* <Footer /> */}
-          {/* <DashMain userData={props.userData}/> */}
         </Route>
         <Route path="/teammanagement">
           <DashNavbar />

@@ -1,40 +1,42 @@
 import flask
 import json
-# from flask_cors import CORS
 import pandas as pd
 import os
+import secrets
 
 app = flask.Flask("__main__")
-# app = flask.Flask(__name__, static_folder='./')
-redirectData = ""
+
+app.secret_key = b'_3#y2L"F4Q8z\n\xec]/'
 
 
-@app.errorhandler(404)
-def not_found(e):
-    redirectData = os.path.split(flask.request.url)[1:]
-    # print(data)
-    return flask.redirect("/", 404, redirectData)
 
 
 @app.route("/<react>")
 def react(react):
+    print("In React Route, Flask Session:")
+    print(flask.session)
+
+    token = ""
+    if 'name' in flask.session:
+        token = json.dumps(flask.session)
+        print("Flask Session not Empty, Flask Session:")
+        print(flask.session)
+
     if react == "<react>":
         react = ""
-    return flask.render_template("index.html", reactData = react)
+        print("On home Route, clearing Flask Session")
+        flask.session.clear()
+        return flask.render_template("index.html", reactData = react)
+
+    print("About to render non-home Route, Flask Session:")
+    print(flask.session)
+    return flask.render_template("index.html",
+     reactData = react,
+     userData = token)
 
 # React Route
 @app.route("/")
 def my_index():
-    testUser = {'name':"Test User",
-                'grantMatches': [{}, {}, {}],
-                'matchedGrants': [],
-                'adminsAndCoadmins': [{'picture': '', 'name': "Frank Bochowski", 'title': "Admin"}, {'picture': '', 'name': 'Tom Bombadil', 'title':'Co-Admin'}, {'picture': "", 'name': "Bob Horatio", 'title': "Co-Admin"}],
-                "projects": [{'title': "Project One", 'manager': "Test Manager One", 'events': []}, {'title': "Project Two", 'manager': "Test Manager Two", 'events': []}, {'title': "Project Three", 'manager': "Test Manager Three", 'events': []}],
-                "watchedGrants": [{'name': "Test Grant One", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the first test grant"}, {'name': "Test Grant Two", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the second test grant"}],
-                "appliedGrants": [{'name': "Test Grant One", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the first applied for grant", 'status': "won"}, {'name': "Test Grant Two", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the second applied for grant", 'status': 'pending'}, {'name': "Test Grant three", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the third applied for grant", 'status': 'lost'}],
-                }
-    print(redirectData)
-    token = json.dumps(testUser)
     return flask.redirect("/<react>")
 
 
@@ -54,10 +56,18 @@ def login():
     returningUser = flask.request.json['returningUser']
     email = returningUser['email']
     password = returningUser['password']
-    return flask.redirect('/')
+    
+    flask.session = {'name':"Test User",
+            'grantMatches': [{}, {}, {}],
+            'matchedGrants': [],
+            'adminsAndCoadmins': [{'picture': '', 'name': "Frank Bochowski", 'title': "Admin"}, {'picture': '', 'name': 'Tom Bombadil', 'title':'Co-Admin'}, {'picture': "", 'name': "Bob Horatio", 'title': "Co-Admin"}],
+            "projects": [{'title': "Project One", 'manager': "Test Manager One", 'events': []}, {'title': "Project Two", 'manager': "Test Manager Two", 'events': []}, {'title': "Project Three", 'manager': "Test Manager Three", 'events': []}],
+            "watchedGrants": [{'name': "Test Grant One", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the first test grant"}, {'name': "Test Grant Two", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the second test grant"}],
+            "appliedGrants": [{'name': "Test Grant One", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the first applied for grant", 'status': "won"}, {'name': "Test Grant Two", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the second applied for grant", 'status': 'pending'}, {'name': "Test Grant three", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the third applied for grant", 'status': 'lost'}],
+            }
 
-# debug=True
-# CORS(app)
+    return flask.redirect('/Dashboard')
+
 if __name__ == '__main__':
     app.run(debug=True)
 

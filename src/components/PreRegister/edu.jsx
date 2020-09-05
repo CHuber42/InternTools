@@ -53,7 +53,7 @@ function Edu() {
     <div className="container" style={{fontSize: '18px', textAlign: 'center'}}> 
         <p>(Yes, really.)</p>
             <Link to="/register">
-                <span className="buttonBlue">Get Registered</span>
+                <span className="bluePreRegBtn">Get Registered</span>
             </Link>
         <br/>
         <br/>

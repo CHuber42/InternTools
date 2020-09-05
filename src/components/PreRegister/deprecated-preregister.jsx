@@ -38,7 +38,7 @@ function PreRegister(){
         </div>
         <div className="container" style={{fontSize: '18px', textAlign: 'center', paddingBottom: '3rem'}}>
             <Link to="/register">
-                <span className='buttonBlue'>Let's Go!</span>
+                <span className='bluePreRegBtn'>Let's Go!</span>
             </Link>
         </div>
         </div>

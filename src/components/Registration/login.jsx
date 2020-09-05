@@ -99,8 +99,8 @@ class Login extends Component {
     const { formErrors } = this.state;
   return (
     <>
-    <div className='wrapper'>
-      <div className='form-wrapper'>
+    <div className='regWrapper'>
+      <div className='form-regWrapper'>
         <h1 style={{color: 'white'}}>Login</h1>
         <form className='registration-form' onSubmit={this.handleSubmit} noValidate>
           <div className='email'>

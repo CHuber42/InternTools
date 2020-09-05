@@ -117,18 +117,19 @@ class Registration extends Component {
     const { formErrors } = this.state;
   return (
     <>
-    <div className='wrapper'>
-      <div className='form-wrapper'>
-        <h1 style={{color: 'white'}}>Create Account</h1>
+    <div className='regWrapper'>
+      <div className='form-regWrapper'>
+        <h1 className='regTitle'>Create Account</h1>
         <form className='registration-form' onSubmit={this.handleSubmit} noValidate>
           <div className='firstName'>
-            <label htmlform='firstName'>First Name</label>
+            <label className='regLabel' htmlform='firstName'>First Name</label>
             <input 
               type='text' 
               className={formErrors.firstName.length > 0 ? 'error' : null}
               placeholder='First Name' 
               name='firstName' 
               onChange={this.handleChange}
+              id='regInput'
               noValidate 
             />
             {formErrors.firstName.length > 0 && (
@@ -136,13 +137,14 @@ class Registration extends Component {
             )}
           </div>
           <div className='lastName'>
-            <label htmlform='lastName'>Last Name</label>
+            <label className='regLabel' htmlform='lastName'>Last Name</label>
             <input 
               type='text' 
               className={formErrors.lastName.length > 0 ? 'error' : null} 
               placeholder='Last Name' 
               name='lastName' 
               onChange={this.handleChange}
+              id='regInput'
               noValidate 
             />
             {formErrors.lastName.length > 0 && (
@@ -150,13 +152,14 @@ class Registration extends Component {
             )}
           </div>
           <div className='email'>
-            <label htmlform='email'>Email</label>
+            <label className='regLabel' htmlform='email'>Email</label>
             <input 
               className={formErrors.email.length > 0 ? 'error' : null} 
               placeholder='Email' 
               type='email'
               name='email' 
               onChange={this.handleChange}
+              id='regInput'
               noValidate 
             />
             {formErrors.email.length > 0 && (
@@ -164,13 +167,14 @@ class Registration extends Component {
             )}
           </div>
           <div className='password'>
-            <label htmlform='password'>Password</label>
+            <label className='regLabel' htmlform='password'>Password</label>
             <input  
               className={formErrors.password.length > 0 ? 'error' : null}
               placeholder='Password'
               type='password' 
               name='password' 
               onChange={this.handleChange}
+              id='regInput'
               noValidate 
             />
             {formErrors.password.length > 0 && (

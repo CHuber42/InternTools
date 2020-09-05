@@ -20,21 +20,13 @@ const fabLinkStyle = {
   marginRight: '1vw'
 }
 
-const copyRight = {
-  // marginTop: '1rem',
-  // marginBottom: '1rem'
-}
-
 const links = {
   color: '#FFFFFF',
 }
 
 const footerLinks = {
   float: 'left',
-  // color: '#49DCB1',
-  // color: '#7CFFCB',
   color: '#fff',
-  // color: '#5881BE',
 } 
 
 function Footer() {
@@ -57,15 +49,18 @@ function Footer() {
               <li>
                 <Link to="/nlp"><span style={footerLinks}>NLP - Natural Language Processing</span></Link>
               </li>
+              <li>
+                <Link to="/ml"><span style={footerLinks}>ML - Machine Learning</span></Link>
+              </li>
               </ul>
             </div>
           </div>
-          <div style={copyRight}>
-              <p style={{background: '#959595', marginBottom: '0px'}}>
-                &copy; 2019-{new Date().getFullYear()}, Grant Us Funding 
-                <br/>
-                All Rights Reserved | <Link to='/terms'><span style={links}>Terms of Service</span></Link> | <Link to="/privacypolicy"><span style={links}>Privacy Policy</span></Link> 
-              </p>
+          <div>
+            <p style={{background: '#959595', marginBottom: '0px'}}>
+              &copy; 2019-{new Date().getFullYear()}, Grant Us Funding 
+              <br/>
+              All Rights Reserved | <Link to='/terms'><span style={links}>Terms of Service</span></Link> | <Link to="/privacypolicy"><span style={links}>Privacy Policy</span></Link> 
+            </p>
           </div>
         </div>
     </>

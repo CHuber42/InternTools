@@ -82,7 +82,7 @@ function Gov() {
         <p>(Yes, really.)</p>
         <br/>
         <Link to="/register">
-           <span className="buttonBlue">Get Registered</span>
+           <span className="bluePreRegBtn">Get Registered</span>
         </Link>
         <br/>
     </div>
