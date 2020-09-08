@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './registrationStyle.css';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -35,13 +35,8 @@ class Login extends Component {
     };
   }
 
-  reroute(result){
-    if (result === "success"){
-      window.location.href="/Dashboard";
-    }
-    else {
-      alert("login failed")
-    }
+  postRequest(requestOptions){
+    return fetch('/login', requestOptions).then(token => {return token})
   }
 
   handleSubmit = e => {
@@ -65,11 +60,16 @@ class Login extends Component {
         body: JSON.stringify({returningUser})
       };
       
-      fetch('/login', requestOptions)
-        // .then(ParseJSON.response)
-        .then(this.reroute("success"))
-    } else {
-      console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
+      const userToken = this.postRequest(requestOptions)
+
+      userToken.then(function(result){
+        if (result.statusText === "OK"){
+          window.location.href="/Dashboard";
+        }
+        else {
+          console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
+        }
+      })
     }
   };
 

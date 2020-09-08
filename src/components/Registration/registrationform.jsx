@@ -39,13 +39,8 @@ class Registration extends Component {
     };
   }
 
-  reroute(result){
-    if (result === "success"){
-      window.location.href="/";
-    }
-    else {
-      alert("registration failed")
-    }
+  postRequest(requestOptions){
+    return fetch('/submit_registration', requestOptions).then(token => {return token})
   }
 
   handleSubmit = e => {
@@ -59,27 +54,30 @@ class Registration extends Component {
     } 
 
     if (formValid(this.state)) {
-      console.log(`
-        --SUBMITTING--
-        First Name: ${this.state.firstName}
-        Last Name: ${this.state.lastName}
-        Email: ${this.state.email}
-        Password: ${this.state.password}
-      `);
+        console.log(`
+          --SUBMITTING--
+          First Name: ${this.state.firstName}
+          Last Name: ${this.state.lastName}
+          Email: ${this.state.email}
+          Password: ${this.state.password}
+        `);
+        
+        const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({newUser})
+        };
+        
+        const userToken = this.postRequest(requestOptions)
 
-      //encrypt the newuser variable
-      
-      const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({newUser})
-      };
-      
-      fetch('/submit_registration', requestOptions)
-        // .then(ParseJSON.response)
-        .then(this.reroute("fail"))
-    } else {
-      console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
+        userToken.then(function(result){
+          if (result.statusText === "OK"){
+            window.location.href="/login";
+          }
+          else {
+            console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
+          }
+        })
     }
   };
 

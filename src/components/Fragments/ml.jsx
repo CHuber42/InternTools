@@ -3,6 +3,8 @@ import React from 'react';
 const background = {
   backgroundColor: '#E5e5e5',
   textAlign: 'center',
+  marginBottom: '0rem',
+  marginTop: '1rem'
 }
 
 function ML () {

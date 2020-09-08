@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, Component } from 'react'
 import DashNavbar from './dashnav';
 import DashboardSidebar from './dashboardsidebar';
 import Project from './project.jsx';
@@ -182,21 +182,25 @@ function determineColor(status){
 
 // JSON.dumps(stuff)
         
-function DashMain(props){
+class DashMain extends Component{
+  constructor(props){
+    super()
+  }
 
-  console.log(props.userData);
 
-  const testUser = JSON.parse(he.decode(props.userData));
   
-
-  const accountName = testUser.name;
-  const grantMatches = testUser.matchedGrants;
-  const matchedGrants = testUser.matchedGrants;
-  const adminsAndCoadmins = testUser.adminsAndCoadmins;
-  const projects = testUser.projects;
-  const watchedGrants = testUser.watchedGrants;
-  const appliedGrants = testUser.appliedGrants;
-
+  render(){  
+      console.log(this.props.userData);
+    
+      const testUser = JSON.parse(he.decode(this.props.userData));
+    
+      const accountName = testUser.name;
+      const grantMatches = testUser.matchedGrants;
+      const matchedGrants = testUser.matchedGrants;
+      const adminsAndCoadmins = testUser.adminsAndCoadmins;
+      const projects = testUser.projects;
+      const watchedGrants = testUser.watchedGrants;
+      const appliedGrants = testUser.appliedGrants;
   return(
     <>
     <DashboardSidebar/>
@@ -329,6 +333,6 @@ function DashMain(props){
       </div>     
     </>
   )
-}
+}}
 
 export default DashMain;

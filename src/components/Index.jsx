@@ -49,7 +49,7 @@ const inquireForm = {
 const firstName = {
   height: '4vh',
   width: '12vw',
-  // paddingLeft: '1rem',
+  paddingLeft: '1rem',
   borderRadius: '5rem',
   border: '1px solid',
 }
@@ -57,7 +57,7 @@ const firstName = {
 const lastName = {
   height: '4vh',
   width: '12vw',
-  // paddingLeft: '1rem',
+  paddingLeft: '1rem',
   marginLeft: '1vw',
   borderRadius: '5rem',
   border: '1px solid',

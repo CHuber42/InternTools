@@ -6,30 +6,25 @@ import secrets
 
 app = flask.Flask("__main__")
 
-app.secret_key = b'_3#y2L"F4Q8z\n\xec]/'
+SECRET_KEY = os.urandom(32)
+app.secret_key = SECRET_KEY
 
+# app.config['SECRET_KEY'] = SECRET_KEY
 
 
 
 @app.route("/<react>")
 def react(react):
-    print("In React Route, Flask Session:")
-    print(flask.session)
 
+    print(SECRET_KEY)
     token = ""
     if 'name' in flask.session:
         token = json.dumps(flask.session)
-        print("Flask Session not Empty, Flask Session:")
-        print(flask.session)
+
 
     if react == "<react>":
         react = ""
-        print("On home Route, clearing Flask Session")
-        flask.session.clear()
-        return flask.render_template("index.html", reactData = react)
 
-    print("About to render non-home Route, Flask Session:")
-    print(flask.session)
     return flask.render_template("index.html",
      reactData = react,
      userData = token)
@@ -53,6 +48,7 @@ def submit_registration():
 
 @app.route("/login", methods= ['POST'])
 def login():
+    print("Login Route Activated")
     returningUser = flask.request.json['returningUser']
     email = returningUser['email']
     password = returningUser['password']
@@ -65,8 +61,8 @@ def login():
             "watchedGrants": [{'name': "Test Grant One", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the first test grant"}, {'name': "Test Grant Two", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the second test grant"}],
             "appliedGrants": [{'name': "Test Grant One", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the first applied for grant", 'status': "won"}, {'name': "Test Grant Two", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the second applied for grant", 'status': 'pending'}, {'name': "Test Grant three", 'submissiondate': "July 4th 1784", 'amount': "$1000", 'notes': "This is the third applied for grant", 'status': 'lost'}],
             }
-
-    return flask.redirect('/Dashboard')
+    data = {'success': "success"}
+    return json.dumps(data), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
