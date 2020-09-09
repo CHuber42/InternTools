@@ -1,15 +1,6 @@
-import React from 'react';
+import React, { Component  } from 'react';
 import {Link} from 'react-router-dom';
 
-
-const background = {
-    background: '#6F6F6F',
-    width: '10rem',
-    border: '1px solid #9E9E9E',
-    boxShadow: '.1rem .3rem .3rem rgba(0, 0, 0, 0.25)',
-    position: 'absolute',
-    height: '200%'
-}
 
 const text = {
     fontFamily: 'Roboto',
@@ -33,7 +24,34 @@ const hrModifiedStyle = {
     marginBottom: '0px'
 }
 
-function DashboardSidebar(){
+
+ class DashboardSidebar extends Component{
+    constructor(){
+         super()
+         this.state = {height: 0}
+    }
+
+    componentDidMount(){
+        this.setState({height: document.body.offsetHeight})
+    }
+
+    componentDidUpdate(){
+        if (document.body.offsetHeight !== this.state.height){
+            this.setState({height: document.body.offsetHeight})
+        }
+    }
+
+    render(){
+
+        const background = {
+            backgroundColor: '#959595',
+            width: '10rem',
+            border: '1px solid #9E9E9E',
+            boxShadow: '.1rem .3rem .3rem rgba(0, 0, 0, 0.25)',
+            position: 'absolute',
+            height: this.state.height,
+        }
+
     return(
         <>
         <div style={background}>
@@ -46,14 +64,14 @@ function DashboardSidebar(){
 
                 <hr style={hrModifiedStyle}/>
 
-                <Link to='/'>
+                <Link to='/projectspage'>
                     <p style={linkStyling}>Projects</p>
                 </Link>
 
                 <hr style={hrModifiedStyle}/>
                 
-                <Link to="/">
-                    <p style={linkStyling}>Grants</p>
+                <Link to="/grantsearch">
+                    <p style={linkStyling}>Search Grants</p>
                 </Link>
                 
                 <hr style={hrModifiedStyle}/>
@@ -64,41 +82,36 @@ function DashboardSidebar(){
                 
                 <hr style={hrModifiedStyle}/>
                 
-                <Link to="/">
-                    <p style={linkStyling}>Bookmarks</p>
-                </Link>
-                
-                <hr style={hrModifiedStyle}/>
-                
-                <Link to="/">
+                <Link to="/userprofile">
                     <p style={linkStyling}>Profile</p>
                 </Link>
                 
                 <hr style={hrModifiedStyle}/>
                 
-                <Link to="/">
+                <Link to="/calendar">
                     <p style={linkStyling}>Calendar</p>
                 </Link>
                 
                 <hr style={hrModifiedStyle}/>
                 
-                <Link to="/">
+                <Link to="/referralprogram">
                     <p style={linkStyling}>Referral Program</p>
                 </Link>
                 
                 <hr style={hrModifiedStyle}/>
                 
-                <Link to="/">
+                <Link to="/help">
                 <p style={linkStyling}>Help</p>
                 </Link>
                 
                 <hr style={hrModifiedStyle}/>
+
             </div>
             {/* END CONTENTS */}
-
+            
         </div>
         </>
     )
-}
+}}
 
 export default DashboardSidebar;

@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 
 const background = {
   textAlign: 'center',
-  // background: '#e5e5e5'
+  background: '#e5e5e5',
+  padding: '1rem',
+//   minHeight: '100vh'
+//   marginTop: '-100vh'
 }
 
 const projectBoxOne = {
@@ -28,6 +31,10 @@ const TestData = {
     email: "UserMcuserson@testdata.com"
 }
 
+const list = {
+    listStyleType: 'none'
+}
+
 const Username = TestData.name;
 const Organization = TestData.organization;
 const Pathway = TestData.pathway;
@@ -48,7 +55,7 @@ class TeamManagement extends Component {
 
                 {/* SUMMARY */}
 
-                <div style={projectBoxOne}>
+                <div style={projectBoxOne, background}>
                     <span style={UserName}>{Username}</span>
                     <p>{Organization}</p>
                     <p>{Pathway}</p>
@@ -61,7 +68,7 @@ class TeamManagement extends Component {
                     {Teams.map((team) =>
                         <div>
                             <span>{team.name}</span>
-                            <ul>
+                            <ul style={list}>
                                 {team.projects.map((project) =>
                                    <li>
                                        {project.name}

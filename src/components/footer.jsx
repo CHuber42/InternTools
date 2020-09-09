@@ -56,7 +56,7 @@ function Footer() {
             </div>
           </div>
           <div>
-            <p style={{background: '#959595', marginBottom: '0px'}}>
+            <p style={{background: '#959595', marginBottom: '0rem', marginTop: '-2rem'}}>
               &copy; 2019-{new Date().getFullYear()}, Grant Us Funding 
               <br/>
               All Rights Reserved | <Link to='/terms'><span style={links}>Terms of Service</span></Link> | <Link to="/privacypolicy"><span style={links}>Privacy Policy</span></Link> 

@@ -1,9 +1,9 @@
 import React, { useState, useRef, Component } from 'react'
-import DashNavbar from './dashnav';
-import DashboardSidebar from './dashboardsidebar';
 import Project from './project.jsx';
 import Admins from './admins.jsx';
 import CanvasJSReact from '../../canvasjs.react';
+import GrantEntry from './grantentry'
+
 
 const he = require('he');
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
@@ -42,15 +42,12 @@ const chartData = {
 };
 // Update Y Values to calculate percentages from user input data
 
-const dash = {
-  backgroundColor: '#e5e5e5',
-  position: 'relative',
-};
-
 const background = {
   backgroundColor: '#e5e5e5',
-  position: 'absolute',
-  marginLeft: '10rem'
+  position: 'relative',
+  marginLeft: '10rem',
+  // marginTop: '-100vh'
+  // overflow: 'scroll'
 };
 
 const DashTitle = {
@@ -100,28 +97,28 @@ const columnOutline = {
 };
 
 
-// const testUser = {
-//   name: 
-//     "Test User",
+const testUser = {
+  name: 
+    "Test User",
   
-//   grantMatches: 
-//     [{}, {}, {}],
+  grantMatches: 
+    [{}, {}, {}],
   
-//   matchedGrants: 
-//     [],
+  matchedGrants: 
+    [],
 
-//   adminsAndCoadmins: 
-//     [{picture: '', name: "Frank Bochowski", title: "Admin"}, {picture: '', name: 'Tom Bombadil', title:'Co-Admin'}, {picture: "", name: "Bob Horatio", title: "Co-Admin"}],
+  adminsAndCoadmins: 
+    [{picture: '', name: "Frank Bochowski", title: "Admin"}, {picture: '', name: 'Tom Bombadil', title:'Co-Admin'}, {picture: "", name: "Bob Horatio", title: "Co-Admin"}],
   
-//   projects: 
-//     [{title: "Project One", manager: "Test Manager One", events: []}, {title: "Project Two", manager: "Test Manager Two", events: []}, {title: "Project Three", manager: "Test Manager Three", events: []}],
+  projects: 
+    [{title: "Project One", manager: "Test Manager One", events: []}, {title: "Project Two", manager: "Test Manager Two", events: []}, {title: "Project Three", manager: "Test Manager Three", events: []}],
 
-//   watchedGrants: 
-//     [{name: "Test Grant One", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the first test grant"}, {name: "Test Grant Two", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the second test grant"}],
+  watchedGrants: 
+    [{name: "Test Grant One", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the first test grant"}, {name: "Test Grant Two", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the second test grant"}],
   
-//   appliedGrants: 
-//     [{name: "Test Grant One", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the first applied for grant", status: "won"}, {name: "Test Grant Two", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the second applied for grant", status: 'pending'}, {name: "Test Grant three", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the third applied for grant", status: 'lost'}],
-// }
+  appliedGrants: 
+    [{name: "Test Grant One", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the first applied for grant", status: "won"}, {name: "Test Grant Two", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the second applied for grant", status: 'pending'}, {name: "Test Grant three", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the third applied for grant", status: 'lost'}],
+}
 
 const pending = {
   backgroundColor: '#FFA500',
@@ -190,9 +187,10 @@ class DashMain extends Component{
 
   
   render(){  
-      console.log(this.props.userData);
+
     
-      const testUser = JSON.parse(he.decode(this.props.userData));
+      // const testUser = JSON.parse(he.decode(this.props.userData));
+      
     
       const accountName = testUser.name;
       const grantMatches = testUser.matchedGrants;
@@ -203,10 +201,10 @@ class DashMain extends Component{
       const appliedGrants = testUser.appliedGrants;
   return(
     <>
-    <DashboardSidebar/>
-    <div style={background}>
+    
+    <div id="dashmain" style={background}>
         <h1 style={DashTitle}>{accountName}</h1>
-        <div style={dash}>
+
 
           {/* DASHBOARD TOP ROW */}
 
@@ -263,6 +261,45 @@ class DashMain extends Component{
           </div>
           {/* END DASHBOARD 2ND ROW */}
 
+
+           {/* NEWEST GRANT OPPORTUNITIES */}
+           <div className="row" style={rowFormatting}>
+            <div style={projectBoxOne} className="col-md-11">
+              <span style={projectTitleHeader}>Newest Grants Since Your Last Login</span>
+              <table className="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Grant Id</th>
+                    <th>Title</th>
+                    <th>Agency</th>
+                    <th>Post Date</th>
+                    <th>Close Date</th>
+                    <th>Min Award</th>
+                    <th>Max Award</th>
+                    <th>Track Grant</th>
+                  </tr>
+                </thead>
+                {/* <tbody>
+                  {pagedGrants.map((grant) =>
+                            <GrantEntry
+                                key={grant.key}
+                                id={grant.id}
+                                title={grant.title}
+                                agency={grant.agency}
+                                postDate={grant.postDate}
+                                closeDate={grant.closeDate}
+                                awardMin={grant.awardMin}
+                                awardMax={grant.awardMax}
+                            />
+                        )}
+  
+                </tbody> */}
+                
+                <p style={{fontWeight: 'bold', fontSize: '24px', fontFamily: 'Roboto', textAlign: 'center'}}>Coming Soon</p>
+              </table>
+            </div>
+          </div>
+          {/* END NEWEST GRANTS */}
 
           {/* WATCHED GRANTS AND OPPORTUNITIES */}
           <div className="row" style={rowFormatting}>
@@ -330,7 +367,7 @@ class DashMain extends Component{
           {/* CALENDAR */}
           {/* END CALENDAR */}
 
-        </div>
+ 
       </div>     
     </>
   )

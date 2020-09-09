@@ -3,10 +3,11 @@ import React from 'react'
 const background = {
   minHeight: '100vh',
   textAlign: 'center',
-  background:  '#e5e5e5'
+  background:  '#e5e5e5',
+  padding: '1rem'
 }
 
-function Calendar(){
+function ProjectsPage(){
   return(
       <>
           <div style={background}>
@@ -16,4 +17,4 @@ function Calendar(){
   )
 }
 
-export default Calendar;
+export default ProjectsPage;

@@ -25,12 +25,41 @@ import Login from './components/Registration/login.jsx';
 import Teammanagement from './components/Dashboard/teammanagement';
 import ML from './components/Fragments/ml.jsx';
 import GrantSearch from './components/Dashboard/grantsearch.jsx'
+import DashMain from './components/Dashboard/dashboardmain.jsx';
+import UserProfile from './components/Dashboard/userprofile.jsx';
+import Help from './components/Dashboard/help.jsx';
+import ProjectsPage from './components/Dashboard/projectspage.jsx';
+import ReferralProgram from './components/Dashboard/referralprogram.jsx'
 
 function App(props) {
   return (
     <>
     <Router>
       <Switch>
+      <Route path="/referralprogram">
+          <DashNavbar />
+          <DashboardSidebar/>
+          <ReferralProgram/>
+          <Footer/>
+        </Route> 
+      <Route path="/projectspage">
+          <DashNavbar />
+          <DashboardSidebar/>
+          <ProjectsPage/>
+          <Footer/>
+        </Route> 
+      <Route path="/help">
+          <DashNavbar />
+          <DashboardSidebar/>
+          <Help/>
+          <Footer/>
+        </Route> 
+      <Route path="/userprofile">
+          <DashNavbar />
+          <DashboardSidebar/>
+          <UserProfile/>
+          <Footer/>
+        </Route> 
         <Route path="/nlp">
           <Navbar />
           <NLP />
@@ -117,24 +146,28 @@ function App(props) {
         <Route path="/Dashboard">
           <DashNavbar />
           {/* <DashBoardMain /> */}
+          <DashboardSidebar />
           <DashBoardMain userData={props.userData}/>
-          {/* <Footer /> */}
+          <Footer />
         </Route>
         <Route path="/teammanagement">
           <DashNavbar />
           <DashboardSidebar/>
           <Teammanagement />
-          {/* <Footer /> */}
+          <Footer />
         </Route>
-        <Route path="/">
+        <Route path="/grantsearch">
+          <DashNavbar />
+          <DashboardSidebar/>
           <GrantSearch/>
+          <Footer/>
         </Route> 
-        {/* <Route path="/">
+        <Route path="/">
           <Navbar />
           <Banner />
           <Home />
           <Footer />
-        </Route>  */}
+        </Route> 
       </Switch>
     </Router>
     </>

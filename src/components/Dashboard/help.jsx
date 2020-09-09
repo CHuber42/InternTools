@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
 const background = {
-    height: '90%',
+    minHeight: '100vh',
     backgroundColor: '#e5e5e5',
     margin: 'auto',
     textAlign: 'center'
 }
 
-function UserProfile(){
+function Help(){
     return(
         <>
             <div style={background}>
@@ -17,4 +17,4 @@ function UserProfile(){
     )
 }
 
-export default UserProfile;
+export default Help;
