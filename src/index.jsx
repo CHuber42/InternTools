@@ -11,7 +11,6 @@ function redirect(destination){
   // If react is running independent of Flask, destination will always be {{reactData}}
   // Therefore: "If React in Independent mode, do not redirect"
   if (destination !== "{{reactData}}"){
-    console.log("rerouting");
     if (destination === ""){
       window.history.pushState(null, null, "/")
     }

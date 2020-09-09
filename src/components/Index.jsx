@@ -14,23 +14,18 @@ import SMB from './PreRegister/smb';
 const inquire = {
   top: '-10vw',
   background: '#FFFFFF',
-  border: '1px solid #DDDDDD',
+  border: '.06rem solid #DDDDDD',
   boxShadow: '.1rem .25em .25em rgba(0, 0, 0, 0.25)',
   borderRadius: '5rem',
   marginLeft: '60vw',
-  // position: 'absolute'
   position: 'relative',
-  // marginBottom: '0rem'
 }
 
 const inquireBox = {
   position: 'relative',
-  // position: 'absolute',
-  // zIndex: '1000',
   backgroundColor:'#FFFFFF',
   color: '#FFFFFF',
   fontWeight: 'bold',
-  // marginBottom: '0rem'
 }
 
 const inquireAbout = {
@@ -51,7 +46,7 @@ const firstName = {
   width: '12vw',
   paddingLeft: '1rem',
   borderRadius: '5rem',
-  border: '1px solid',
+  border: '.06rem solid',
 }
 
 const lastName = {
@@ -60,7 +55,7 @@ const lastName = {
   paddingLeft: '1rem',
   marginLeft: '1vw',
   borderRadius: '5rem',
-  border: '1px solid',
+  border: '.06rem solid',
 }
 
  const inquireFields = {
@@ -69,7 +64,7 @@ const lastName = {
   paddingLeft: '1rem',
   marginTop: '2rem',
   borderRadius: '5rem',
-  border: '1px solid',
+  border: '.06rem solid',
 }
 
 const btnInquiry = {
@@ -81,7 +76,7 @@ const btnInquiry = {
   marginTop: '2rem',
   backgroundColor: '#7598CC',
   borderRadius: '5rem',
-  border: '1px solid #000000',
+  border: '.06rem solid #000000',
   cursor: 'pointer',
   color: '#FFFFFF',
 }
@@ -98,21 +93,19 @@ const findFund = {
   lineHeight: '3.5rem',
   textAlign: 'center',
   padding: '2rem'
-  //   color: #FFFFFF;
-  //   text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
 
 const edu = {
   textAlign: 'left',
-  paddingBottom: '15px',
+  paddingBottom: '1rem',
 }
 
 const leftTable = {
-  marginTop: '-100px',
+  marginTop: '-6.25rem',
 }
 
 const icon = {
-  marginTop: '-15px'
+  marginTop: '-1rem'
 }
 
 const sectText = {
@@ -120,19 +113,19 @@ const sectText = {
 }
 
 const sectHead = {
-  left: '-15px'
+  left: '-1rem'
 }
 
 const buttonBlue = {
   backgroundColor: '#7598CC',
-  border: '1px solid #000000',
+  border: '.06rem solid #000000',
   color: '#FFFFFF',
-  padding: '1px 32px',
+  padding: '.06rem 2rem',
   textAlign: 'center',
   textDecoration: 'none',
   display: 'inline-block',
   fontSize: '24px',
-  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+  boxShadow: '0rem .25rem .25rem rgba(0, 0, 0, 0.25)',
 }
 
 const funderSpecific = {

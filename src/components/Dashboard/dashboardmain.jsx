@@ -288,6 +288,7 @@ class DashMain extends Component{
                     </tr>
                     </>
                   )}
+  
                 </tbody>            
               </table>
             </div>

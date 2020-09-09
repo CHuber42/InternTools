@@ -24,6 +24,7 @@ import Registration from './components/Registration/registrationform.jsx';
 import Login from './components/Registration/login.jsx';
 import Teammanagement from './components/Dashboard/teammanagement';
 import ML from './components/Fragments/ml.jsx';
+import GrantSearch from './components/Dashboard/grantsearch.jsx'
 
 function App(props) {
   return (
@@ -126,11 +127,14 @@ function App(props) {
           {/* <Footer /> */}
         </Route>
         <Route path="/">
+          <GrantSearch/>
+        </Route> 
+        {/* <Route path="/">
           <Navbar />
           <Banner />
           <Home />
           <Footer />
-        </Route> 
+        </Route>  */}
       </Switch>
     </Router>
     </>

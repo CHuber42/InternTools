@@ -27,20 +27,20 @@ const btnLogin = {
     color: 'white',
     width: '10vw',
     height: '100%',
-    border: '.1rem solid white',
-    borderRadius: '5px'
+    border: '.06rem solid white',
+    borderRadius: '.3rem'
 }
 
 const searchStyle = {
-    borderRadius: '5px',
+    borderRadius: '.3rem',
     height: '100%',
     width: '100%'
 }
 
 const magGlassStyle = {
     height: '100%',
-    borderRadius: '5px',
-    marginLeft: '-35px',
+    borderRadius: '.3rem',
+    marginLeft: '-2.2rem',
     border: 'none',
 }
 
@@ -52,7 +52,7 @@ const freeTrialStyle = {
 const activeLink = {
     backgroundColor: '#7598cc',
     borderRadius: '2rem',
-    border: '1px solid white',
+    border: '.06 solid white',
     boxShadow: '.3rem .3rem .3rem rgba(0, 0, 0, 0.25)',
 }
 
