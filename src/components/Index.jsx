@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
-import Banner from './Fragments/banner';
 import schoolIcon1 from '../img/schoolIcon1.svg';
 import smallbusiness1 from '../img/smallbusiness1.svg';
 import govicon from '../img/govicon.svg';

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import GrantEntry from './grantentry';
 
 const testGrants = [
+    {id: '0', title: 'Gov Grant', agency: 'Pineapple Firm', postDate: '1/20/2021', closeDate: '12/12/2021', awardMin: '1000', awardMax: '50,000'},
     {id: '1', title: 'Gov Grant', agency: 'Pineapple Firm', postDate: '1/20/2021', closeDate: '12/12/2021', awardMin: '1000', awardMax: '50,000'},
     {id: '2', title: 'test grant 2', postDate: '1/1/2020', closeDate: '12/1/2020', awardMin: '500', awardMax: '500,000', agency: 'B&M Gates Foundation'},
     {id: '3', title: 'test grant 2', postDate: '1/1/2020', closeDate: '12/1/2020', awardMin: '500', awardMax: '500,000', agency: 'B&M Gates Foundation'},
@@ -143,7 +144,7 @@ class GrantSearch extends Component{
         // const grantData = this.state.grantData; 
         var pagedGrants;
         if (grantData.length > 0){
-            pagedGrants = grantData.slice(this.state.pageNumber*10, this.state.pageNumber*10+9);
+            pagedGrants = grantData.slice(this.state.pageNumber*10, (this.state.pageNumber+1)*10);
         }
         else {
             pagedGrants = [];

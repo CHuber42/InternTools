@@ -355,6 +355,9 @@ function EssentialFeatures() {
                             <li>
                                 <p>Importation from other products</p>
                             </li>
+                            <li>
+                                <p>More Coming Soon!</p>
+                            </li>
                         </ul>
                     </div>
                 </div>
