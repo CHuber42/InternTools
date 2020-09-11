@@ -11,7 +11,7 @@ function Banner() {
 
   return (
     <>
-    <div style={background}></div>
+      <div style={background}></div>
     </>
   )
 };

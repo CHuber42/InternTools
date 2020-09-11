@@ -2,7 +2,7 @@ import React from 'react';
 
 const projectTitle = {
     marginLeft: '2rem',
-    fontFamily: 'Roboto'
+    fontFamily: 'Roboto',
 }
 
 const subtitle = {

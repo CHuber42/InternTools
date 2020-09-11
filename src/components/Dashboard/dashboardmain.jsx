@@ -24,18 +24,21 @@ const chartData = {
     type: "doughnut",
     showInLegend: true,
     indexLabel: "{name}: {y}",
-    yValueFormatString: "#,###''",
+    yValueFormatString: "'$'#,###",
     dataPoints: [
       // BLUE
-      { name: "Unsatisfied", y: 1 },
-      // RED
-      { name: "Very Unsatisfied", y: 54 },
+      { name: "Gov - Won", y: 1 },
+
+      { name: "Gov - Lost", y: 1 },
       // YELLOW
-      { name: "Very Satisfied", y: 1 },
+      { name: "Gov - Pending", y: 1 },
+      // RED
+      { name: "Private Orgs - Won", y: 1 },
+
+      { name: "Private Orgs - Pending", y: 1 },
       // Teal
-      { name: "Satisfied", y: 1 },
+      { name: "Private Orgs - Lost", y: 1 },
       // Purple
-      { name: "Neutral", y: 1 }
     ]
   }],
   colorSet: "colorSet1",
@@ -249,13 +252,14 @@ class DashMain extends Component{
             <div className='col-md-6'>
               <span style={projectTitleHeader}>Admins and Co-Admins</span>
               <div style={projectBoxTwo}>
-                {adminsAndCoadmins.map((adminsAndCoadmins) =>
+                <p style={{fontSize: '28px', fontFamily: 'Roboto', fontWeight: 'bold'}}>Coming Soon</p>
+                {/* {adminsAndCoadmins.map((adminsAndCoadmins) =>
                     <Admins 
                       picture={adminsAndCoadmins.picture}
                       name={adminsAndCoadmins.name}
                       title={adminsAndCoadmins.title}
                     />
-                  )}
+                  )} */}
               </div>
             </div>  
           </div>

@@ -30,6 +30,7 @@ import UserProfile from './components/Dashboard/userprofile.jsx';
 import Help from './components/Dashboard/help.jsx';
 import ProjectsPage from './components/Dashboard/projectspage.jsx';
 import ReferralProgram from './components/Dashboard/referralprogram.jsx'
+import Calendar from './components/Dashboard/calendar.jsx'
 
 function App(props) {
   return (
@@ -160,6 +161,12 @@ function App(props) {
           <DashNavbar />
           <DashboardSidebar/>
           <GrantSearch/>
+          <Footer/>
+        </Route> 
+        <Route path="/calendar">
+          <DashNavbar />
+          <DashboardSidebar/>
+          <Calendar/>
           <Footer/>
         </Route> 
         <Route path="/">

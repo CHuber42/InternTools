@@ -4,7 +4,7 @@ const background = {
   textAlign: 'center',
   background: '#e5e5e5',
   padding: '1rem',
-//   minHeight: '100vh'
+  minHeight: '100vh'
 //   marginTop: '-100vh'
 }
 
@@ -51,21 +51,23 @@ class TeamManagement extends Component {
         return (
             <>
             <div style={background}>
-                <p>Team Managment</p>
+            <p style={{fontSize: '28px', fontFamily: 'Roboto', fontWeight: 'bold'}}>Team Manager Coming Soon</p>
+
+                {/* <p>Team Managment</p> */}
 
                 {/* SUMMARY */}
 
-                <div style={projectBoxOne, background}>
+                {/* <div style={projectBoxOne, background}>
                     <span style={UserName}>{Username}</span>
                     <p>{Organization}</p>
                     <p>{Pathway}</p>
                     <p>{Plan}</p>
 
-                    <p style={UserName}>Teams and Projects</p>
+                    <p style={UserName}>Teams and Projects</p> */}
                     
                     {/*MAP PROJECT SUMMARIES */}
 
-                    {Teams.map((team) =>
+                    {/* {Teams.map((team) =>
                         <div>
                             <span>{team.name}</span>
                             <ul style={list}>
@@ -77,12 +79,8 @@ class TeamManagement extends Component {
                             </ul>
                         </div> 
                     )}
-           
-
-                    
-
-                </div>
-
+                </div> */}
+        
             </div>
             </>
         )

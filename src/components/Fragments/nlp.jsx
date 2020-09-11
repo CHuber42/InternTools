@@ -78,23 +78,23 @@ function NLP () {
             <div className="container"> 
 
                 <h1 style={sectionBreakStyle}>What is Natural Language Processing?</h1> 
-                <h2>Have you ever wondered how smart technology can really get, given that the majority of human knowledge is contained within the written word? </h2>
-                <br/> 
-                <h3>Take the study of Linguistics and combine it with Computer Science. Add a dash of Information Engineering and some Artificial Intelligence, and you get Natural Language Processing.</h3>
-                <br/> 
-                <h3>It’s all about programming software to process and analyze large amounts of Natural Language data, and make that information available and useful with context.</h3>
-                <h2 style={sectionBreakStyle}><strong>What does this have to do with grants?</strong></h2> 
-                <h2>Digital information is only useful when we derive an understanding of the interactions, the context, and then make those translations understood.</h2>
-                <br/> 
-                <h3>When you look for a grant match, it’s essential to be able to describe your project in detail.  Generally, the more specific your work is to the intent of the grantor, the higher the potential for funding.</h3> 
-                <h2 style={sectionBreakStyle}><strong>How our grant matching works:</strong></h2> 
-                <h2>When combined with your starting Keywords, the NLP-enabled system provides a shortcut between you and the funding you need.</h2>
-                <br/> 
-                <h3>Our Data Search returns suggested Data Keywords relevant to your starting input. Don’t waste time combing through endless lists and fields; with our software, you’re directed straight to additional Keywords that are found in similar grants. Then we focus your results, maximizing your opportunities for successful funding. And this is only the start of our smarter technology.</h3> 
+                    <p>
+                        Have you ever wondered how smart technology can really get, given that the majority of human knowledge is contained within the written word? Take the study of Linguistics and combine it with Computer Science. Add a dash of Information Engineering and some Artificial Intelligence, and you get Natural Language Processing.It’s all about programming software to process and analyze large amounts of Natural Language data, and make that information available and useful with context.
+                    </p>
+
+                <h3 style={sectionBreakStyle}><strong>What does this have to do with grants?</strong></h3> 
+                    <p>
+                        Digital information is only useful when we derive an understanding of the interactions, the context, and then make those translations understood. When you look for a grant match, it’s essential to be able to describe your project in detail.  Generally, the more specific your work is to the intent of the grantor, the higher the potential for funding.
+                    </p> 
+
+                <h3 style={sectionBreakStyle}><strong>How our grant matching works:</strong></h3> 
+                    <p>
+                        When combined with your starting Keywords, the NLP-enabled system provides a shortcut between you and the funding you need. Our Data Search returns suggested Data Keywords relevant to your starting input. Don’t waste time combing through endless lists and fields; with our software, you’re directed straight to additional Keywords that are found in similar grants. Then we focus your results, maximizing your opportunities for successful funding. And this is only the start of our smarter technology.
+                    </p> 
 
                 <h3 style={example}>An example of the process.....in 2 clicks (animation/video of process at some point)</h3>  
                 <div style={JoinUs}> 
-                    <h2 style={actionstyle}>Join us for a piece of the action.</h2> 
+                    <h3 style={actionstyle}>Join us for a piece of the action.</h3> 
                     <Link to='/pricingplans'><span style={buttonGreen}>Plans and Pricing</span></Link>     
                     <h4>Or Start Your</h4> 
                     <Link to='/freetrial'><span style={buttonOrange}>7-Day Free Trial</span></Link>          

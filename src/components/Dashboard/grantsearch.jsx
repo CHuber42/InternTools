@@ -190,6 +190,8 @@ class GrantSearch extends Component{
                                 closeDate={grant.closeDate}
                                 awardMin={grant.awardMin}
                                 awardMax={grant.awardMax}
+                                color='#27ad1d'
+                                content="Track"
                             />
                         )}
                     </tbody>            
