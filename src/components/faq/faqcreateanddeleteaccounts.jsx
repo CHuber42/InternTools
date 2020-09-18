@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CreateAndDeleteAccount = 
 `
 <h3 style={accordionH2}>How to Delete a Grant Us Funding account:</h3> 

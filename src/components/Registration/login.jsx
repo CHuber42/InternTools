@@ -22,12 +22,24 @@ const formValid = ({ formErrors, ...rest }) => {
   return valid;
 };
 
+const subBtn = {
+  backgroundColor: '#519e8a',
+  color: '#fff',
+  border: '2px solid #fff',
+  width: '25%',
+  margin: 'auto',
+  padding: '8px 0px',
+  fontSize: '1rem',
+  letterSpacing: '1px',
+}
+
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: null,
       password: null,
+      submissionResponseText: "",
       formErrors: {
         email: '',
         password: '',
@@ -62,12 +74,22 @@ class Login extends Component {
       
       const userToken = this.postRequest(requestOptions)
 
+
+      // RESPONSE FROM SERVER GOES HERE
       userToken.then(function(result){
-        if (result.statusText === "OK"){
-          window.location.href="/Dashboard";
-        }
-        else {
-          console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
+        switch(result.statusText) {
+          case "OK":
+            this.setState({submissionResponseText: "Login Successful!\nRedirecting to Dashboard."})
+            setTimeout(window.location.href="/Dashboard", 2000);
+            break;
+          case "email":
+            this.setState({submissionResponseText: "That email is not registered."})
+            break;
+          case 'password':
+            this.setState({submissionResponseText: "That password is incorrect"})
+            break;
+          default:
+            this.setState({submissionResponseText: "FORM INVALID - Catastrophic meltdown, run for your lives!"})
         }
       })
     }
@@ -97,14 +119,38 @@ class Login extends Component {
 
   render() {
     const { formErrors } = this.state;
+
+    var visible;
+    if (this.state.submissionResponseText !== '') {
+      visible = 'inline-block'  
+    }
+    else {
+      visible = 'none'  
+    }
+    const submissionResponseDiv = {
+      position: 'relative',
+      width: '100%',
+      height: 'fitContent',
+      textAlign: 'center',
+      display: visible,
+      color: 'ivory',
+      padding: '1rem',
+      fontWeight: 'lighter',
+      fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif'
+    }
+
   return (
     <>
     <div className='regWrapper'>
       <div className='form-regWrapper'>
+      <div style={submissionResponseDiv} id="SubmissionResponseDiv">
+          <p>{this.state.submissionResponseText}</p>
+          <button style={subBtn} onClick={() => this.setState({submissionResponseText: ''})}>Ok</button>
+        </div>
         <h1 style={{color: 'white'}}>Login</h1>
         <form className='registration-form' onSubmit={this.handleSubmit} noValidate>
           <div className='email'>
-            <label htmlForm='email'>Email</label>
+            <label htmlform='email'>Email</label>
             <input 
               className={formErrors.email.length > 0 ? 'error' : null} 
               placeholder='Email' 
@@ -118,7 +164,7 @@ class Login extends Component {
             )}
           </div>
           <div className='password'>
-            <label htmlForm='password'>Password</label>
+            <label htmlform='password'>Password</label>
             <input  
               className={formErrors.password.length > 0 ? 'error' : null}
               placeholder='Password'

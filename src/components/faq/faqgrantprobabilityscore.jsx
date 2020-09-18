@@ -1,5 +1,3 @@
-import React from 'react';
-
 const GrantProbabilityScore = 
 `
 <h3>Your Grant Probability Score (GPS)</h3>

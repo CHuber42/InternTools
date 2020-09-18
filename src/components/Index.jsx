@@ -1,14 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import schoolIcon1 from '../img/schoolIcon1.svg';
 import smallbusiness1 from '../img/smallbusiness1.svg';
 import govicon from '../img/govicon.svg';
 import SmartFocusFunding from './Fragments/smartfocusfunding';
 import HowWeFindFunding from './Fragments/howwefindfunding';
 import CovidPlan from './Fragments/covidplan';
-import Gov from './PreRegister/gov';
-import Edu from './PreRegister/edu';
-import SMB from './PreRegister/smb';
 
 const inquire = {
   top: '-10vw',
@@ -157,7 +154,6 @@ function Home() {
   return (
     <>
       <div style={{backgroundColor: '#e5e5e5'}}>
-      {/* <Banner /> */}
         {/* Inquire Box */}
         <div style={inquire} className="col-md-4 col-sm-12">
           <div stlye={inquireBox} className="d-none d-lg-block">
@@ -268,31 +264,12 @@ function Home() {
         </div>
       </div>
       <hr/>
-      {/* <Router>
-        <Switch>
-          <Route path="/edu">
-            <Edu/>
-            <SmartFocusFunding/>
-          </Route>
-          <Route path="/smb">
-            <SMB/>
-            <SmartFocusFunding/>
-          </Route>
-          <Route path="/gov">
-            <Gov/>
-            <SmartFocusFunding/>
-          </Route>
-          <Route path="/"> */}
-            {/* How We Find Funding Box */}
-            <HowWeFindFunding/>
-            {/* SMART FOCUSED FUNDING SECTION */}
-            <SmartFocusFunding/>
-            {/* Covid Bottom Section */}
-            <CovidPlan/>
-            {/* <Preregistration/>
-          </Route>
-        </Switch>
-      </Router> */}
+      {/* How We Find Funding Box */}
+      <HowWeFindFunding/>
+      {/* SMART FOCUSED FUNDING SECTION */}
+      <SmartFocusFunding/>
+      {/* Covid Bottom Section */}
+      <CovidPlan/>
     </div>
     </div>
     </>

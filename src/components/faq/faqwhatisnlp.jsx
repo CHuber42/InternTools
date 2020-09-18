@@ -1,5 +1,3 @@
-import React from 'react';
-
 const WhatIsNLP = `
 <h3>What is Natural Language Processing?</h3> 
 <p>Have you ever wondered how smart technology can really get, given that the majority of human knowledge is contained within the written word? </p> 

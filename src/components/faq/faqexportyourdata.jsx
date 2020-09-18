@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ExportYourData = 
 `
 <h3>Coming Soon</h3>

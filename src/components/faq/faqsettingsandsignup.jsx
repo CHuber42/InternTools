@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SettingsAndSignup = 
 `
 <h3>How to sign into your Grant Us Funding account:</h3> 

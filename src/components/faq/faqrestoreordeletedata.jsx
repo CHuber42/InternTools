@@ -1,5 +1,3 @@
-import React from 'react';
-
 const RestoreOrDeleteYourData = 
 `
 <h3>Where is my data stored?</h3>

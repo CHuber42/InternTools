@@ -1,8 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Footer from './components/footer.jsx';
 import Navbar from './components/navbar';
-
 import Faq from './components/faq/faq';
 import Team from './components/team';
 import Terms from './components/Fragments/terms'
@@ -16,21 +15,21 @@ import Contact from './components/contact.jsx';
 import Gov from './components/PreRegister/gov.jsx';
 import Edu from './components/PreRegister/edu.jsx';
 import Smb from './components/PreRegister/smb.jsx';
-import DashNavbar from './components/Dashboard/dashnav.jsx';
-import DashboardSidebar from './components/Dashboard/dashboardsidebar.jsx';
-import DashBoardMain from './components/Dashboard/dashboardmain.jsx';
+import DashNavbar from './components/UserPortal/dashnav.jsx';
+import DashboardSidebar from './components/UserPortal/dashboardsidebar.jsx';
+import DashBoardMain from './components/UserPortal/dashboardmain.jsx';
 import NLP from './components/Fragments/nlp';
 import Registration from './components/Registration/registrationform.jsx';
 import Login from './components/Registration/login.jsx';
-import Teammanagement from './components/Dashboard/teammanagement';
+import Teammanagement from './components/UserPortal/teammanagement';
 import ML from './components/Fragments/ml.jsx';
-import GrantSearch from './components/Dashboard/grantsearch.jsx'
-import DashMain from './components/Dashboard/dashboardmain.jsx';
-import UserProfile from './components/Dashboard/userprofile.jsx';
-import Help from './components/Dashboard/help.jsx';
-import ProjectsPage from './components/Dashboard/projectspage.jsx';
-import ReferralProgram from './components/Dashboard/referralprogram.jsx'
-import Calendar from './components/Dashboard/calendar.jsx'
+import GrantSearch from './components/UserPortal/grantsearch.jsx'
+// import DashMain from './components/UserPortal/dashboardmain.jsx';
+import UserProfile from './components/UserPortal/userprofile.jsx';
+import Help from './components/UserPortal/help.jsx';
+import ProjectsPage from './components/UserPortal/projectspage.jsx';
+import ReferralProgram from './components/UserPortal/referralprogram.jsx'
+import Calendar from './components/UserPortal/Calendar/calendar.jsx'
 
 function App(props) {
   return (

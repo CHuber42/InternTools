@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 // import GrantUsLogo from "../../img/RemasteredGufLogo3.png";
 import GrantUsLogo from "../../img/guf_logo.png";
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
-import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 const headerStyle = {
     backgroundColor: '#959595',
@@ -43,26 +42,10 @@ const magGlassStyle = {
     border: 'none',
 }
 
-const freeTrialStyle = {
-    color: 'yellow',
-    cursor: 'pointer'
-}
-
-const activeLink = {
-    backgroundColor: '#7598cc',
-    borderRadius: '2rem',
-    border: '1px solid white',
-    boxShadow: '.3rem .3rem .3rem rgba(0, 0, 0, 0.25)',
-}
-
 const boundingBox = {
     width: '10rem',
     textAlign: 'center',
 }
-
-var teamLink;
-var contactLink;
-var pricingPlansLink;
 
 class DashNavbar extends Component{
     constructor(props){
@@ -70,28 +53,8 @@ class DashNavbar extends Component{
     }
 
     componentDidUpdate = () => {
-        ReactDOM.findDOMNode(this).scrollIntoView();
-    }
-    
-    componentWillUpdate(){
-        pricingPlansLink = {};
-        contactLink = {};
-        teamLink = {};
-        
-        switch(window.location.href){
-            case 'http://localhost:3000/pricingplans':
-                pricingPlansLink = activeLink;
-                break;
-            case 'http://localhost:3000/contact':
-                contactLink = activeLink;
-                break;
-            case 'http://localhost:3000/team':
-                teamLink = activeLink;
-                break;
-            default :
-                console.log("default switch condition in navbar");
-                break;
-        }
+        const target = document.getElementsByTagName("body")[0]
+        target.scrollIntoView();
     }
 
     render(){
@@ -101,24 +64,20 @@ class DashNavbar extends Component{
                 <div className="navbar-brand">
                     <Link to="/">
                         <img src={GrantUsLogo} alt="Logo" style={logoStyle} /> 
-                        {/* onClick={() => this.setState({active: "home"})} */}
                     </Link>
                 </div>
                 <div style={boundingBox}>
-                    <div className="nav-item" style={teamLink}>
-                    {/* <span style={navLinksStyle} onClick={() => this.setState({active: "team"})}>Our Team</span> */}
-                    <Link style={navLinksStyle} to="/team">Our Team</Link>
+                    <div className="nav-item">
+                        <Link style={navLinksStyle} to="/team">Our Team</Link>
                     </div>
                 </div>
                 <div style={boundingBox}>
-                    <div className="nav-item" style={pricingPlansLink}>
-                        {/* <span style={navLinksStyle} onClick={() => this.setState({active: "pricingplans"})}>Pricing & Plans</span> */}
+                    <div className="nav-item">
                         <Link style={navLinksStyle} to="/pricingplans">Pricing & Plans</Link>
                     </div>
                 </div>
                 <div style={boundingBox}>
-                    <div className="nav-item" style={contactLink}>
-                        {/* <span style={navLinksStyle} onClick={() => this.setState({active: "contact"})}>Contact</span> */}
+                    <div className="nav-item">
                         <Link style={navLinksStyle} to="/contact">Contact</Link>
                     </div>
                 </div>

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const TeamMembers = 
 `
 <h3>How to change your picture/image</strong></h3> 

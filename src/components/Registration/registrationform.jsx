@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './registrationStyle.css';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -22,6 +22,19 @@ const formValid = ({ formErrors, ...rest }) => {
   return valid;
 };
 
+
+
+const subBtn = {
+  backgroundColor: '#519e8a',
+  color: '#fff',
+  border: '2px solid #fff',
+  width: '25%',
+  margin: 'auto',
+  padding: '8px 0px',
+  fontSize: '1rem',
+  letterSpacing: '1px',
+}
+
 class Registration extends Component {
   constructor(props) {
     super(props);
@@ -30,11 +43,14 @@ class Registration extends Component {
       lastName: null,
       email: null,
       password: null,
+      passwordCheck: null,
+      submissionResponseText: "",
       formErrors: {
         firstName: '',
         lastName: '',
         email: '',
         password: '',
+        passwordCheck: '',
       }
     };
   }
@@ -70,12 +86,19 @@ class Registration extends Component {
         
         const userToken = this.postRequest(requestOptions)
 
+        // RESPONSE FROM SERVER GOES HERE
         userToken.then(function(result){
-          if (result.statusText === "OK"){
-            window.location.href="/login";
-          }
-          else {
-            console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
+          switch(result.statusText) {
+            case "OK":
+              this.setState({submissionResponseText: "Registration Successful!\nRedirecting to Login."})
+              setTimeout(window.location.href="/login", 2000);
+              break;
+            case "error":
+              this.setState({submissionResponseText: "An error occured during database registration. That email may already exist."})
+              break;
+            default:
+              this.setState({submissionResponseText: "FORM INVALID - Catastrophic meltdown, run for your lives!"})
+              // console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
           }
         })
     }
@@ -100,6 +123,10 @@ class Registration extends Component {
           ? '' 
           : 'invalid email addresss';
         break;
+        case 'passwordCheck':
+          formErrors.passwordCheck = 
+            value !== this.state.password ? "passwords don't match" : ''; 
+          break;
       case 'password':
         formErrors.password = 
           value.length < 6 ? 'minimum 6 characters required' : '';
@@ -108,15 +135,40 @@ class Registration extends Component {
         break;
     }
 
-    this.setState({formErrors, [name]: value }, () => console.log(this.state));
+    // USEFUL TOOL FOR DIAGNOSING FORM INPUT ERRORS
+    // this.setState({formErrors, [name]: value }, () => console.log(this.state));
   };
 
   render() {
     const { formErrors } = this.state;
+    
+    var visible;
+    if (this.state.submissionResponseText !== '') {
+      visible = 'inline-block'  
+    }
+    else {
+      visible = 'none'  
+    }
+    const submissionResponseDiv = {
+      position: 'relative',
+      width: '100%',
+      height: 'fitContent',
+      textAlign: 'center',
+      display: visible,
+      color: 'ivory',
+      padding: '1rem',
+      fontWeight: 'lighter',
+      fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif'
+    }
+    
   return (
     <>
     <div className='regWrapper'>
       <div className='form-regWrapper'>
+        <div style={submissionResponseDiv} id="SubmissionResponseDiv">
+          <p>{this.state.submissionResponseText}</p>
+          <button style={subBtn} onClick={() => this.setState({submissionResponseText: ''})}>Ok</button>
+        </div>
         <h1 className='regTitle'>Create Account</h1>
         <form className='registration-form' onSubmit={this.handleSubmit} noValidate>
           <div className='firstName'>
@@ -177,6 +229,21 @@ class Registration extends Component {
             />
             {formErrors.password.length > 0 && (
               <span className='errorMessage'>{formErrors.password}</span>
+            )}
+          </div>
+          <div className='passwordCheck'>
+            <label className='regLabel' htmlform='passwordCheck'>Confirm Password</label>
+            <input  
+              className={formErrors.passwordCheck === formErrors.password ? 'error' : null}
+              placeholder='Re-Type Password'
+              type='password' 
+              name='passwordCheck' 
+              onChange={this.handleChange}
+              id='regInput'
+              noValidate 
+            />
+            {formErrors.passwordCheck.length > 0 && (
+              <span className='errorMessage'>{formErrors.passwordCheck}</span>
             )}
           </div>
           <div className='createAccount'>

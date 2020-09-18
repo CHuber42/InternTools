@@ -1,5 +1,4 @@
 import React from 'react';
-import Banner from './Fragments/banner';
 import EducationIcon from '../img/schoolIcon1.svg';
 import SmallBusinessIcon from '../img/smallbusiness1.svg';
 import GovIcon from '../img/govicon.svg';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CancellationsAndRefunds = `
             <h3>For Free Trials & Paid Plans:</h3> 
             <p>Your account will be canceled, and your service stopped on the date of cancellation. We will retain your search information and update you with ongoing emails.</p> 

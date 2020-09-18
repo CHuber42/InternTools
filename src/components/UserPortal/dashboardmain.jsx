@@ -1,11 +1,12 @@
-import React, { useState, useRef, Component } from 'react'
+// import React, { useState, useRef, Component } from 'react'
+// import GrantEntry from './grantentry'
+// import Admins from './admins.jsx';
+// const he = require('he');
+import React, { Component } from 'react'
 import Project from './project.jsx';
-import Admins from './admins.jsx';
 import CanvasJSReact from '../../canvasjs.react';
-import GrantEntry from './grantentry'
 
 
-const he = require('he');
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 // CanvasJSReact.addColorSet ('greenShades', ['#e5e5e5']);
 
@@ -114,7 +115,7 @@ const testUser = {
     [{picture: '', name: "Frank Bochowski", title: "Admin"}, {picture: '', name: 'Tom Bombadil', title:'Co-Admin'}, {picture: "", name: "Bob Horatio", title: "Co-Admin"}],
   
   projects: 
-    [{title: "Project One", manager: "Test Manager One", events: []}, {title: "Project Two", manager: "Test Manager Two", events: []}, {title: "Project Three", manager: "Test Manager Three", events: []}],
+    [{title: "Project One", manager: "Test Manager One", events: [], key: "1"}, {title: "Project Two", manager: "Test Manager Two", events: [], key: "2"}, {title: "Project Three", manager: "Test Manager Three", events: [], key:"3"}],
 
   watchedGrants: 
     [{name: "Test Grant One", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the first test grant"}, {name: "Test Grant Two", submissiondate: "July 4th 1784", amount: "$1000", notes: "This is the second test grant"}],
@@ -168,13 +169,10 @@ function determineColor(status){
   switch(status){
     case 'won':
       return won;
-      break;
     case 'lost':
       return lost;
-      break;
     case 'pending':
       return pending;
-      break;
     default:
       return {};
   }
@@ -191,14 +189,12 @@ class DashMain extends Component{
   
   render(){  
 
-    
       // const testUser = JSON.parse(he.decode(this.props.userData));
-      
-    
+       
+      // const grantMatches = testUser.matchedGrants;
+      // const matchedGrants = testUser.matchedGrants;
+      // const adminsAndCoadmins = testUser.adminsAndCoadmins;
       const accountName = testUser.name;
-      const grantMatches = testUser.matchedGrants;
-      const matchedGrants = testUser.matchedGrants;
-      const adminsAndCoadmins = testUser.adminsAndCoadmins;
       const projects = testUser.projects;
       const watchedGrants = testUser.watchedGrants;
       const appliedGrants = testUser.appliedGrants;
@@ -219,6 +215,7 @@ class DashMain extends Component{
               <div >
                 {projects.map((project) =>
                   <Project 
+                    key={project.key}
                     title={project.title}
                     manager={project.manager}
                   />
@@ -247,7 +244,7 @@ class DashMain extends Component{
           <div className="row" style={rowFormatting}>
             <div style={projectBoxOne} className="col-md-5">
               {/* <span style={projectTitleHeader}>Your Grant Matches</span> */}
-              <CanvasJSChart options = {chartData}/>  
+              <span style={{padding: '1rem'}}><CanvasJSChart options = {chartData}/></span>
             </div>
             <div className='col-md-6'>
               <span style={projectTitleHeader}>Admins and Co-Admins</span>

@@ -66,8 +66,8 @@ function EduPlanPricing(){
                                 <tbody> 
                                     <tr> 
                                         <th scope="row"></th> 
-                                        <td className="columnOutline"><span class="priceStyle">[TBD]/Month</span> <br/>Billed Annually<br/> or<br/> [TBD] <br/>billed monthly</td> 
-                                        <td className="columnOutline"><span class="priceStyle">Custom Pricing</span></td> 
+                                        <td className="columnOutline"><span className="priceStyle">[TBD]/Month</span> <br/>Billed Annually<br/> or<br/> [TBD] <br/>billed monthly</td> 
+                                        <td className="columnOutline"><span className="priceStyle">Custom Pricing</span></td> 
                                     </tr>                     
                                     <tr> 
                                         <th scope="row" className="rowTitles">Users & Projects</th> 

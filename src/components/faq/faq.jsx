@@ -1,5 +1,4 @@
 import React from 'react';
-import SmartFocusFunding from '../Fragments/smartfocusfunding';
 import Accordion from './accordion';
 import CancellationsAndRefunds from './faqcancellationsandrefunds';
 import WhatIsNLP from './faqwhatisnlp';
@@ -110,7 +109,6 @@ function Faq() {
                 <Accordion title="What is NLP?" content={WhatIsNLP}/>
                 <Accordion title="Grant Probability Score" content={GrantProbabilityScore}/>
             </div> 
-            <SmartFocusFunding/>
         </div>      
     </div>   
     </>

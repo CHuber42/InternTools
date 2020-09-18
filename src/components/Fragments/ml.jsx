@@ -3,7 +3,8 @@ import React from 'react';
 const background = {
   backgroundColor: '#E5e5e5',
   textAlign: 'center',
-  padding: '1rem'
+  padding: '1rem',
+  height: '100vh'
 }
 
 const pad = {

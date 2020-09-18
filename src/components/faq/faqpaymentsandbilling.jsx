@@ -1,5 +1,3 @@
-import React from 'react';
-
 const PaymentAndBilling = 
 `
 <h3>How do I find a billing receipt or invoice?</h3> 

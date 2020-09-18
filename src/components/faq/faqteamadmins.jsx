@@ -1,5 +1,3 @@
-import React from 'react';
-
 const TeamAdmins = 
 `
 <h3 style={accordionH2}>Change Admin rights for your Grant Us Funding Team</h3> 

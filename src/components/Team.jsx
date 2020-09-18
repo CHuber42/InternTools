@@ -1,10 +1,9 @@
 import React from 'react';
-import Banner from './Fragments/banner';
 import AlanImage from '../img/alanjpgformat1.png';
 import ClintImage from '../img/Clint.png';
 import HristoImage from '../img/hristo.png';
 import RachelImage from '../img/rachel.png';
-import BryonImage from '../img/bryon.png';
+// import BryonImage from '../img/bryon.png';
 import CHuberImage from '../img/CHuber.png';
 import NathanImage from '../img/nathan.jpg'
 
@@ -21,6 +20,7 @@ const programmerIMG = {
   boxShadow: '.1rem .5rem .5rem rgba(0, 0, 0, 0.25', 
   height: '85%', 
   float: 'left',
+  marginRight: '1rem'
 }
 
 const programmerDiv = {
@@ -35,7 +35,7 @@ const aboutParagraph2 = {
   position: 'relative',
   width: '70%',
   marginLeft: '30%',
-  marginTop: '5%'
+  marginTop: '5%',
 }
 
 const background = {
@@ -148,15 +148,15 @@ function Team() {
                 <p style={aboutParagraph2}>
                   <span><strong>Rachel</strong></span>
                   <br/>
-                  Known for having an eye for design. More Coming Soon!
+                  Looking for the women who can see the larger picture, from the tons of parts and can make it orderly and look sharp. I've taken my coding skills coupled with my design sense to make functional results from chaos.
                 </p>
               </div>
               <div style={programmerDiv}>
-                <img style={programmerIMG} src={BryonImage} alt="Bryon"/>
+                {/* <img style={programmerIMG} src={BryonImage} alt="Bryon"/> */}
                 <p style={aboutParagraph2}>
                   <span><strong>Bryon</strong></span>
                   <br/>
-                  Coming Soon!
+                  As a Navy vet with an ear for tunes I went from making high tech manuals, to professional music recordings, to coding. From making the sounds of clubs recordable with portable popup setups to the code for making it accessible and efficient, Bryon’s the man.
                 </p>
               </div>
             </div>

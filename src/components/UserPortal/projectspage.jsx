@@ -56,7 +56,6 @@ const background = {
     marginBottom: '0rem',
     padding: '1rem',
     minHeight: '100vh'
-    // marginTop: '-100vh'
 }
 
 const paginationBox = {
@@ -122,7 +121,7 @@ class ProjectsPage extends Component{
                             <th style={tableHeaders}>Close Date</th>
                             <th style={tableHeaders}>Min Award</th>
                             <th style={tableHeaders}>Max Award</th>
-                            <th style={tableHeaders}>Untrack Grant</th>
+                            <th style={tableHeaders}>Unwatch Grant</th>
                         </tr>
                     </thead>
                     <tbody>

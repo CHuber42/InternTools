@@ -1,5 +1,3 @@
-import React from 'react';
-
 const PlansAndUpgrades = 
 `
 <h3>Education Pathway</h3> 

@@ -1,5 +1,4 @@
 import React from 'react';
-import Banner from './Fragments/banner';
 import EduPlanPricing from './PlansAndPricing/planpricingedu';
 import SmbPlanPricing from './PlansAndPricing/planpricingsmb';
 import GovPlanPricing from './PlansAndPricing/planpricinggov';

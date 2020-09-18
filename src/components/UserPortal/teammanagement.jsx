@@ -8,39 +8,39 @@ const background = {
 //   marginTop: '-100vh'
 }
 
-const projectBoxOne = {
-    height: 'fit-content',
-    borderRadius: '2rem',
-    backgroundColor: '#FFFFFF',
-    margin:'1rem' 
-};
+// const projectBoxOne = {
+//     height: 'fit-content',
+//     borderRadius: '2rem',
+//     backgroundColor: '#FFFFFF',
+//     margin:'1rem' 
+// };
 
-const UserName = {
-    fontSize: '2rem',
-    marginLeft: '2rem',
-    fontFamily: 'Roboto',
-    fontWeight: 'bold',
-};
+// const UserName = {
+//     fontSize: '2rem',
+//     marginLeft: '2rem',
+//     fontFamily: 'Roboto',
+//     fontWeight: 'bold',
+// };
   
-const TestData = {
-    name: "User McUserson",
-    organization: "University of Oregon",
-    pathway: "Education",
-    plan: "Essential",
-    teams: [{name: "Team One", projects: [{name: "Project One"}, {name: "Project Two"}]}, {name: "Team One", projects: [{name: "Project One"}, {name: "Project Two"}]}],
-    email: "UserMcuserson@testdata.com"
-}
+// const TestData = {
+//     name: "User McUserson",
+//     organization: "University of Oregon",
+//     pathway: "Education",
+//     plan: "Essential",
+//     teams: [{name: "Team One", projects: [{name: "Project One"}, {name: "Project Two"}]}, {name: "Team One", projects: [{name: "Project One"}, {name: "Project Two"}]}],
+//     email: "UserMcuserson@testdata.com"
+// }
 
-const list = {
-    listStyleType: 'none'
-}
+// const list = {
+//     listStyleType: 'none'
+// }
 
-const Username = TestData.name;
-const Organization = TestData.organization;
-const Pathway = TestData.pathway;
-const Plan = TestData.plan;
-const Teams = TestData.teams;
-const Email = TestData.email;
+// const Username = TestData.name;
+// const Organization = TestData.organization;
+// const Pathway = TestData.pathway;
+// const Plan = TestData.plan;
+// const Teams = TestData.teams;
+// const Email = TestData.email;
 
 class TeamManagement extends Component {
     constructor(){

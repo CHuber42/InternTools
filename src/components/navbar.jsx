@@ -1,9 +1,8 @@
-import React, {Component} from 'react';
+// import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 // import GrantUsLogo from "../img/RemasteredGufLogo3.png";
 import GrantUsLogo from "../img/guf_logo.png";
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
-import ReactDOM from 'react-dom';
-
+import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
 
 const headerStyle = {
     backgroundColor: '#959595',
@@ -77,98 +76,71 @@ class Navbar extends Component {
     }
 
     componentDidUpdate = () => {
-        ReactDOM.findDOMNode(this).scrollIntoView();
+        const target = document.getElementsByTagName("body")[0]
+        target.scrollIntoView();
     }
+    
+    render(){  
 
-    componentWillUpdate(){
         pricingPlansLink = {};
         contactLink = {};
         freeTrialLink = {};
         teamLink = {};
         
         switch(window.location.href){
-            case 'http://www.grantusfunding.com/pricingplans':
+            case 'https://www.grantusfunding.com/pricingplans':
                 pricingPlansLink = activeLink;
                 break;
-            case 'http://www.grantusfunding.com/contact':
+            case 'https://www.grantusfunding.com/contact':
                 contactLink = activeLink;
                 break;
-            case 'http://www.grantusfunding.com/team':
+            case 'https://www.grantusfunding.com/team':
                 teamLink = activeLink;
                 break;
-            case 'http://www.grantusfunding.com/freetrial':
+            case 'https://www.grantusfunding.com/freetrial':
                 freeTrialLink = activeLink;
                 break;
             default :
-                console.log("default switch condition in navbar");
                 break;
         }
-    }
-    
-    render(){  
-        // switch (this.state.active){
-        //     case "home":
-        //         this.fragment=<Home/>;
-        //         break
-        //     case "team":
-        //         this.fragment=<Team/>;
-        //         break
-        //     case "pricingplans":
-        //         this.fragment=<PricingPlans/>;
-        //         break
-        //     case "contact":
-        //         this.fragment=<Contact/>;
-        //         break
-        //     case "freetrial":
-        //         this.fragment=<FreeTrial/>;
-        //         break
-        //     default:
-        //         this.fragment=<Home/>;
-        //         break
-        // }
+
     return(
         <>
-        {/* <Router> */}
-            <div style={headerStyle} className="navbar">
-                <div className="navbar-brand">
-                    <Link to="/">
-                        <img src={GrantUsLogo} alt="Logo" style={logoStyle} /> 
-                        {/* onClick={() => this.setState({active: "home"})} */}
-                    </Link>
-                </div>
-                <div style={boundingBox}>
-                    <div className="nav-item" style={teamLink}>
-                    {/* <span style={navLinksStyle} onClick={() => this.setState({active: "team"})}>Our Team</span> */}
-                    <Link style={navLinksStyle} to="/team">Our Team</Link>
-                    </div>
-                </div>
-                <div style={boundingBox}>
-                    <div className="nav-item" style={pricingPlansLink}>
-                        {/* <span style={navLinksStyle} onClick={() => this.setState({active: "pricingplans"})}>Pricing & Plans</span> */}
-                        <Link style={navLinksStyle} to="/pricingplans">Pricing & Plans</Link>
-                    </div>
-                </div>
-                <div style={boundingBox}>
-                    <div className="nav-item" style={contactLink}>
-                        {/* <span style={navLinksStyle} onClick={() => this.setState({active: "contact"})}>Contact</span> */}
-                        <Link style={navLinksStyle} to="/contact">Contact</Link>
-                    </div>
-                </div>
-                <div style={boundingBox}>
-                    <div className="nav-item" style={freeTrialLink}>
-                        {/* <span style={freeTrialStyle} onClick={() => this.setState({active: "freetrial"})}>7-Day Free Trial</span> */}
-                        <Link style={freeTrialStyle} to="/freetrial">7-Day Free Trial</Link>
-                    </div>
-                </div>
-                <div className="nav-item">
-                    <input style={searchStyle} type="text" placeholder="Search For..."/>
-                    <button className='fas fa-search fa-sm' style={magGlassStyle} type='submit'/>
-                </div>
-                <Link to="./login">
-                    <button style={btnLogin} className='btn-login' type='button'>Login</button>
+        <div style={headerStyle} className="navbar">
+            <div className="navbar-brand">
+                <Link to="/">
+                    <img src={GrantUsLogo} alt="Logo" style={logoStyle} /> 
+
                 </Link>
             </div>
-            {/* {this.fragment} */}
+            <div style={boundingBox}>
+                <div className="nav-item" style={teamLink}>
+                    <Link style={navLinksStyle} to="/team">Our Team</Link>
+                </div>
+            </div>
+            <div style={boundingBox}>
+                <div className="nav-item" style={pricingPlansLink}>
+                    <Link style={navLinksStyle} to="/pricingplans">Pricing & Plans</Link>
+                </div>
+            </div>
+            <div style={boundingBox}>
+                <div className="nav-item" style={contactLink}>
+                    <Link style={navLinksStyle} to="/contact">Contact</Link>
+                </div>
+            </div>
+            <div style={boundingBox}>
+                <div className="nav-item" style={freeTrialLink}>
+                    <Link style={freeTrialStyle} to="/freetrial">7-Day Free Trial</Link>
+                </div>
+            </div>
+            <div className="nav-item">
+                <input style={searchStyle} type="text" placeholder="Search For..."/>
+                <button className='fas fa-search fa-sm' style={magGlassStyle} type='submit'/>
+            </div>
+            <Link to="./login">
+                <button style={btnLogin} className='btn-login' type='button'>Login</button>
+            </Link>
+        </div>
         </>
     )}
 }
